@@ -1,0 +1,90 @@
+Script started on ma 12 okt 2015 17:26:29 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$      sudo apt-get install apache2-utils
+[sudo] password for patharmor: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following extra packages will be installed:
+  libapr1 libaprutil1
+The following NEW packages will be installed:
+  apache2-utils libapr1 libaprutil1
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 245 kB of archives.
+After this operation, 876 kB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+0% [Working]            Get:1 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libapr1 amd64 1.5.0-1 [85,1 kB]
+            0% [1 libapr1 0 B/85,1 kB 0%]                             35% [Working]             Get:2 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1 amd64 1.5.3-1 [76,4 kB]
+             35% [2 libaprutil1 0 B/76,4 kB 0%]                                  66% [Working]             Get:3 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2-utils amd64 2.4.7-1ubuntu4.6 [83,5 kB]
+             71% [3 apache2-utils 12,3 kB/83,5 kB 15%]                                         100% [Working]              Fetched 245 kB in 0s (3094 kB/s)
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 239605 files and directories currently installed.)
+Preparing to unpack .../libapr1_1.5.0-1_amd64.deb ...
+Unpacking libapr1:amd64 (1.5.0-1) ...
+Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../libaprutil1_1.5.3-1_amd64.deb ...
+Unpacking libaprutil1:amd64 (1.5.3-1) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../apache2-utils_2.4.7-1ubuntu4.6_amd64.deb ...
+Unpacking apache2-utils (2.4.7-1ubuntu4.6) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up libapr1:amd64 (1.5.0-1) ...
+Setting up libaprutil1:amd64 (1.5.3-1) ...
+Setting up apache2-utils (2.4.7-1ubuntu4.6) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$      ab -n 1000 http://127.0.0.1/
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        nginx/0.8.54
+Server Hostname:        127.0.0.1
+Server Port:            80
+
+Document Path:          /
+Document Length:        151 bytes
+
+Concurrency Level:      1
+Time taken for tests:   0.244 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      362000 bytes
+HTML transferred:       151000 bytes
+Requests per second:    4101.79 [#/sec] (mean)
+Time per request:       0.244 [ms] (mean)
+Time per request:       0.244 [ms] (mean, across all concurrent requests)
+Transfer rate:          1450.05 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:     0    0   0.3      0       5
+Waiting:        0    0   0.2      0       5
+Total:          0    0   0.3      0       5
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      0
+  80%      0
+  90%      0
+  95%      0
+  98%      1
+  99%      1
+ 100%      5 (longest request)
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ exit
+
+Script done on ma 12 okt 2015 17:26:46 CEST

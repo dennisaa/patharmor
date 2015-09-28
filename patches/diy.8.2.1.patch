@@ -1,0 +1,546 @@
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/h/BPatch.h Dyninst-8.2.1/dyninstAPI/h/BPatch.h
+--- Dyninst-8.2.1.orig/dyninstAPI/h/BPatch.h	2015-01-08 17:26:18.953752480 +0100
++++ Dyninst-8.2.1/dyninstAPI/h/BPatch.h	2015-01-08 18:42:08.341631121 +0100
+@@ -135,6 +135,8 @@ class BPATCH_DLL_EXPORT BPatch {
+        Defaults to false */
+     bool        trampRecursiveOn;
+ 
++    bool        forceInstrumentationOn;
++
+     bool        forceRelocation_NP;
+     /* If true,allows automatic relocation of functions if dyninst
+        deems it necessary.  Defaults to true */
+@@ -291,6 +293,8 @@ public:
+     // returns whether trampolines are set to handle recursive instrumentation
+     bool isTrampRecursive();
+ 
++    bool isForceInstrumentation();
++
+     // BPatch::isMergeTramp:
+     // returns whether base tramp and mini-tramp is merged
+     bool isMergeTramp();        
+@@ -496,6 +500,8 @@ public:
+ 
+     void setMergeTramp(bool x);
+ 
++    void setForceInstrumentation(bool x);
++
+     //  BPatch::setSaveFPR:
+     //  Turn on/off merged base & mini-tramps
+     
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/h/BPatch_snippet.h Dyninst-8.2.1/dyninstAPI/h/BPatch_snippet.h
+--- Dyninst-8.2.1.orig/dyninstAPI/h/BPatch_snippet.h	2015-01-08 17:26:18.957752480 +0100
++++ Dyninst-8.2.1/dyninstAPI/h/BPatch_snippet.h	2015-01-08 17:27:58.333749829 +0100
+@@ -287,7 +287,8 @@ class BPATCH_DLL_EXPORT BPatch_funcCallE
+     //  BPatch_funcCallExpr::BPatch_funcCallExpr
+     //  Creates a representation of a function call
+     BPatch_funcCallExpr(const BPatch_function& func,
+-                         const BPatch_Vector<BPatch_snippet *> &args);
++                         const BPatch_Vector<BPatch_snippet *> &args,
++                         bool DIYmode = false );
+ };
+ 
+ class BPATCH_DLL_EXPORT BPatch_ifExpr : public BPatch_snippet {
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/BPatch.C Dyninst-8.2.1/dyninstAPI/src/BPatch.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/BPatch.C	2015-01-08 17:26:18.713752487 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/BPatch.C	2015-01-08 18:09:21.237683595 +0100
+@@ -100,6 +100,7 @@ BPatch::BPatch()
+     debugParseOn(true),
+     baseTrampDeletionOn(false),
+     trampRecursiveOn(false),
++    forceInstrumentationOn(false),
+     forceRelocation_NP(false),
+     autoRelocation_NP(true),
+     saveFloatingPointsOn(true),
+@@ -264,6 +265,14 @@ void BPatch::setTrampRecursive(bool x)
+ {
+   trampRecursiveOn = x;
+ }
++bool BPatch::isForceInstrumentation()
++{
++  return forceInstrumentationOn;
++}
++void BPatch::setForceInstrumentation(bool x)
++{
++  forceInstrumentationOn = x;
++}
+ void BPatch::setLivenessAnalysis(bool x)
+ {
+     livenessAnalysisOn_ = x;
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/BPatch_function.C Dyninst-8.2.1/dyninstAPI/src/BPatch_function.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/BPatch_function.C	2015-01-08 17:26:18.701752487 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/BPatch_function.C	2015-01-08 18:39:56.217634646 +0100
+@@ -600,7 +600,7 @@ BPatch_Vector<BPatch_point*> *BPatch_fun
+     if (!mod->isValid()) return NULL;
+ 
+     // if the function is not instrumentable, we won't find the point
+-    if (!isInstrumentable())
++    if (!isInstrumentable() && !BPatch::bpatch->isForceInstrumentation())
+        return NULL;
+ 
+     BPatch_Vector<BPatch_point*> *result = new BPatch_Vector<BPatch_point *>;
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/BPatch_snippet.C Dyninst-8.2.1/dyninstAPI/src/BPatch_snippet.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/BPatch_snippet.C	2015-01-08 17:26:18.693752487 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/BPatch_snippet.C	2015-01-08 17:41:17.745728504 +0100
+@@ -795,7 +795,8 @@ BPatch_regExpr::BPatch_regExpr(unsigned
+  */
+ BPatch_funcCallExpr::BPatch_funcCallExpr(
+     const BPatch_function &func,
+-    const BPatch_Vector<BPatch_snippet *> &args)
++    const BPatch_Vector<BPatch_snippet *> &args,
++    bool DIYmode)
+ {
+     pdvector<AstNodePtr> ast_args;
+ 
+@@ -809,7 +810,7 @@ BPatch_funcCallExpr::BPatch_funcCallExpr
+     //  to generate function calls can lead to non uniqueness probs
+     //  in the case of overloaded callee functions.
+ 
+-    ast_wrapper = AstNodePtr(AstNode::funcCallNode(func.lowlevel_func(), ast_args));
++    ast_wrapper = AstNodePtr(AstNode::funcCallNode(func.lowlevel_func(), ast_args, DIYmode));
+ 
+     assert(BPatch::bpatch != NULL);
+     ast_wrapper->setTypeChecking(BPatch::bpatch->isTypeChecked());
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/Relocation/CodeMover.C Dyninst-8.2.1/dyninstAPI/src/Relocation/CodeMover.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/Relocation/CodeMover.C	2015-01-08 17:26:18.533752491 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/Relocation/CodeMover.C	2015-01-08 18:46:46.025623714 +0100
+@@ -32,6 +32,7 @@
+ #include "CodeMover.h"
+ #include "Widgets/Widget.h"
+ #include "CFG/RelocBlock.h"
++#include "BPatch.h"
+ 
+ #include "instructionAPI/h/InstructionDecoder.h" // for debug
+ 
+@@ -73,7 +74,7 @@ bool CodeMover::addFunctions(FuncSet::co
+    // A vector of Functions is just an extended vector of basic blocks...
+    for (; begin != end; ++begin) {
+       func_instance *func = *begin;
+-      if (!func->isInstrumentable()) {
++      if (!func->isInstrumentable() && !BPatch::bpatch->isForceInstrumentation()) {
+ 	relocation_cerr << "\tFunction " << func->symTabName() << " is non-instrumentable, skipping" << endl;
+          continue;
+       }
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/addressSpace.C Dyninst-8.2.1/dyninstAPI/src/addressSpace.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/addressSpace.C	2015-01-08 17:26:18.829752484 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/addressSpace.C	2015-02-03 14:37:59.814180214 +0100
+@@ -2306,7 +2306,8 @@ void AddressSpace::addMappedObject(mappe
+ bool uninstrument(Dyninst::PatchAPI::Instance::Ptr inst) {
+    instPoint *point = IPCONV(inst->point());
+    bool ret = point->remove(inst);
+-   if (!ret) return false;
++// if (!ret) return false;
++   if (!ret) return true; /* PATHARMOR PATCH, a bit hacky */
+    point->markModified();
+    return true;
+ 
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/ast.C Dyninst-8.2.1/dyninstAPI/src/ast.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/ast.C	2015-01-08 17:26:18.761752485 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/ast.C	2015-01-08 17:34:37.453739182 +0100
+@@ -212,9 +212,9 @@ AstNodePtr AstNode::funcCallNode(const s
+       return AstNodePtr(new AstCallNode(func, args));
+ }
+ 
+-AstNodePtr AstNode::funcCallNode(func_instance *func, pdvector<AstNodePtr > &args) {
++AstNodePtr AstNode::funcCallNode(func_instance *func, pdvector<AstNodePtr > &args, bool DIYmode) {
+     if (func == NULL) return AstNodePtr();
+-    return AstNodePtr(new AstCallNode(func, args));
++    return AstNodePtr(new AstCallNode(func, args, DIYmode));
+ }
+ 
+ AstNodePtr AstNode::funcCallNode(func_instance *func) {
+@@ -387,12 +387,14 @@ AstOperandNode::AstOperandNode(operandTy
+ 
+ 
+ AstCallNode::AstCallNode(func_instance *func,
+-                         pdvector<AstNodePtr > &args) :
++                         pdvector<AstNodePtr > &args,
++                         bool DIYmode) :
+     AstNode(),
+     func_addr_(0),
+     func_(func),
+     callReplace_(false),
+-    constFunc_(false)
++    constFunc_(false),
++    DIYmode_(DIYmode)
+ {
+     for (unsigned i = 0; i < args.size(); i++) {
+         args[i]->referenceCount++; 
+@@ -405,7 +407,8 @@ AstCallNode::AstCallNode(func_instance *
+     func_addr_(0),
+     func_(func),
+     callReplace_(true),
+-    constFunc_(false)
++    constFunc_(false),
++    DIYmode_(false)
+ {
+ }
+ 
+@@ -416,7 +419,8 @@ AstCallNode::AstCallNode(const std::stri
+     func_addr_(0),
+     func_(NULL),
+     callReplace_(false),
+-    constFunc_(false)
++    constFunc_(false),
++    DIYmode_(false)
+ {
+     for (unsigned i = 0; i < args.size(); i++) {
+         args[i]->referenceCount++; 
+@@ -1800,15 +1804,15 @@ bool AstCallNode::generateCode_phase2(co
+ 
+     if (use_func && !callReplace_) {
+         tmp = emitFuncCall(callOp, gen, args_,  
+-                           noCost, use_func);
++                           noCost, use_func, DIYmode_);
+     }
+     else if (use_func && callReplace_) {
+ 	tmp = emitFuncCall(funcJumpOp, gen, args_,
+-                           noCost, use_func);
++                           noCost, use_func, DIYmode_);
+     }
+     else if (func_addr_) {
+         tmp = emitFuncCall(callOp, gen, args_,  
+-                           noCost, func_addr_);
++                           noCost, func_addr_, DIYmode_);
+     }
+     else {
+         char msg[256];
+@@ -1845,6 +1849,18 @@ bool AstCallNode::generateCode_phase2(co
+     return true;
+ }
+ 
++bool AstSequenceNode::isDIY() {
++    if (sequence_.size() == 0) return false;
++
++    for (unsigned i = 0; i < sequence_.size(); i++) {
++        if (sequence_[i]->isDIY()) return true;
++    }
++    return false;
++}
++bool AstCallNode::isDIY() {
++    return DIYmode_;
++}
++
+ bool AstSequenceNode::generateCode_phase2(codeGen &gen, bool noCost,
+                                           Address &,
+                                           Register &retReg) {
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/ast.h Dyninst-8.2.1/dyninstAPI/src/ast.h
+--- Dyninst-8.2.1.orig/dyninstAPI/src/ast.h	2015-01-08 17:26:18.801752484 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/ast.h	2015-01-08 17:42:23.829726741 +0100
+@@ -220,7 +220,7 @@ class AstNode : public Dyninst::PatchAPI
+                                   AstNodePtr e = AstNodePtr());
+ 
+    static AstNodePtr funcCallNode(const std::string &func, pdvector<AstNodePtr > &args, AddressSpace *addrSpace = NULL);
+-   static AstNodePtr funcCallNode(func_instance *func, pdvector<AstNodePtr > &args);
++   static AstNodePtr funcCallNode(func_instance *func, pdvector<AstNodePtr > &args, bool DIYmode = false);
+    static AstNodePtr funcCallNode(func_instance *func); // Special case for function call replacement.
+    static AstNodePtr funcCallNode(Address addr, pdvector<AstNodePtr > &args); // For when you absolutely need
+    // to jump somewhere.
+@@ -277,6 +277,9 @@ class AstNode : public Dyninst::PatchAPI
+                                     bool noCost,
+                                     Address &retAddr,
+                                     Register &retReg);
++   virtual bool isDIY() {
++      return false;
++   }
+ 
+    // Perform whatever pre-processing steps are necessary.
+    virtual bool initRegisters(codeGen &gen);
+@@ -578,7 +581,7 @@ class AstOperandNode : public AstNode {
+ class AstCallNode : public AstNode {
+  public:
+ 
+-    AstCallNode(func_instance *func, pdvector<AstNodePtr>&args);
++    AstCallNode(func_instance *func, pdvector<AstNodePtr>&args, bool DIYmode = false);
+     AstCallNode(const std::string &str, pdvector<AstNodePtr>&args);
+     AstCallNode(Address addr, pdvector<AstNodePtr> &args);
+     AstCallNode(func_instance *func);
+@@ -606,6 +609,8 @@ class AstCallNode : public AstNode {
+ 
+     virtual bool initRegisters(codeGen &gen);
+ 
++    virtual bool isDIY();
++
+  private:
+     virtual bool generateCode_phase2(codeGen &gen,
+                                      bool noCost,
+@@ -625,6 +630,8 @@ class AstCallNode : public AstNode {
+     // input parameters, or can otherwise be guaranteed to not change
+     // if executed multiple times in the same sequence - AKA 
+     // "can be kept".
++
++    bool DIYmode_;
+ };
+ 
+ 
+@@ -650,6 +657,8 @@ class AstSequenceNode : public AstNode {
+     virtual void setVariableAST(codeGen &gen);
+     virtual bool containsFuncCall() const;
+     virtual bool usesAppRegister() const;
++
++    virtual bool isDIY();
+  
+ 
+  private:
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/baseTramp.C Dyninst-8.2.1/dyninstAPI/src/baseTramp.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/baseTramp.C	2015-01-08 17:26:18.945752481 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/baseTramp.C	2015-01-08 17:40:48.781729277 +0100
+@@ -406,14 +406,14 @@ bool baseTramp::generateCodeInlined(code
+    // MUST HAPPEN BEFORE THE SAVES, and state should not
+    // be reset until AFTER THE RESTORES.
+    bool retval = baseTrampAST->initRegisters(gen);
+-   generateSaves(gen, gen.rs());
++   if (!baseTrampAST->isDIY()) generateSaves(gen, gen.rs());
+ 
+    if (!baseTrampAST->generateCode(gen, false)) {
+       fprintf(stderr, "Gripe: base tramp creation failed\n");
+       retval = false;
+    }
+ 
+-   generateRestores(gen, gen.rs());
++   if (!baseTrampAST->isDIY()) generateRestores(gen, gen.rs());
+ 
+    // And now to clean up after us
+    //if (minis) delete minis;
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/codegen.h Dyninst-8.2.1/dyninstAPI/src/codegen.h
+--- Dyninst-8.2.1.orig/dyninstAPI/src/codegen.h	2015-01-08 17:26:18.781752485 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/codegen.h	2015-01-08 17:41:17.745728504 +0100
+@@ -221,7 +221,10 @@ class codeGen {
+     Emitter *codeEmitter() const;
+     Emitter *emitter() const { return codeEmitter(); } // A little shorter
+     bool inInstrumentation() const { return inInstrumentation_; }
+-    
++  
++    // PATHARMOR PATCH
++    void setDIYmode(bool x);
++    bool inDIYmode() { return inDIYmode_; }
+ 
+     Dyninst::Architecture getArch() const;
+ 
+@@ -273,7 +276,7 @@ class codeGen {
+     bool trackRegDefs_;
+ 
+     bool inInstrumentation_;
+-
++    bool inDIYmode_; // PATHARMOR PATCH
+ 
+     std::vector<relocPatch> patches_;
+     std::vector<pcRelRegion *> pcrels_;
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/emit-power.h Dyninst-8.2.1/dyninstAPI/src/emit-power.h
+--- Dyninst-8.2.1.orig/dyninstAPI/src/emit-power.h	2015-01-08 17:26:18.869752483 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/emit-power.h	2015-01-08 17:41:17.745728504 +0100
+@@ -91,7 +91,7 @@ class EmitterPOWER : public Emitter {
+ 
+     // This one we actually use now.
+     virtual Register emitCall(opCode, codeGen &, const pdvector<AstNodePtr> &,
+-			      bool, func_instance *);
++			      bool, func_instance *, bool);
+     //virtual bool emitPIC(codeGen& /*gen*/, Address, Address )=0;
+ 
+     virtual void emitGetRetVal(Register, bool, codeGen &) { assert(0); }
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/emit-x86.C Dyninst-8.2.1/dyninstAPI/src/emit-x86.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/emit-x86.C	2015-01-08 17:26:18.725752486 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/emit-x86.C	2015-01-08 17:41:17.749728504 +0100
+@@ -1685,7 +1685,7 @@ bool EmitterAMD64::clobberAllFuncCall( r
+ static Register amd64_arg_regs[] = {REGNUM_RDI, REGNUM_RSI, REGNUM_RDX, REGNUM_RCX, REGNUM_R8, REGNUM_R9};
+ #define AMD64_ARG_REGS (sizeof(amd64_arg_regs) / sizeof(Register))
+ Register EmitterAMD64::emitCall(opCode op, codeGen &gen, const pdvector<AstNodePtr> &operands,
+-                                bool noCost, func_instance *callee)
++                                bool noCost, func_instance *callee, bool DIYmode)
+ {
+    assert(op == callOp);
+    pdvector <Register> srcs;
+@@ -1700,6 +1700,12 @@ Register EmitterAMD64::emitCall(opCode o
+       showErrorCallback(80, msg);
+       assert(0);
+    }
++   
++   // PATHARMOR PATCH
++   if (DIYmode) {
++       emitCallInstruction(gen, callee, REG_NULL);
++       return 0;
++   }
+ 
+    // Before we generate argument code, save any register that's live across
+    // the call. 
+@@ -2412,6 +2418,14 @@ bool EmitterAMD64::emitBTSaves(baseTramp
+          
+    bool skipRedZone = (num_to_save > 0) || alignStack || saveOrigAddr || createFrame;
+ 
++   /* PATHARMOR PATCH: 
++    * This will 1) save RBP and 2) copy the top of the stack into RBP. This may
++    * be useful if one requires access to the return address in the new function
++    * when inserting a BPatch_funcCallExpr().
++    */
++// emitPushReg64(REGNUM_RBP, gen);
++// emitLoadRelative(REGNUM_RBP, 8, REGNUM_RSP, 8, gen);
++
+ 
+    if (alignStack) {
+       emitStackAlign(AMD64_RED_ZONE, gen);
+@@ -2670,6 +2684,11 @@ bool EmitterAMD64::emitBTRestores(baseTr
+                   AMD64_RED_ZONE, REGNUM_ESP, true, gen);
+     }
+ 
++   /* PATHARMOR PATCH:
++    * This restores RBP.
++    */
++// emitPopReg64(REGNUM_RBP, gen);
++
+    gen.setInInstrumentation(false);
+     return true;
+ }
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/emit-x86.h Dyninst-8.2.1/dyninstAPI/src/emit-x86.h
+--- Dyninst-8.2.1.orig/dyninstAPI/src/emit-x86.h	2015-01-08 17:26:18.661752488 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/emit-x86.h	2015-01-08 17:41:17.749728504 +0100
+@@ -88,7 +88,7 @@ public:
+     // We can overload this for the stat/dyn case
+     virtual Register emitCall(opCode op, codeGen &gen,
+                               const pdvector<AstNodePtr> &operands,
+-                              bool noCost, func_instance *callee);
++                              bool noCost, func_instance *callee, bool DIYmode);
+     //virtual bool emitPIC(codeGen& /*gen*/, Address, Address )=0;
+     int emitCallParams(codeGen &gen, 
+                        const pdvector<AstNodePtr> &operands,
+@@ -207,7 +207,7 @@ public:
+     // See comment on 32-bit emitCall
+     virtual Register emitCall(opCode op, codeGen &gen,
+                               const pdvector<AstNodePtr> &operands,
+-                              bool noCost, func_instance *callee);
++                              bool noCost, func_instance *callee, bool DIYmode);
+     //virtual bool emitPIC(codeGen& /*gen*/, Address, Address )=0;
+     void emitGetRetVal(Register dest, bool addr_of, codeGen &gen);
+     void emitGetRetAddr(Register dest, codeGen &gen);
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/emitter.h Dyninst-8.2.1/dyninstAPI/src/emitter.h
+--- Dyninst-8.2.1.orig/dyninstAPI/src/emitter.h	2015-01-08 17:26:18.801752484 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/emitter.h	2015-01-08 17:41:17.745728504 +0100
+@@ -88,7 +88,7 @@ class Emitter {
+     virtual bool emitMoveRegToReg(registerSlot *src, registerSlot *dest, codeGen &gen) = 0;
+ 
+     virtual Register emitCall(opCode op, codeGen &gen, const pdvector<AstNodePtr> &operands,
+-			      bool noCost, func_instance *callee) = 0;
++			      bool noCost, func_instance *callee, bool DIYmode) = 0;
+ 
+     virtual void emitGetRetVal(Register dest, bool addr_of, codeGen &gen) = 0;
+     virtual void emitGetRetAddr(Register dest, codeGen &gen) = 0;
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/function.C Dyninst-8.2.1/dyninstAPI/src/function.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/function.C	2015-01-08 17:26:18.801752484 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/function.C	2015-01-08 17:41:17.749728504 +0100
+@@ -68,7 +68,7 @@ func_instance::func_instance(parse_func
+   , callingConv(unknown_call)
+   , paramSize(0)
+ #endif
+-   , wrapperSym_(NULL)
++  , wrapperSym_(NULL)
+ {
+   assert(f);
+ #if defined(ROUGH_MEMORY_PROFILE)
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/function.h Dyninst-8.2.1/dyninstAPI/src/function.h
+--- Dyninst-8.2.1.orig/dyninstAPI/src/function.h	2015-01-08 17:26:18.905752482 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/function.h	2015-01-08 17:41:17.749728504 +0100
+@@ -219,7 +219,6 @@ class func_instance : public patchTarget
+                            std::map<Address,vector<block_instance*> > & output_stubs);
+ 
+ 
+-
+ #if defined(arch_power)
+   bool savesReturnAddr() const { return ifunc()->savesReturnAddr(); }
+ #endif
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/inst-power.C Dyninst-8.2.1/dyninstAPI/src/inst-power.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/inst-power.C	2015-01-08 17:26:18.785752485 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/inst-power.C	2015-01-08 17:41:17.749728504 +0100
+@@ -1233,7 +1233,7 @@ bool EmitterPOWER::clobberAllFuncCall( r
+ //   based - offset into the code generated.
+ //
+ 
+-Register emitFuncCall(opCode, codeGen &, pdvector<AstNodePtr> &, bool, Address) {
++Register emitFuncCall(opCode, codeGen &, pdvector<AstNodePtr> &, bool, Address, bool) {
+ 	assert(0);
+         return 0;
+ }
+@@ -1241,8 +1241,9 @@ Register emitFuncCall(opCode, codeGen &,
+ Register emitFuncCall(opCode op,
+                       codeGen &gen,
+                       pdvector<AstNodePtr> &operands, bool noCost,
+-                      func_instance *callee) {
+-    return gen.emitter()->emitCall(op, gen, operands, noCost, callee);
++                      func_instance *callee,
++                      bool DIYmode) {
++    return gen.emitter()->emitCall(op, gen, operands, noCost, callee, DIYmode);
+ }
+ 
+ Register EmitterPOWER::emitCallReplacement(opCode ocode,
+@@ -1307,7 +1308,8 @@ Register EmitterPOWER::emitCall(opCode o
+                                 codeGen &gen,
+                                 const pdvector<AstNodePtr> &operands,
+                                 bool noCost,
+-                                func_instance *callee) {
++                                func_instance *callee,
++                                bool) {
+     bool inInstrumentation = true;
+ 
+     // If inInstrumentation is true we're in instrumentation;
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/inst-x86.C Dyninst-8.2.1/dyninstAPI/src/inst-x86.C
+--- Dyninst-8.2.1.orig/dyninstAPI/src/inst-x86.C	2015-01-08 17:26:18.681752488 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/inst-x86.C	2015-01-08 17:41:17.749728504 +0100
+@@ -573,7 +573,6 @@ bool baseTramp::generateSaves(codeGen& g
+ }
+ 
+ bool baseTramp::generateRestores(codeGen &gen, registerSpace*) {
+-
+    return gen.codeEmitter()->emitBTRestores(this, gen);
+ }
+ 
+@@ -1243,7 +1242,7 @@ static inline void emitEnter(short imm16
+     SET_PTR(insn, gen);
+ }
+ 
+-Register emitFuncCall(opCode, codeGen &, pdvector<AstNodePtr> &, bool, Address) {
++Register emitFuncCall(opCode, codeGen &, pdvector<AstNodePtr> &, bool, Address, bool) {
+ 	assert(0);
+ 	return 0;
+ }
+@@ -1253,9 +1252,10 @@ Register emitFuncCall(opCode op,
+                       codeGen &gen,
+                       pdvector<AstNodePtr> &operands, 
+                       bool noCost,
+-                      func_instance *callee)
++                      func_instance *callee,
++                      bool DIYmode)
+ {
+-    Register reg = gen.codeEmitter()->emitCall(op, gen, operands, noCost, callee);
++    Register reg = gen.codeEmitter()->emitCall(op, gen, operands, noCost, callee, DIYmode);
+     return reg;
+ }
+ 
+@@ -1310,7 +1310,8 @@ void EmitterIA32::setFPSaveOrNot(const i
+ Register EmitterIA32::emitCall(opCode op, 
+                                codeGen &gen,
+                                const pdvector<AstNodePtr> &operands, 
+-                               bool noCost, func_instance *callee) {
++                               bool noCost, func_instance *callee,
++                               bool) {
+     bool inInstrumentation = true;
+ #if 0
+     if (gen.obj() &&
+diff -rupN Dyninst-8.2.1.orig/dyninstAPI/src/inst.h Dyninst-8.2.1/dyninstAPI/src/inst.h
+--- Dyninst-8.2.1.orig/dyninstAPI/src/inst.h	2015-01-08 17:26:18.905752482 +0100
++++ Dyninst-8.2.1/dyninstAPI/src/inst.h	2015-01-08 17:41:17.749728504 +0100
+@@ -229,13 +229,15 @@ void emitCSload(const BPatch_countSpec_N
+ Register emitFuncCall(opCode op, codeGen &gen,
+                       pdvector<AstNodePtr> &operands,
+ 					  bool noCost, 
+-                      func_instance *func);
++                      func_instance *func,
++                      bool DIYmode = false);
+ 
+ // Obsolete version that uses an address. DON'T USE THIS or expect it to survive.
+ Register emitFuncCall(opCode op, codeGen &gen,
+                       pdvector<AstNodePtr> &operands, 
+ 		      		  bool noCost, 
+-                      Address callee_addr_);
++                      Address callee_addr_,
++                      bool DIYmode = false);
+ 
+ int getInsnCost(opCode t);
+ 

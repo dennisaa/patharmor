@@ -1,0 +1,5 @@
+# Dr. Memory tool config file
+FRONTEND_REL=drmemory//./bin/drmemory
+TOOL_OP=-dr
+TOOL_OP_DR_PATH
+TOOL_OP_DR_BUNDLE=-dr_ops

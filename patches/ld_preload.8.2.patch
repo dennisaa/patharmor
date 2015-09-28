@@ -1,0 +1,11 @@
+--- dyninstAPI/src/unix.C.orig	2014-10-07 20:56:58.070389120 +0200
++++ dyninstAPI/src/unix.C	2014-10-07 20:57:06.918389279 +0200
+@@ -375,7 +375,7 @@
+         while( environ[i] != NULL ) {
+             std::string envVar(environ[i]);
+             if( envVar.find("LD_PRELOAD=") == 0 ) {
+-                ld_preload_orig = environ[i];
++                ld_preload_orig = environ[i] + 11;
+             }else{
+                 envp.push_back(envVar);
+             }

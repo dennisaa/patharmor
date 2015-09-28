@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['proc_5favx_5fenabled',['proc_avx_enabled',['../dr__proc_8h.html#a3039c377f1b296cd8be453957f95c103',1,'dr_proc.h']]],
+  ['proc_5fbump_5fto_5fend_5fof_5fcache_5fline',['proc_bump_to_end_of_cache_line',['../dr__proc_8h.html#ae5096c4199f9493f2148ec0aa9170f68',1,'dr_proc.h']]],
+  ['proc_5ffpstate_5fsave_5fsize',['proc_fpstate_save_size',['../dr__proc_8h.html#a468a29572175ba1d3ca7dbeb1fdbb825',1,'dr_proc.h']]],
+  ['proc_5fget_5fall_5ffeature_5fbits',['proc_get_all_feature_bits',['../dr__proc_8h.html#abe2e2fa221708b3d7fd5f0e60e67e31a',1,'dr_proc.h']]],
+  ['proc_5fget_5fbrand_5fstring',['proc_get_brand_string',['../dr__proc_8h.html#a7f4d8f5467038218d6eb554a3ba85c46',1,'dr_proc.h']]],
+  ['proc_5fget_5fcache_5fline_5fsize',['proc_get_cache_line_size',['../dr__proc_8h.html#ad2add9b8aab5b68cb2362a1f53428453',1,'dr_proc.h']]],
+  ['proc_5fget_5fcache_5fsize_5fstr',['proc_get_cache_size_str',['../dr__proc_8h.html#a0cd0671418a60a5c05146ab0790c4f12',1,'dr_proc.h']]],
+  ['proc_5fget_5fcontaining_5fpage',['proc_get_containing_page',['../dr__proc_8h.html#a7f1a1ed13dd1661167f1ead3136105d5',1,'dr_proc.h']]],
+  ['proc_5fget_5ffamily',['proc_get_family',['../dr__proc_8h.html#add381f471335fe8449382bb5cdedfb89',1,'dr_proc.h']]],
+  ['proc_5fget_5fl1_5fdcache_5fsize',['proc_get_L1_dcache_size',['../dr__proc_8h.html#a46777763af21eeaa0c40973f16d643ad',1,'dr_proc.h']]],
+  ['proc_5fget_5fl1_5ficache_5fsize',['proc_get_L1_icache_size',['../dr__proc_8h.html#ad3027106b06cd4d83c96a57c71a7f7e6',1,'dr_proc.h']]],
+  ['proc_5fget_5fl2_5fcache_5fsize',['proc_get_L2_cache_size',['../dr__proc_8h.html#a0e8c4267978e43b7ad3813eb35876af5',1,'dr_proc.h']]],
+  ['proc_5fget_5fmodel',['proc_get_model',['../dr__proc_8h.html#a80efe6b358d534961c7023a276ccbf5d',1,'dr_proc.h']]],
+  ['proc_5fget_5fstepping',['proc_get_stepping',['../dr__proc_8h.html#aad97b0f87b4b48ec9f4fc685968b777a',1,'dr_proc.h']]],
+  ['proc_5fget_5ftype',['proc_get_type',['../dr__proc_8h.html#a8131332a495d7bd62cb5a0bd554baff6',1,'dr_proc.h']]],
+  ['proc_5fget_5fvendor',['proc_get_vendor',['../dr__proc_8h.html#ab93fa51ec1100e6407ab6c0da21129ef',1,'dr_proc.h']]],
+  ['proc_5fhas_5ffeature',['proc_has_feature',['../dr__proc_8h.html#af1e2126b25bfe95d3803edf2418ff7fe',1,'dr_proc.h']]],
+  ['proc_5fis_5fcache_5faligned',['proc_is_cache_aligned',['../dr__proc_8h.html#af47ac510613aac4028d637fc365a6ace',1,'dr_proc.h']]],
+  ['proc_5frestore_5ffpstate',['proc_restore_fpstate',['../dr__proc_8h.html#a23edceee5d1ae7c7d51a212432e6d644',1,'dr_proc.h']]],
+  ['proc_5fsave_5ffpstate',['proc_save_fpstate',['../dr__proc_8h.html#a4a11c9d5d127ce126562ad35b4d165dd',1,'dr_proc.h']]],
+  ['proc_5fset_5fvendor',['proc_set_vendor',['../dr__proc_8h.html#a5a9d6c28ef304d6b4f5e1a45fb9da996',1,'dr_proc.h']]]
+];

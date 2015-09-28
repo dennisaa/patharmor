@@ -1,0 +1,25 @@
+Script started on ma 12 okt 2015 17:17:16 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ cd patharmor/
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$ sh lkm-start.sh 
+make: Entering directory `/home/patharmor/patharmor/lkm'
+rm -f -rf *.o armor-module.ko .tmp_versions Module.symvers modules.order armor-module.mod.c .*.o.cmd .*.ko.cmd
+make -C /lib/modules/3.16.0-49-generic/build M=/home/patharmor/patharmor/lkm modules EXTRA_CFLAGS="-DARMOR_DEBUG -DARMOR_DEBUG_JIT -DARMOR_STATS -DARMOR_VALIDATE -DARMOR_JIT -I/home/patharmor/patharmor/lkm/../include -I/home/patharmor/patharmor/lkm/../include/patharmor"
+make[1]: Entering directory `/usr/src/linux-headers-3.16.0-49-generic'
+  CC [M]  /home/patharmor/patharmor/lkm/armor.o
+  CC [M]  /home/patharmor/patharmor/lkm/lbr.o
+  CC [M]  /home/patharmor/patharmor/lkm/intercept.o
+  AS [M]  /home/patharmor/patharmor/lkm/pre.o
+  AS [M]  /home/patharmor/patharmor/lkm/syscall-handler.o
+  LD [M]  /home/patharmor/patharmor/lkm/armor-module.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/patharmor/patharmor/lkm/armor-module.mod.o
+  LD [M]  /home/patharmor/patharmor/lkm/armor-module.ko
+make[1]: Leaving directory `/usr/src/linux-headers-3.16.0-49-generic'
+make: Leaving directory `/home/patharmor/patharmor/lkm'
+removing currently loaded armor module if present
+[sudo] password for patharmor: 
+loading armor module
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$ exit
+
+Script done on ma 12 okt 2015 17:17:30 CEST

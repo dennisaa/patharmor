@@ -1,0 +1,54 @@
+#!/bin/bash
+
+echo -n > config.inc
+
+function config_add {
+    key=$1
+    val=$2
+    echo "$key=$val" >> config.inc
+}
+
+if [ "$PATHARMOR_ROOT" == "" ]; then
+    PATHARMOR_ROOT=`pwd`
+fi
+config_add "PATHARMOR_ROOT" "$PATHARMOR_ROOT"
+config_add "LBR_LIBSYMS" "${PATHARMOR_ROOT}/libsyms.rel"
+config_add "LBR_BININFO" "${PATHARMOR_ROOT}/bin.info"
+
+if [ "$1" != "" ]; then
+    # scripted configure (e.g. from Makefile)
+    root=$1
+else
+    echo -n "DYNINST_ROOT: "
+    read root
+fi 
+
+if [ ! -d $root ]; then
+    echo "Directory $root does not exist!"
+fi
+
+
+config_add "DYNINST_ROOT" "$root"
+lib=/usr/lib
+if [ -f $root/install/lib/libdyninstAPI_RT.a ]; then
+    lib=$root/install/lib
+fi
+config_add "DYNINST_LIB" "$lib"
+config_add "DYNINSTAPI_RT_LIB" "$lib/libdyninstAPI_RT.so"
+config_add "LD_LIBRARY_PATH" "$lib"
+
+if [ "$(arch)" == "x86_64" ]; then
+    cflags="-Darch_x86_64 -Dx86_64_unknown_linux2_4"
+    arch="x64"
+else
+    cflags="-Darch_x86 -Di386_unknown_linux2_0"
+    arch="x86"
+fi
+cflags="$cflags -Dos_linux"
+config_add "DYNINST_CFLAGS" "$cflags"
+config_add "DYNINST_ARCH" "$arch"
+
+echo
+echo "*** Generated configuration (config.inc): "
+cat config.inc
+

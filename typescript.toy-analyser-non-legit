@@ -1,0 +1,1200 @@
+Script started on ma 12 okt 2015 17:34:23 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ cd patharmor/toy-bug/
+]0;patharmor@patharmor-test: ~/patharmor/toy-bugpatharmor@patharmor-test:~/patharmor/toy-bug$      sh ../run-analyser.sh ./toy
+Using bininfo file /home/patharmor/patharmor/toy-bug/../dyninst-static/bin.info
+[sudo] password for patharmor: 
+Running (binary edit)...
+Analyzing module ./toy.1 (toy.1)
+Warning: no output file selected
+Warning: no statistics file selected
+Using window size 16
+Using LBR size 16
+####### parsing CFG #######
+adding new bb 0x4005d0
+store_bb: 4005d0-4005de
+adding new bb 0x4005e0
+store_bb: 4005e0-4005e0
+adding new bb 0x4005e5
+store_bb: 4005e5-4005e9
+adding new bb 0x400600
+store_bb: 400600-400600
+adding new bb 0x400610
+store_bb: 400610-400610
+adding new bb 0x400620
+store_bb: 400620-400620
+adding new bb 0x400630
+store_bb: 400630-400630
+adding new bb 0x400640
+store_bb: 400640-400640
+adding new bb 0x400650
+store_bb: 400650-400650
+adding new bb 0x400660
+store_bb: 400660-400660
+adding new bb 0x400670
+store_bb: 400670-400670
+adding new bb 0x400680
+store_bb: 400680-400680
+adding new bb 0x400690
+store_bb: 400690-400690
+adding new bb 0x4006a0
+store_bb: 4006a0-4006c4
+adding new bb 0x4006c9
+store_bb: 4006c9-4006c9
+adding new bb 0x4006d0
+store_bb: 4006d0-4006e3
+adding new bb 0x4006e5
+store_bb: 4006e5-4006e6
+adding new bb 0x4006e7
+store_bb: 4006e7-4006ef
+adding new bb 0x4006f1
+store_bb: 4006f1-4006f7
+adding new bb 0x400700
+store_bb: 400700-400720
+adding new bb 0x400722
+store_bb: 400722-400723
+adding new bb 0x400724
+store_bb: 400724-40072c
+adding new bb 0x40072e
+store_bb: 40072e-400737
+adding new bb 0x400740
+store_bb: 400740-400747
+adding new bb 0x400749
+store_bb: 400749-40074d
+adding new bb 0x400752
+store_bb: 400752-400753
+adding new bb 0x40075a
+store_bb: 40075a-40075a
+adding new bb 0x400760
+store_bb: 400760-400768
+adding new bb 0x40076a
+store_bb: 40076a-400772
+adding new bb 0x400774
+store_bb: 400774-40077d
+adding new bb 0x40077f
+store_bb: 40077f-400780
+adding new bb 0x400788
+store_bb: 400788-400788
+adding new bb 0x40078d
+store_bb: 40078d-4007b1
+adding new bb 0x4007b6
+store_bb: 4007b6-4007d6
+adding new bb 0x4007db
+store_bb: 4007db-4007e4
+adding new bb 0x4007e9
+store_bb: 4007e9-4007ee
+adding new bb 0x4007f3
+store_bb: 4007f3-400802
+adding new bb 0x400807
+store_bb: 400807-40080c
+adding new bb 0x400811
+store_bb: 400811-400816
+adding new bb 0x40081b
+store_bb: 40081b-40082f
+adding new bb 0x400834
+store_bb: 400834-400839
+adding new bb 0x40083e
+store_bb: 40083e-400842
+adding new bb 0x400844
+store_bb: 400844-40085f
+adding new bb 0x400864
+store_bb: 400864-400869
+adding new bb 0x40086e
+store_bb: 40086e-40088a
+adding new bb 0x40088f
+store_bb: 40088f-400892
+adding new bb 0x400894
+store_bb: 400894-400899
+adding new bb 0x40089e
+store_bb: 40089e-4008ba
+adding new bb 0x4008bf
+store_bb: 4008bf-4008c3
+adding new bb 0x4008c5
+store_bb: 4008c5-4008ca
+adding new bb 0x4008cf
+store_bb: 4008cf-4008d0
+adding new bb 0x4008e0
+store_bb: 4008e0-40090e
+adding new bb 0x400913
+store_bb: 400913-400916
+adding new bb 0x400918
+store_bb: 400918-400918
+adding new bb 0x400920
+store_bb: 400920-400929
+adding new bb 0x40092d
+store_bb: 40092d-400934
+adding new bb 0x400936
+store_bb: 400936-400944
+adding new bb 0x400950
+store_bb: 400950-400950
+adding new bb 0x400954
+store_bb: 400954-40095c
+####### running in daemon mode #######
+Found function 0x400660 with address taken
+Found function 0x40078d with address taken
+Found function 0x4008e0 with address taken
+Found function 0x400950 with address taken
+store_bb: c477b4c8-c477b4c8
+created dummy callback edge 0xc477b4c8 -> 0x400660
+created dummy callback edge 0xc477b4c8 -> 0x40078d
+created dummy callback edge 0xc477b4c8 -> 0x4008e0
+created dummy callback edge 0xc477b4c8 -> 0x400950
+parsing bininfo /home/patharmor/patharmor/dyninst-static/bin.info
+mapped config line <addr.func.main, 0x000000000040078d>
+store_bb: 0-0
+created dummy loader call edge 0x0 -> 0x40078d
+collapsing function _init
+searching for exits reachable from bb 0x4005e5
+searching bb 0x4005e5
+bb 0x4005e5 is an exit block (has exit edge 0x4005e9 -> 0x400913), creating fastpath
+searching for exits reachable from bb 0x4005e0
+searching bb 0x4005e0
+bb 0x4005e0 is an exit block (has exit edge 0x4005e0 -> 0x400660), creating fastpath
+searching for exits reachable from bb 0x4005d0
+searching bb 0x4005d0
+hiding internal function edge 0x4005de -> 0x4005e0
+hiding internal function edge 0x4005de -> 0x4005e5
+searching bb 0x4005e0
+bb 0x4005e0 is an exit block (has exit edge 0x4005e0 -> 0x400660), creating fastpath
+created fastpath 0x4005de -> 0x4005e0
+searching bb 0x4005e5
+bb 0x4005e5 is an exit block (has exit edge 0x4005e9 -> 0x400913), creating fastpath
+created fastpath 0x4005de -> 0x4005e5
+skipping collapse of function puts
+skipping collapse of function sigaction
+skipping collapse of function mmap
+skipping collapse of function printf
+skipping collapse of function __libc_start_main
+skipping collapse of function fprintf
+skipping collapse of function __gmon_start__
+skipping collapse of function __isoc99_sscanf
+skipping collapse of function mprotect
+skipping collapse of function exit
+collapsing function _start
+searching for exits reachable from bb 0x4006c9
+searching bb 0x4006c9
+bb 0x4006c9 is an exit block (no outgoing edges), creating fastpath
+searching for exits reachable from bb 0x4006a0
+searching bb 0x4006a0
+bb 0x4006a0 is an exit block (has exit edge 0x4006c4 -> 0x400640), creating fastpath
+collapsing function deregister_tm_clones
+searching for exits reachable from bb 0x4006f1
+searching bb 0x4006f1
+bb 0x4006f1 is an exit block (has exit edge 0x4006f7 -> 0x291b), creating fastpath
+searching for exits reachable from bb 0x4006e7
+searching bb 0x4006e7
+hiding internal function edge 0x4006ef -> 0x4006e5
+hiding internal function edge 0x4006ef -> 0x4006f1
+searching bb 0x4006e5
+bb 0x4006e5 is an exit block (has exit edge 0x4006e6 -> 0x400752), creating fastpath
+created fastpath 0x4006ef -> 0x4006e5
+searching bb 0x4006f1
+bb 0x4006f1 is an exit block (has exit edge 0x4006f7 -> 0x291b), creating fastpath
+created fastpath 0x4006ef -> 0x4006f1
+searching for exits reachable from bb 0x4006e5
+searching bb 0x4006e5
+bb 0x4006e5 is an exit block (has exit edge 0x4006e6 -> 0x400752), creating fastpath
+searching for exits reachable from bb 0x4006d0
+searching bb 0x4006d0
+hiding internal function edge 0x4006e3 -> 0x4006e7
+hiding internal function edge 0x4006e3 -> 0x4006e5
+searching bb 0x4006e7
+hiding internal function edge 0x4006ef -> 0x4006e5
+hiding internal function edge 0x4006ef -> 0x4006f1
+searching bb 0x4006e5
+bb 0x4006e5 is an exit block (has exit edge 0x4006e6 -> 0x400752), creating fastpath
+created fastpath 0x4006e3 -> 0x4006e5
+searching bb 0x4006f1
+bb 0x4006f1 is an exit block (has exit edge 0x4006f7 -> 0x291b), creating fastpath
+created fastpath 0x4006e3 -> 0x4006f1
+collapsing function register_tm_clones
+searching for exits reachable from bb 0x40072e
+searching bb 0x40072e
+bb 0x40072e is an exit block (has exit edge 0x400737 -> 0x291c), creating fastpath
+searching for exits reachable from bb 0x400724
+searching bb 0x400724
+hiding internal function edge 0x40072c -> 0x400722
+hiding internal function edge 0x40072c -> 0x40072e
+searching bb 0x400722
+bb 0x400722 is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x40072c -> 0x400722
+searching bb 0x40072e
+bb 0x40072e is an exit block (has exit edge 0x400737 -> 0x291c), creating fastpath
+created fastpath 0x40072c -> 0x40072e
+searching for exits reachable from bb 0x400722
+searching bb 0x400722
+bb 0x400722 is an exit block (no outgoing edges), creating fastpath
+searching for exits reachable from bb 0x400700
+searching bb 0x400700
+hiding internal function edge 0x400720 -> 0x400724
+hiding internal function edge 0x400720 -> 0x400722
+searching bb 0x400724
+hiding internal function edge 0x40072c -> 0x400722
+hiding internal function edge 0x40072c -> 0x40072e
+searching bb 0x400722
+bb 0x400722 is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x400720 -> 0x400722
+searching bb 0x40072e
+bb 0x40072e is an exit block (has exit edge 0x400737 -> 0x291c), creating fastpath
+created fastpath 0x400720 -> 0x40072e
+collapsing function __do_global_dtors_aux
+searching for exits reachable from bb 0x40075a
+searching bb 0x40075a
+bb 0x40075a is an exit block (no outgoing edges), creating fastpath
+searching for exits reachable from bb 0x400752
+searching bb 0x400752
+hiding internal function edge 0x400753 -> 0x40075a
+searching bb 0x40075a
+bb 0x40075a is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x400753 -> 0x40075a
+searching for exits reachable from bb 0x400749
+searching bb 0x400749
+bb 0x400749 is an exit block (has exit edge 0x40074d -> 0x4006d0), creating fastpath
+searching for exits reachable from bb 0x400740
+searching bb 0x400740
+hiding internal function edge 0x400747 -> 0x40075a
+hiding internal function edge 0x400747 -> 0x400749
+searching bb 0x40075a
+bb 0x40075a is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x400747 -> 0x40075a
+searching bb 0x400749
+bb 0x400749 is an exit block (has exit edge 0x40074d -> 0x4006d0), creating fastpath
+created fastpath 0x400747 -> 0x400749
+collapsing function frame_dummy
+searching for exits reachable from bb 0x400788
+searching bb 0x400788
+hiding internal function edge 0x400788 -> 0x400700
+searching bb 0x400700
+hiding internal function edge 0x400720 -> 0x400724
+hiding internal function edge 0x400720 -> 0x400722
+searching bb 0x400724
+hiding internal function edge 0x40072c -> 0x400722
+hiding internal function edge 0x40072c -> 0x40072e
+searching bb 0x400722
+bb 0x400722 is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x400788 -> 0x400722
+searching bb 0x40072e
+bb 0x40072e is an exit block (has exit edge 0x400737 -> 0x291c), creating fastpath
+created fastpath 0x400788 -> 0x40072e
+searching for exits reachable from bb 0x40077f
+searching bb 0x40077f
+hiding internal function edge 0x400780 -> 0x400700
+searching bb 0x400700
+hiding internal function edge 0x400720 -> 0x400724
+hiding internal function edge 0x400720 -> 0x400722
+searching bb 0x400724
+hiding internal function edge 0x40072c -> 0x400722
+hiding internal function edge 0x40072c -> 0x40072e
+searching bb 0x400722
+bb 0x400722 is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x400780 -> 0x400722
+searching bb 0x40072e
+bb 0x40072e is an exit block (has exit edge 0x400737 -> 0x291c), creating fastpath
+created fastpath 0x400780 -> 0x40072e
+searching for exits reachable from bb 0x400774
+searching bb 0x400774
+bb 0x400774 is an exit block (has exit edge 0x40077d -> 0x40078d), creating fastpath
+searching for exits reachable from bb 0x40076a
+searching bb 0x40076a
+hiding internal function edge 0x400772 -> 0x400788
+hiding internal function edge 0x400772 -> 0x400774
+searching bb 0x400788
+hiding internal function edge 0x400788 -> 0x400700
+searching bb 0x400774
+bb 0x400774 is an exit block (has exit edge 0x40077d -> 0x40078d), creating fastpath
+created fastpath 0x400772 -> 0x400774
+searching bb 0x400700
+hiding internal function edge 0x400720 -> 0x400724
+hiding internal function edge 0x400720 -> 0x400722
+searching bb 0x400724
+hiding internal function edge 0x40072c -> 0x400722
+hiding internal function edge 0x40072c -> 0x40072e
+searching bb 0x400722
+bb 0x400722 is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x400772 -> 0x400722
+searching bb 0x40072e
+bb 0x40072e is an exit block (has exit edge 0x400737 -> 0x291c), creating fastpath
+created fastpath 0x400772 -> 0x40072e
+searching for exits reachable from bb 0x400760
+searching bb 0x400760
+hiding internal function edge 0x400768 -> 0x400788
+hiding internal function edge 0x400768 -> 0x40076a
+searching bb 0x400788
+hiding internal function edge 0x400788 -> 0x400700
+searching bb 0x40076a
+hiding internal function edge 0x400772 -> 0x400788
+hiding internal function edge 0x400772 -> 0x400774
+searching bb 0x400700
+hiding internal function edge 0x400720 -> 0x400724
+hiding internal function edge 0x400720 -> 0x400722
+searching bb 0x400774
+bb 0x400774 is an exit block (has exit edge 0x40077d -> 0x40078d), creating fastpath
+created fastpath 0x400768 -> 0x400774
+searching bb 0x400724
+hiding internal function edge 0x40072c -> 0x400722
+hiding internal function edge 0x40072c -> 0x40072e
+searching bb 0x400722
+bb 0x400722 is an exit block (no outgoing edges), creating fastpath
+created fastpath 0x400768 -> 0x400722
+searching bb 0x40072e
+bb 0x40072e is an exit block (has exit edge 0x400737 -> 0x291c), creating fastpath
+created fastpath 0x400768 -> 0x40072e
+collapsing function main
+searching for exits reachable from bb 0x4008cf
+searching bb 0x4008cf
+bb 0x4008cf is an exit block (has exit edge 0x4008d0 -> 0x40077f), creating fastpath
+searching for exits reachable from bb 0x4008c5
+searching bb 0x4008c5
+bb 0x4008c5 is an exit block (has exit edge 0x4008ca -> 0x400600), creating fastpath
+searching for exits reachable from bb 0x4008bf
+searching bb 0x4008bf
+bb 0x4008bf is an exit block (has exit edge 0x4008c3 -> 0x40078d), creating fastpath
+searching for exits reachable from bb 0x40089e
+searching bb 0x40089e
+bb 0x40089e is an exit block (has exit edge 0x4008ba -> 0x400630), creating fastpath
+searching for exits reachable from bb 0x400894
+searching bb 0x400894
+bb 0x400894 is an exit block (has exit edge 0x400899 -> 0x400600), creating fastpath
+searching for exits reachable from bb 0x40088f
+searching bb 0x40088f
+hiding internal function edge 0x400892 -> 0x40089e
+hiding internal function edge 0x400892 -> 0x400894
+searching bb 0x40089e
+bb 0x40089e is an exit block (has exit edge 0x4008ba -> 0x400630), creating fastpath
+created fastpath 0x400892 -> 0x40089e
+searching bb 0x400894
+bb 0x400894 is an exit block (has exit edge 0x400899 -> 0x400600), creating fastpath
+created fastpath 0x400892 -> 0x400894
+searching for exits reachable from bb 0x40086e
+searching bb 0x40086e
+bb 0x40086e is an exit block (has exit edge 0x40088a -> 0x400670), creating fastpath
+searching for exits reachable from bb 0x400864
+searching bb 0x400864
+bb 0x400864 is an exit block (has exit edge 0x400869 -> 0x400690), creating fastpath
+searching for exits reachable from bb 0x400844
+searching bb 0x400844
+bb 0x400844 is an exit block (has exit edge 0x40085f -> 0x400650), creating fastpath
+searching for exits reachable from bb 0x40083e
+searching bb 0x40083e
+hiding internal function edge 0x400842 -> 0x40086e
+hiding internal function edge 0x400842 -> 0x400844
+searching bb 0x40086e
+bb 0x40086e is an exit block (has exit edge 0x40088a -> 0x400670), creating fastpath
+created fastpath 0x400842 -> 0x40086e
+searching bb 0x400844
+bb 0x400844 is an exit block (has exit edge 0x40085f -> 0x400650), creating fastpath
+created fastpath 0x400842 -> 0x400844
+searching for exits reachable from bb 0x400834
+searching bb 0x400834
+bb 0x400834 is an exit block (has exit edge 0x400839 -> 0x400600), creating fastpath
+searching for exits reachable from bb 0x40081b
+searching bb 0x40081b
+bb 0x40081b is an exit block (has exit edge 0x40082f -> 0x400610), creating fastpath
+searching for exits reachable from bb 0x400811
+searching bb 0x400811
+bb 0x400811 is an exit block (has exit edge 0x400816 -> 0x400600), creating fastpath
+searching for exits reachable from bb 0x400807
+searching bb 0x400807
+bb 0x400807 is an exit block (has exit edge 0x40080c -> 0x400600), creating fastpath
+searching for exits reachable from bb 0x4007f3
+searching bb 0x4007f3
+bb 0x4007f3 is an exit block (has exit edge 0x400802 -> 0x400680), creating fastpath
+searching for exits reachable from bb 0x4007e9
+searching bb 0x4007e9
+bb 0x4007e9 is an exit block (has exit edge 0x4007ee -> 0x400600), creating fastpath
+searching for exits reachable from bb 0x4007db
+searching bb 0x4007db
+bb 0x4007db is an exit block (has exit edge 0x4007e4 -> 0x400600), creating fastpath
+searching for exits reachable from bb 0x4007b6
+searching bb 0x4007b6
+bb 0x4007b6 is an exit block (has exit edge 0x4007d6 -> 0x400620), creating fastpath
+searching for exits reachable from bb 0x40078d
+searching bb 0x40078d
+bb 0x40078d is an exit block (has exit edge 0x4007b1 -> 0x400600), creating fastpath
+collapsing function __libc_csu_init
+searching for exits reachable from bb 0x400936
+searching bb 0x400936
+bb 0x400936 is an exit block (has exit edge 0x400944 -> 0x40077f), creating fastpath
+searching for exits reachable from bb 0x40092d
+searching bb 0x40092d
+hiding internal function edge 0x400934 -> 0x400920
+hiding internal function edge 0x400934 -> 0x400936
+searching bb 0x400920
+bb 0x400920 is an exit block (has exit edge 0x400929 -> 0x40078d), creating fastpath
+created fastpath 0x400934 -> 0x400920
+searching bb 0x400936
+bb 0x400936 is an exit block (has exit edge 0x400944 -> 0x40077f), creating fastpath
+created fastpath 0x400934 -> 0x400936
+searching for exits reachable from bb 0x400920
+searching bb 0x400920
+bb 0x400920 is an exit block (has exit edge 0x400929 -> 0x40078d), creating fastpath
+searching for exits reachable from bb 0x400918
+searching bb 0x400918
+hiding internal function edge 0x400918 -> 0x400920
+searching bb 0x400920
+bb 0x400920 is an exit block (has exit edge 0x400929 -> 0x40078d), creating fastpath
+created fastpath 0x400918 -> 0x400920
+searching for exits reachable from bb 0x400913
+searching bb 0x400913
+hiding internal function edge 0x400916 -> 0x400936
+hiding internal function edge 0x400916 -> 0x400918
+searching bb 0x400936
+bb 0x400936 is an exit block (has exit edge 0x400944 -> 0x40077f), creating fastpath
+created fastpath 0x400916 -> 0x400936
+searching bb 0x400918
+hiding internal function edge 0x400918 -> 0x400920
+searching bb 0x400920
+bb 0x400920 is an exit block (has exit edge 0x400929 -> 0x40078d), creating fastpath
+created fastpath 0x400916 -> 0x400920
+searching for exits reachable from bb 0x4008e0
+searching bb 0x4008e0
+bb 0x4008e0 is an exit block (has exit edge 0x40090e -> 0x4005d0), creating fastpath
+collapsing function __libc_csu_fini
+searching for exits reachable from bb 0x400950
+searching bb 0x400950
+bb 0x400950 is an exit block (has exit edge 0x400950 -> 0x40077f), creating fastpath
+collapsing function _fini
+searching for exits reachable from bb 0x400954
+searching bb 0x400954
+bb 0x400954 is an exit block (no outgoing edges), creating fastpath
+CFG simplification completed in 0.003801 seconds
+AddressTaken Policy 'CFG' was selected
+== _callSites 5
+== _addressesTaken 4
+Initializing JIT daemon
+- Got library offsets from armor module:
+libs: 11
+0x400000 - 0x401000: /home/patharmor/patharmor/toy-bug/toy
+0x7fcbca6fc000 - 0x7fcbca6ff000: /lib/x86_64-linux-gnu/libdl-2.19.so
+0x7fcbca900000 - 0x7fcbca919000: /lib/x86_64-linux-gnu/libpthread-2.19.so
+0x7fcbcab1e000 - 0x7fcbcacd9000: /lib/x86_64-linux-gnu/libc-2.19.so
+0x7fcbcaee3000 - 0x7fcbcaeeb000: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.so.8.2.1
+0x7fcbcb0eb000 - 0x7fcbcb0ec000: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.so.8.2.1
+0x7fcbcb0ec000 - 0x7fcbcc176000: <unknown>
+0x7fcbcc176000 - 0x7fcbcc178000: /home/patharmor/patharmor/bin/libwrappers.so
+0x7fcbcc379000 - 0x7fcbcc39c000: /lib/x86_64-linux-gnu/ld-2.19.so
+0x7ffe3756a000 - 0x7ffe3758b000: <unknown>
+0x7ffe375a5000 - 0x7ffe375a7000: <unknown>
+indirect call source: 0x7fcbcc177768
+load from:            0x7fcbcc1774ef
+armor lib enter:      0x7fcbcc1777bd
+armor lib return:     0x7fcbcc177853
+pthread create:       0x7fcbcc1775c0
+pthread create return:0x7fcbcc1776fe
+Fetching plt_got_copy sruct
+Fetching PLTs
+Fetching GOTs
+Got a PLT table:
+  0x400600: 0x7fcbcab8de30
+  0x400610: 0x7fcbcab54f60
+  0x400620: 0x7fcbcac129c0
+  0x400630: 0x7fcbcab72400
+  0x400640: 0x7fcbcc1774fe
+  0x400650: 0x7fcbcab72370
+  0x400660: (nil)
+  0x400670: 0x7fcbcab7c450
+  0x400680: 0x7fcbcac12a20
+  0x400690: 0x7fcbcab5a290
+Fetching exit points struct
+Fetching exit points
+Got exitpoints:
+  0x7fcbcac129d2
+  0x7fcbcac129e3
+  0x7fcbcac12a2f
+  0x7fcbcac12a40
+
+
+***** STARTING JIT DAEMON *****
+
+Waiting for LBR to analyze
+Fetching another copy of PLTs
+Fetching another copy of GOTs
+Analyzing LBR
+validating LBR state to 0x00007fcbcac129c0
+normalizing loader addr 0x00007fcbcc1774ef to 0x0000000000000000
+normalizing local addr 0x000000000040078d to 0x000000000040078d
+normalizing local addr 0x00000000004007b1 to 0x00000000004007b1
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing lib addr 0x00007fcbcab8de30 to 0x00007fcbcab8de30
+edge not found! testing for intraprocedural indirect jump.
+no: no target bb
+edge not found! testing for intraprocedural indirect jumps.
+no: not all intra-proceudral indirects
+cannot find edge 0x0000000000400600 -> 0x00007fcbcab8de30 in CFG
+trying the plt->got table...
+- Edge[12] 0000000000400600 -> 00007fcbcab8de30 only in PLT->GOT: ifunc or uninstrumentable?
+           0000000000400600 -> 00007fcbcab8de30 (normalized)
+store_bb: 7fcbcab8de30-7fcbcab8de30
+created dummy jmp edge 0x400600 -> 0x7fcbcab8de30 (puts@plt -> puts)
+created dummy ret edge 0x7fcbcab8de30 -> 0x4007b6 (puts -> call site)
+created dummy ret edge 0x7fcbcab8de30 -> 0x4007e9 (puts -> call site)
+created dummy ret edge 0x7fcbcab8de30 -> 0x4007f3 (puts -> call site)
+created dummy ret edge 0x7fcbcab8de30 -> 0x400811 (puts -> call site)
+created dummy ret edge 0x7fcbcab8de30 -> 0x40081b (puts -> call site)
+created dummy ret edge 0x7fcbcab8de30 -> 0x40083e (puts -> call site)
+created dummy ret edge 0x7fcbcab8de30 -> 0x40089e (puts -> call site)
+created dummy ret edge 0x7fcbcab8de30 -> 0x4008cf (puts -> call site)
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab8de30
+normalizing local addr 0x00000000004007b6 to 0x00000000004007b6
+normalizing local addr 0x00000000004007d6 to 0x00000000004007d6
+normalizing local addr 0x0000000000400620 to 0x0000000000400620
+normalizing local addr 0x0000000000400620 to 0x0000000000400620
+normalizing lib addr 0x00007fcbcac129c0 to 0x00007fcbcac129c0
+edge not found! testing for intraprocedural indirect jump.
+no: no target bb
+edge not found! testing for intraprocedural indirect jumps.
+no: not all intra-proceudral indirects
+cannot find edge 0x0000000000400620 -> 0x00007fcbcac129c0 in CFG
+trying the plt->got table...
+- Edge[15] 0000000000400620 -> 00007fcbcac129c0 only in PLT->GOT: ifunc or uninstrumentable?
+           0000000000400620 -> 00007fcbcac129c0 (normalized)
+store_bb: 7fcbcac129c0-7fcbcac129c0
+created dummy jmp edge 0x400620 -> 0x7fcbcac129c0 (mmap@plt -> mmap)
+created dummy ret edge 0x7fcbcac129c0 -> 0x4007db (mmap -> call site)
+searching edge 0x0 -> 0x40078d (indirect call) (out: 1)
+lbr_src: 0x0 -> 0x40078d (indirect call)
+lbr_dst: 0x4007b1 -> 0x400600 (call)
+   analyzing next edge 0x4007b1 -> 0x400600 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 5
+searching edge 0x4007b1 -> 0x400600 (call) (out: 2)
+lbr_src: 0x4007b1 -> 0x400600 (call)
+lbr_dst: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+   analyzing next edge 0x400600 -> 0x2911 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+stack size: 1
+   Looking at next LBR entry. new len: 4
+searching edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp) (out: 8)
+lbr_src: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcab8de30 -> 0x4007b6 (return)
+   analyzing next edge 0x7fcbcab8de30 -> 0x4008cf (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x4007b6
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x4007b6
+   analyzing next edge 0x7fcbcab8de30 -> 0x40089e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x4007b6
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x4007b6
+   analyzing next edge 0x7fcbcab8de30 -> 0x40083e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x4007b6
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x4007b6
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007b6 (return)
+stack size: 1
+   Looking at next LBR entry. new len: 3
+searching edge 0x7fcbcab8de30 -> 0x4007b6 (return) (out: 1)
+lbr_src: 0x7fcbcab8de30 -> 0x4007b6 (return)
+lbr_dst: 0x4007d6 -> 0x400620 (call)
+   analyzing next edge 0x4007d6 -> 0x400620 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 2
+searching edge 0x4007d6 -> 0x400620 (call) (out: 2)
+lbr_src: 0x4007d6 -> 0x400620 (call)
+lbr_dst: 0x400620 -> 0x7fcbcac129c0 (interprocedural indirect jmp)
+   analyzing next edge 0x400620 -> 0x2913 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400620 -> 0x7fcbcac129c0 (interprocedural indirect jmp)
+stack size: 1
+   We've found a path that reaches the final LBR edge, so we're done.
+LBR state to 0x00007fcbcac129c0 is valid
+lbr[ 0], <from:            (nil), to:            (nil)>  empty
+lbr[ 1], <from:            (nil), to:            (nil)>  empty
+lbr[ 2], <from:            (nil), to:            (nil)>  empty
+lbr[ 3], <from:            (nil), to:            (nil)>  empty
+lbr[ 4], <from:            (nil), to:            (nil)>  empty
+lbr[ 5], <from:            (nil), to:            (nil)>  empty
+lbr[ 6], <from:            (nil), to:            (nil)>  empty
+lbr[ 7], <from:            (nil), to:            (nil)>  empty
+lbr[ 8], <from:            (nil), to:            (nil)>  empty
+lbr[ 9], <from:            (nil), to:            (nil)>  empty
+lbr[10], <from:   0x7fcbcc1774ef, to:         0x40078d>  ARMOR.load
+lbr[11], <from:         0x4007b1, to:         0x400600>  call
+lbr[12], <from:         0x400600, to:   0x7fcbcab8de30>  indirect.jump
+lbr[13], <from:   0x7fcbcc177853, to:         0x4007b6>  lib.return
+lbr[14], <from:         0x4007d6, to:         0x400620>  call
+lbr[15], <from:         0x400620, to:   0x7fcbcac129c0>  indirect.jump
+!ind.:   3, call:   2, icall:   0, ijmp:   2, locret:   0, libret:   1, iindex:  12
+#ind.:   3, call:   2, icall:   0, ijmp:   2, locret:   0, libret:   1, iindex:  12, e:  10, u: 0 | l:  1, lbrs: 1
+    \------------------- is valid
+
+State is valid, reporting to armor module
+Waiting for LBR to analyze
+Fetching another copy of PLTs
+Fetching another copy of GOTs
+Analyzing LBR
+validating LBR state to 0x00007fcbcac12a20
+normalizing lbr ret 0x00007fcbcac129d2 to 0x00007fcbcc177853
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing lib addr 0x00007fcbcab8de30 to 0x00007fcbcab8de30
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab8de30
+normalizing local addr 0x00000000004007b6 to 0x00000000004007b6
+normalizing local addr 0x00000000004007d6 to 0x00000000004007d6
+normalizing local addr 0x0000000000400620 to 0x0000000000400620
+normalizing local addr 0x0000000000400620 to 0x0000000000400620
+normalizing lib addr 0x00007fcbcac129c0 to 0x00007fcbcac129c0
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcac129c0
+normalizing local addr 0x00000000004007db to 0x00000000004007db
+normalizing local addr 0x00000000004007e4 to 0x00000000004007e4
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing lib addr 0x00007fcbcab8de30 to 0x00007fcbcab8de30
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab8de30
+normalizing local addr 0x00000000004007e9 to 0x00000000004007e9
+normalizing local addr 0x00000000004007ee to 0x00000000004007ee
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing lib addr 0x00007fcbcab8de30 to 0x00007fcbcab8de30
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab8de30
+normalizing local addr 0x00000000004007f3 to 0x00000000004007f3
+normalizing local addr 0x0000000000400802 to 0x0000000000400802
+normalizing local addr 0x0000000000400680 to 0x0000000000400680
+normalizing local addr 0x0000000000400680 to 0x0000000000400680
+normalizing lib addr 0x00007fcbcac12a20 to 0x00007fcbcac12a20
+edge not found! testing for intraprocedural indirect jump.
+no: no target bb
+edge not found! testing for intraprocedural indirect jumps.
+no: not all intra-proceudral indirects
+cannot find edge 0x0000000000400680 -> 0x00007fcbcac12a20 in CFG
+trying the plt->got table...
+- Edge[15] 0000000000400680 -> 00007fcbcac12a20 only in PLT->GOT: ifunc or uninstrumentable?
+           0000000000400680 -> 00007fcbcac12a20 (normalized)
+store_bb: 7fcbcac12a20-7fcbcac12a20
+created dummy jmp edge 0x400680 -> 0x7fcbcac12a20 (mprotect@plt -> mprotect)
+created dummy ret edge 0x7fcbcac12a20 -> 0x400807 (mprotect -> call site)
+searching edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp) (out: 8)
+lbr_src: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcab8de30 -> 0x4007b6 (return)
+   analyzing next edge 0x7fcbcab8de30 -> 0x4008cf (return)
+stack size: 0
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 0
+   analyzing next edge 0x7fcbcab8de30 -> 0x40089e (return)
+stack size: 0
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 0
+   analyzing next edge 0x7fcbcab8de30 -> 0x40083e (return)
+stack size: 0
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 0
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007b6 (return)
+stack size: 0
+   Looking at next LBR entry. new len: 12
+searching edge 0x7fcbcab8de30 -> 0x4007b6 (return) (out: 1)
+lbr_src: 0x7fcbcab8de30 -> 0x4007b6 (return)
+lbr_dst: 0x4007d6 -> 0x400620 (call)
+   analyzing next edge 0x4007d6 -> 0x400620 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 11
+searching edge 0x4007d6 -> 0x400620 (call) (out: 2)
+lbr_src: 0x4007d6 -> 0x400620 (call)
+lbr_dst: 0x400620 -> 0x7fcbcac129c0 (interprocedural indirect jmp)
+   analyzing next edge 0x400620 -> 0x2913 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400620 -> 0x7fcbcac129c0 (interprocedural indirect jmp)
+stack size: 1
+   Looking at next LBR entry. new len: 10
+searching edge 0x400620 -> 0x7fcbcac129c0 (interprocedural indirect jmp) (out: 1)
+lbr_src: 0x400620 -> 0x7fcbcac129c0 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcac129c0 -> 0x4007db (return)
+   analyzing next edge 0x7fcbcac129c0 -> 0x4007db (return)
+stack size: 1
+   Looking at next LBR entry. new len: 9
+searching edge 0x7fcbcac129c0 -> 0x4007db (return) (out: 1)
+lbr_src: 0x7fcbcac129c0 -> 0x4007db (return)
+lbr_dst: 0x4007e4 -> 0x400600 (call)
+   analyzing next edge 0x4007e4 -> 0x400600 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 8
+searching edge 0x4007e4 -> 0x400600 (call) (out: 2)
+lbr_src: 0x4007e4 -> 0x400600 (call)
+lbr_dst: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+   analyzing next edge 0x400600 -> 0x2911 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+stack size: 1
+   Looking at next LBR entry. new len: 7
+searching edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp) (out: 8)
+lbr_src: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcab8de30 -> 0x4007e9 (return)
+   analyzing next edge 0x7fcbcab8de30 -> 0x4008cf (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x4007e9
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x4007e9
+   analyzing next edge 0x7fcbcab8de30 -> 0x40089e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x4007e9
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x4007e9
+   analyzing next edge 0x7fcbcab8de30 -> 0x40083e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x4007e9
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x4007e9
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007b6 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x4007e9
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x4007e9
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007e9 (return)
+stack size: 1
+   Looking at next LBR entry. new len: 6
+searching edge 0x7fcbcab8de30 -> 0x4007e9 (return) (out: 1)
+lbr_src: 0x7fcbcab8de30 -> 0x4007e9 (return)
+lbr_dst: 0x4007ee -> 0x400600 (call)
+   analyzing next edge 0x4007ee -> 0x400600 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 5
+searching edge 0x4007ee -> 0x400600 (call) (out: 2)
+lbr_src: 0x4007ee -> 0x400600 (call)
+lbr_dst: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+   analyzing next edge 0x400600 -> 0x2911 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+stack size: 1
+   Looking at next LBR entry. new len: 4
+searching edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp) (out: 8)
+lbr_src: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcab8de30 -> 0x4007f3 (return)
+   analyzing next edge 0x7fcbcab8de30 -> 0x4008cf (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x4007f3
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x4007f3
+   analyzing next edge 0x7fcbcab8de30 -> 0x40089e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x4007f3
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x4007f3
+   analyzing next edge 0x7fcbcab8de30 -> 0x40083e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x4007f3
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x4007f3
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007b6 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x4007f3
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x4007f3
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007e9 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007e9: mismatch with call returning to 0x4007f3
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007e9: mismatch with call returning to 0x4007f3
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007f3 (return)
+stack size: 1
+   Looking at next LBR entry. new len: 3
+searching edge 0x7fcbcab8de30 -> 0x4007f3 (return) (out: 1)
+lbr_src: 0x7fcbcab8de30 -> 0x4007f3 (return)
+lbr_dst: 0x400802 -> 0x400680 (call)
+   analyzing next edge 0x400802 -> 0x400680 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 2
+searching edge 0x400802 -> 0x400680 (call) (out: 2)
+lbr_src: 0x400802 -> 0x400680 (call)
+lbr_dst: 0x400680 -> 0x7fcbcac12a20 (interprocedural indirect jmp)
+   analyzing next edge 0x400680 -> 0x2919 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400680 -> 0x7fcbcac12a20 (interprocedural indirect jmp)
+stack size: 1
+   We've found a path that reaches the final LBR edge, so we're done.
+LBR state to 0x00007fcbcac12a20 is valid
+lbr[ 0], <from:            (nil), to:            (nil)>  empty
+lbr[ 1], <from:            (nil), to:            (nil)>  empty
+lbr[ 2], <from:            (nil), to:            (nil)>  empty
+lbr[ 3], <from:         0x400600, to:   0x7fcbcab8de30>  indirect.jump
+lbr[ 4], <from:   0x7fcbcc177853, to:         0x4007b6>  lib.return
+lbr[ 5], <from:         0x4007d6, to:         0x400620>  call
+lbr[ 6], <from:         0x400620, to:   0x7fcbcac129c0>  indirect.jump
+lbr[ 7], <from:   0x7fcbcc177853, to:         0x4007db>  lib.return
+lbr[ 8], <from:         0x4007e4, to:         0x400600>  call
+lbr[ 9], <from:         0x400600, to:   0x7fcbcab8de30>  indirect.jump
+lbr[10], <from:   0x7fcbcc177853, to:         0x4007e9>  lib.return
+lbr[11], <from:         0x4007ee, to:         0x400600>  call
+lbr[12], <from:         0x400600, to:   0x7fcbcab8de30>  indirect.jump
+lbr[13], <from:   0x7fcbcc177853, to:         0x4007f3>  lib.return
+lbr[14], <from:         0x400802, to:         0x400680>  call
+lbr[15], <from:         0x400680, to:   0x7fcbcac12a20>  indirect.jump
+!ind.:   9, call:   4, icall:   0, ijmp:   5, locret:   0, libret:   4, iindex:   3
+#ind.:  12, call:   6, icall:   0, ijmp:   7, locret:   0, libret:   5, iindex:  15, e:  13, u: 0 | l:  1, lbrs: 2
+    \------------------- is valid
+
+State is valid, reporting to armor module
+Waiting for LBR to analyze
+Fetching another copy of PLTs
+Fetching another copy of GOTs
+Analyzing LBR
+validating LBR state to 0x00007fcbcc1777bd
+normalizing lbr ret 0x00007fcbcac12a40 to 0x00007fcbcc177853
+cannot determine source for lib return at LBR[3], skipping
+normalizing local addr 0x0000000000400802 to 0x0000000000400802
+normalizing local addr 0x0000000000400680 to 0x0000000000400680
+normalizing local addr 0x0000000000400680 to 0x0000000000400680
+normalizing lib addr 0x00007fcbcac12a20 to 0x00007fcbcac12a20
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcac12a20
+normalizing local addr 0x0000000000400807 to 0x0000000000400807
+normalizing local addr 0x000000000040080c to 0x000000000040080c
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing lib addr 0x00007fcbcab8de30 to 0x00007fcbcab8de30
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab8de30
+normalizing local addr 0x0000000000400811 to 0x0000000000400811
+normalizing local addr 0x0000000000400816 to 0x0000000000400816
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing lib addr 0x00007fcbcab8de30 to 0x00007fcbcab8de30
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab8de30
+normalizing local addr 0x000000000040081b to 0x000000000040081b
+normalizing local addr 0x000000000040082f to 0x000000000040082f
+normalizing local addr 0x0000000000400610 to 0x0000000000400610
+normalizing local addr 0x0000000000400610 to 0x0000000000400610
+normalizing lib addr 0x00007fcbcab54f60 to 0x00007fcbcab54f60
+edge not found! testing for intraprocedural indirect jump.
+no: no target bb
+edge not found! testing for intraprocedural indirect jumps.
+no: not all intra-proceudral indirects
+cannot find edge 0x0000000000400610 -> 0x00007fcbcab54f60 in CFG
+trying the plt->got table...
+- Edge[15] 0000000000400610 -> 00007fcbcab54f60 only in PLT->GOT: ifunc or uninstrumentable?
+           0000000000400610 -> 00007fcbcab54f60 (normalized)
+store_bb: 7fcbcab54f60-7fcbcab54f60
+created dummy jmp edge 0x400610 -> 0x7fcbcab54f60 (sigaction@plt -> sigaction)
+created dummy ret edge 0x7fcbcab54f60 -> 0x400834 (sigaction -> call site)
+searching edge 0x400802 -> 0x400680 (call) (out: 2)
+lbr_src: 0x400802 -> 0x400680 (call)
+lbr_dst: 0x400680 -> 0x7fcbcac12a20 (interprocedural indirect jmp)
+   analyzing next edge 0x400680 -> 0x2919 (interprocedural indirect jmp)
+stack size: 0
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 0
+   analyzing next edge 0x400680 -> 0x7fcbcac12a20 (interprocedural indirect jmp)
+stack size: 0
+   Looking at next LBR entry. new len: 10
+searching edge 0x400680 -> 0x7fcbcac12a20 (interprocedural indirect jmp) (out: 1)
+lbr_src: 0x400680 -> 0x7fcbcac12a20 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcac12a20 -> 0x400807 (return)
+   analyzing next edge 0x7fcbcac12a20 -> 0x400807 (return)
+stack size: 0
+   Looking at next LBR entry. new len: 9
+searching edge 0x7fcbcac12a20 -> 0x400807 (return) (out: 1)
+lbr_src: 0x7fcbcac12a20 -> 0x400807 (return)
+lbr_dst: 0x40080c -> 0x400600 (call)
+   analyzing next edge 0x40080c -> 0x400600 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 8
+searching edge 0x40080c -> 0x400600 (call) (out: 2)
+lbr_src: 0x40080c -> 0x400600 (call)
+lbr_dst: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+   analyzing next edge 0x400600 -> 0x2911 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+stack size: 1
+   Looking at next LBR entry. new len: 7
+searching edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp) (out: 8)
+lbr_src: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcab8de30 -> 0x400811 (return)
+   analyzing next edge 0x7fcbcab8de30 -> 0x4008cf (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x400811
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x400811
+   analyzing next edge 0x7fcbcab8de30 -> 0x40089e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x400811
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x400811
+   analyzing next edge 0x7fcbcab8de30 -> 0x40083e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x400811
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x400811
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007b6 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x400811
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x400811
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007e9 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007e9: mismatch with call returning to 0x400811
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007e9: mismatch with call returning to 0x400811
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007f3 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007f3: mismatch with call returning to 0x400811
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007f3: mismatch with call returning to 0x400811
+   analyzing next edge 0x7fcbcab8de30 -> 0x400811 (return)
+stack size: 1
+   Looking at next LBR entry. new len: 6
+searching edge 0x7fcbcab8de30 -> 0x400811 (return) (out: 1)
+lbr_src: 0x7fcbcab8de30 -> 0x400811 (return)
+lbr_dst: 0x400816 -> 0x400600 (call)
+   analyzing next edge 0x400816 -> 0x400600 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 5
+searching edge 0x400816 -> 0x400600 (call) (out: 2)
+lbr_src: 0x400816 -> 0x400600 (call)
+lbr_dst: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+   analyzing next edge 0x400600 -> 0x2911 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+stack size: 1
+   Looking at next LBR entry. new len: 4
+searching edge 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp) (out: 8)
+lbr_src: 0x400600 -> 0x7fcbcab8de30 (interprocedural indirect jmp)
+lbr_dst: 0x7fcbcab8de30 -> 0x40081b (return)
+   analyzing next edge 0x7fcbcab8de30 -> 0x4008cf (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x40081b
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4008cf: mismatch with call returning to 0x40081b
+   analyzing next edge 0x7fcbcab8de30 -> 0x40089e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x40081b
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40089e: mismatch with call returning to 0x40081b
+   analyzing next edge 0x7fcbcab8de30 -> 0x40083e (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x40081b
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x40083e: mismatch with call returning to 0x40081b
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007b6 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x40081b
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007b6: mismatch with call returning to 0x40081b
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007e9 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007e9: mismatch with call returning to 0x40081b
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007e9: mismatch with call returning to 0x40081b
+   analyzing next edge 0x7fcbcab8de30 -> 0x4007f3 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007f3: mismatch with call returning to 0x40081b
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x4007f3: mismatch with call returning to 0x40081b
+   analyzing next edge 0x7fcbcab8de30 -> 0x400811 (return)
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x400811: mismatch with call returning to 0x40081b
+   One of the constraints prohibits traversing this edge.
+stack size: 1
+return edge 0x7fcbcab8de30 -> 0x400811: mismatch with call returning to 0x40081b
+   analyzing next edge 0x7fcbcab8de30 -> 0x40081b (return)
+stack size: 1
+   Looking at next LBR entry. new len: 3
+searching edge 0x7fcbcab8de30 -> 0x40081b (return) (out: 1)
+lbr_src: 0x7fcbcab8de30 -> 0x40081b (return)
+lbr_dst: 0x40082f -> 0x400610 (call)
+   analyzing next edge 0x40082f -> 0x400610 (call)
+stack size: 0
+   Looking at next LBR entry. new len: 2
+searching edge 0x40082f -> 0x400610 (call) (out: 2)
+lbr_src: 0x40082f -> 0x400610 (call)
+lbr_dst: 0x400610 -> 0x7fcbcab54f60 (interprocedural indirect jmp)
+   analyzing next edge 0x400610 -> 0x2912 (interprocedural indirect jmp)
+stack size: 1
+   This indirect edge cannot be on the path, or it would be in the LBR.
+stack size: 1
+   analyzing next edge 0x400610 -> 0x7fcbcab54f60 (interprocedural indirect jmp)
+stack size: 1
+   We've found a path that reaches the final LBR edge, so we're done.
+LBR state to 0x00007fcbcab54f60 is valid
+lbr[ 0], <from:            (nil), to:            (nil)>  empty
+lbr[ 1], <from:            (nil), to:            (nil)>  empty
+lbr[ 2], <from:            (nil), to:            (nil)>  empty
+lbr[ 3], <from:            (nil), to:            (nil)>  empty
+lbr[ 4], <from:   0x7fcbcc177853, to:         0x4007f3>  lib.return
+lbr[ 5], <from:         0x400802, to:         0x400680>  call
+lbr[ 6], <from:         0x400680, to:   0x7fcbcac12a20>  indirect.jump
+lbr[ 7], <from:   0x7fcbcc177853, to:         0x400807>  lib.return
+lbr[ 8], <from:         0x40080c, to:         0x400600>  call
+lbr[ 9], <from:         0x400600, to:   0x7fcbcab8de30>  indirect.jump
+lbr[10], <from:   0x7fcbcc177853, to:         0x400811>  lib.return
+lbr[11], <from:         0x400816, to:         0x400600>  call
+lbr[12], <from:         0x400600, to:   0x7fcbcab8de30>  indirect.jump
+lbr[13], <from:   0x7fcbcc177853, to:         0x40081b>  lib.return
+lbr[14], <from:         0x40082f, to:         0x400610>  call
+lbr[15], <from:         0x400610, to:   0x7fcbcab54f60>  indirect.jump
+!ind.:   8, call:   4, icall:   0, ijmp:   4, locret:   0, libret:   4, iindex:   6
+#ind.:  20, call:  10, icall:   0, ijmp:  11, locret:   0, libret:   9, iindex:  21, e:  17, u: 0 | l:  1, lbrs: 3
+    \------------------- is valid
+
+State is valid, reporting to armor module
+Waiting for LBR to analyze
+Fetching another copy of PLTs
+Fetching another copy of GOTs
+Analyzing LBR
+validating LBR state to 0x00007fcbcc1777bd
+cannot determine source for lib return at LBR[3], skipping
+normalizing local addr 0x0000000000400839 to 0x0000000000400839
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing local addr 0x0000000000400600 to 0x0000000000400600
+normalizing lib addr 0x00007fcbcab8de30 to 0x00007fcbcab8de30
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab8de30
+normalizing local addr 0x000000000040083e to 0x000000000040083e
+normalizing local addr 0x000000000040088a to 0x000000000040088a
+normalizing local addr 0x0000000000400670 to 0x0000000000400670
+normalizing local addr 0x0000000000400670 to 0x0000000000400670
+normalizing lib addr 0x00007fcbcab7c450 to 0x00007fcbcab7c450
+edge not found! testing for intraprocedural indirect jump.
+no: no target bb
+edge not found! testing for intraprocedural indirect jumps.
+no: not all intra-proceudral indirects
+cannot find edge 0x0000000000400670 -> 0x00007fcbcab7c450 in CFG
+trying the plt->got table...
+- Edge[ 9] 0000000000400670 -> 00007fcbcab7c450 only in PLT->GOT: ifunc or uninstrumentable?
+           0000000000400670 -> 00007fcbcab7c450 (normalized)
+store_bb: 7fcbcab7c450-7fcbcab7c450
+created dummy jmp edge 0x400670 -> 0x7fcbcab7c450 (__isoc99_sscanf@plt -> __isoc99_sscanf)
+created dummy ret edge 0x7fcbcab7c450 -> 0x40088f (__isoc99_sscanf -> call site)
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab7c450
+normalizing local addr 0x000000000040088f to 0x000000000040088f
+normalizing local addr 0x00000000004008ba to 0x00000000004008ba
+normalizing local addr 0x0000000000400630 to 0x0000000000400630
+normalizing local addr 0x0000000000400630 to 0x0000000000400630
+normalizing lib addr 0x00007fcbcab72400 to 0x00007fcbcab72400
+edge not found! testing for intraprocedural indirect jump.
+no: no target bb
+edge not found! testing for intraprocedural indirect jumps.
+no: not all intra-proceudral indirects
+cannot find edge 0x0000000000400630 -> 0x00007fcbcab72400 in CFG
+trying the plt->got table...
+- Edge[12] 0000000000400630 -> 00007fcbcab72400 only in PLT->GOT: ifunc or uninstrumentable?
+           0000000000400630 -> 00007fcbcab72400 (normalized)
+store_bb: 7fcbcab72400-7fcbcab72400
+created dummy jmp edge 0x400630 -> 0x7fcbcab72400 (printf@plt -> printf)
+created dummy ret edge 0x7fcbcab72400 -> 0x4008bf (printf -> call site)
+normalizing lib return addr 0x00007fcbcc177853 to 0x00007fcbcab72400
+normalizing local addr 0x00000000004008bf to 0x00000000004008bf
+normalizing local addr 0x00000000004008c3 to 0x00000000004008c3
+normalizing local addr 0x0000000000400610 to 0x0000000000400610
+edge not found! testing for intraprocedural indirect jump.
+no: 4 outgoing edges, expecting 1
+0. 4008c3->40078d (BB(0x4008bf)->BB(0x40078d)) ((indirect_call) BB(0x4008bf) -> BB(0x40078d))
+1. 4008c3->4008e0 (BB(0x4008bf)->BB(0x4008e0)) ((indirect_call) BB(0x4008bf) -> BB(0x4008e0))
+2. 4008c3->400950 (BB(0x4008bf)->BB(0x400950)) ((indirect_call) BB(0x4008bf) -> BB(0x400950))
+3. 4008c3->400660 (BB(0x4008bf)->BB(0x400660)) ((indirect_call) BB(0x4008bf) -> BB(0x400660))
+edge not found! testing for intraprocedural indirect jumps.
+no: not all intra-proceudral indirects
+cannot find edge 0x00000000004008c3 -> 0x0000000000400610 in CFG
+trying the plt->got table...
+Previous edge 0x400610 -> 0x2912
+Previous edge 0x400610 -> 0x7fcbcab54f60
+-> Could not validate LBR
+lbr[ 0], <from: 0x0000000000000000, to: 0x0000000000000000>
+lbr[ 1], <from: 0x0000000000000000, to: 0x0000000000000000>
+lbr[ 2], <from: 0x0000000000000000, to: 0x0000000000000000>
+lbr[ 3], <from: 0x0000000000000000, to: 0x0000000000000000>
+lbr[ 4], <from: 0x00007fcbcc177853, to: 0x0000000000400834>
+lbr[ 5], <from: 0x0000000000400839, to: 0x0000000000400600>
+lbr[ 6], <from: 0x0000000000400600, to: 0x00007fcbcab8de30>
+lbr[ 7], <from: 0x00007fcbcc177853, to: 0x000000000040083e>
+lbr[ 8], <from: 0x000000000040088a, to: 0x0000000000400670>
+lbr[ 9], <from: 0x0000000000400670, to: 0x00007fcbcab7c450>
+lbr[10], <from: 0x00007fcbcc177853, to: 0x000000000040088f>
+lbr[11], <from: 0x00000000004008ba, to: 0x0000000000400630>
+lbr[12], <from: 0x0000000000400630, to: 0x00007fcbcab72400>
+lbr[13], <from: 0x00007fcbcc177853, to: 0x00000000004008bf>
+lbr[14], <from: 0x00000000004008c3, to: 0x0000000000400610>
+lbr[15], <from: 0x0000000000400610, to: 0x00007fcbcab54f60>
+-> Edge[14] 00000000004008c3 -> 0000000000400610 was not found: return from ifunc or uninstrumentable?
+            00000000004008c3 -> 0000000000400610 (normalized)
+
+lbr[ 0], <from:            (nil), to:            (nil)>  empty
+lbr[ 1], <from:            (nil), to:            (nil)>  empty
+lbr[ 2], <from:            (nil), to:            (nil)>  empty
+lbr[ 3], <from:            (nil), to:            (nil)>  empty
+lbr[ 4], <from:   0x7fcbcc177853, to:         0x400834>  lib.return
+lbr[ 5], <from:         0x400839, to:         0x400600>  call
+lbr[ 6], <from:         0x400600, to:   0x7fcbcab8de30>  indirect.jump
+lbr[ 7], <from:   0x7fcbcc177853, to:         0x40083e>  lib.return
+lbr[ 8], <from:         0x40088a, to:         0x400670>  call
+lbr[ 9], <from:         0x400670, to:   0x7fcbcab7c450>  indirect.jump
+lbr[10], <from:   0x7fcbcc177853, to:         0x40088f>  lib.return
+lbr[11], <from:         0x4008ba, to:         0x400630>  call
+lbr[12], <from:         0x400630, to:   0x7fcbcab72400>  indirect.jump
+lbr[13], <from:   0x7fcbcc177853, to:         0x4008bf>  lib.return
+lbr[14], <from:         0x4008c3, to:         0x400610>  unknown
+lbr[15], <from:         0x400610, to:   0x7fcbcab54f60>  indirect.jump
+!ind.:   8, call:   3, icall:   0, ijmp:   4, locret:   0, libret:   4, iindex:   6
+#ind.:  28, call:  13, icall:   0, ijmp:  15, locret:   0, libret:  13, iindex:  27, e:  21, u: 1 | l:  1, lbrs: 4
+    \------------------- is NOT valid
+
+State is invalid, reporting to armor module
+Waiting for LBR to analyze
+^C
+SIGINT caught, exiting
+
+__________ TOTALS ____________________________________________
+LBRs validated: 4
+indirect branches:    28
+ - indirect calls:     0
+ - indirect jumps:    15
+ - local returns :     0
+ - lib returns   :    13
+direct branches  :    13 (direct calls only)
+empty entries    :    21
+unknown edges    :     1
+
+
+__________ AVERAGES PER LBR __________________________________
+indirect branches:     7.00
+ - indirect calls:     0.00
+ - indirect jumps:     3.75
+ - local returns :     0.00
+ - lib returns   :     3.25
+direct branches  :     3.25 (direct calls only)
+empty entries    :     5.25
+unknown edges    :     0.25
+
+
+__________ KERNEL SUMMARY ____________________________________
+
+
+]0;patharmor@patharmor-test: ~/patharmor/toy-bugpatharmor@patharmor-test:~/patharmor/toy-bug$ exit
+
+Script done on ma 12 okt 2015 17:36:03 CEST

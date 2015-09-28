@@ -1,0 +1,38 @@
+var dr__defines_8h =
+[
+    [ "opnd_t", "structopnd__t.html", null ],
+    [ "instr_t", "structinstr__t.html", null ],
+    [ "_dr_xmm_t", "union__dr__xmm__t.html", "union__dr__xmm__t" ],
+    [ "_dr_ymm_t", "union__dr__ymm__t.html", "union__dr__ymm__t" ],
+    [ "_dr_mcontext_t", "struct__dr__mcontext__t.html", "struct__dr__mcontext__t" ],
+    [ "dr_time_t", "structdr__time__t.html", null ],
+    [ "DR_NOTE_FIRST_RESERVED", "dr__defines_8h.html#ae900af3cb1032e748eefc80808c43610", null ],
+    [ "INVALID_FILE", "dr__defines_8h.html#a5f22fa59d1d8caa3fa4750147f559043", null ],
+    [ "INVALID_FILE", "dr__defines_8h.html#a5f22fa59d1d8caa3fa4750147f559043", null ],
+    [ "MAXIMUM_PATH", "dr__defines_8h.html#a95c7b582d53e0a376f2a0e89323b2a7b", null ],
+    [ "PFX", "dr__defines_8h.html#a176e4c39a833f4d01f0ecd322c0f4343", null ],
+    [ "PIDFMT", "dr__defines_8h.html#a5d42a165683c52523356b380889803b5", null ],
+    [ "PIFX", "dr__defines_8h.html#a42ee5175c12e68f0d8ce3f67426853e8", null ],
+    [ "PRE_XMM_PADDING", "dr__defines_8h.html#aaeb72915e4c71fc1fb346e9a52640e5b", null ],
+    [ "STDERR", "dr__defines_8h.html#a3a540e3eef339eec06aff31c4ba1eb25", null ],
+    [ "STDERR", "dr__defines_8h.html#a3a540e3eef339eec06aff31c4ba1eb25", null ],
+    [ "STDIN", "dr__defines_8h.html#ac00bfb46347d26fdc58568fe1ab5fa5b", null ],
+    [ "STDIN", "dr__defines_8h.html#ac00bfb46347d26fdc58568fe1ab5fa5b", null ],
+    [ "STDOUT", "dr__defines_8h.html#a8875037d0772a4fc34516f1e03d7e238", null ],
+    [ "STDOUT", "dr__defines_8h.html#a8875037d0772a4fc34516f1e03d7e238", null ],
+    [ "TIDFMT", "dr__defines_8h.html#a80e139e8f2d2dd7d5d4a92f8ad7c6f4d", null ],
+    [ "app_rva_t", "dr__defines_8h.html#af9fff97e6e608cc681ebfd1793c772f6", null ],
+    [ "client_id_t", "dr__defines_8h.html#a68540a70b4f8150a4fe6dcec91bf8825", null ],
+    [ "dr_mcontext_t", "dr__defines_8h.html#a5d50a4225e834d67f66438669608e435", null ],
+    [ "dr_xmm_t", "dr__defines_8h.html#a59c7cf2d0a5311fac09914a982a2ea14", null ],
+    [ "dr_ymm_t", "dr__defines_8h.html#afdb3ea3d885c7c9302dc76e7110db1d0", null ],
+    [ "dr_mcontext_flags_t", "dr__defines_8h.html#af0434595b47158e7512c2bf5f0e43ae4", [
+      [ "DR_MC_INTEGER", "dr__defines_8h.html#af0434595b47158e7512c2bf5f0e43ae4af2252e055eafe402a7bf12b9951410d8", null ],
+      [ "DR_MC_CONTROL", "dr__defines_8h.html#af0434595b47158e7512c2bf5f0e43ae4ab7914092947d4a374f4a95e089870218", null ],
+      [ "DR_MC_MULTIMEDIA", "dr__defines_8h.html#af0434595b47158e7512c2bf5f0e43ae4af3780bef723b8bf1a34eb75125f7f122", null ],
+      [ "DR_MC_ALL", "dr__defines_8h.html#af0434595b47158e7512c2bf5f0e43ae4ab00df3673cdf0e7fd660767bcc54e29b", null ]
+    ] ],
+    [ "our_stderr", "dr__defines_8h.html#a096153d4f8a4fffa5d2cabeecffc9540", null ],
+    [ "our_stdin", "dr__defines_8h.html#ac5d961a13c6ef71da452f84886cd3de5", null ],
+    [ "our_stdout", "dr__defines_8h.html#a49ff3685a627a273629e95fc78948e5a", null ]
+];

@@ -1,0 +1,363 @@
+Script started on ma 12 okt 2015 17:20:54 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ cd patharmor/
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$      sh lkm-start.sh
+make: Entering directory `/home/patharmor/patharmor/lkm'
+rm -f -rf *.o armor-module.ko .tmp_versions Module.symvers modules.order armor-module.mod.c .*.o.cmd .*.ko.cmd
+make -C /lib/modules/3.16.0-49-generic/build M=/home/patharmor/patharmor/lkm modules EXTRA_CFLAGS="-DARMOR_DEBUG -DARMOR_DEBUG_JIT -DARMOR_STATS -DARMOR_VALIDATE -DARMOR_JIT -I/home/patharmor/patharmor/lkm/../include -I/home/patharmor/patharmor/lkm/../include/patharmor"
+make[1]: Entering directory `/usr/src/linux-headers-3.16.0-49-generic'
+  CC [M]  /home/patharmor/patharmor/lkm/armor.o
+  CC [M]  /home/patharmor/patharmor/lkm/lbr.o
+  CC [M]  /home/patharmor/patharmor/lkm/intercept.o
+  AS [M]  /home/patharmor/patharmor/lkm/pre.o
+  AS [M]  /home/patharmor/patharmor/lkm/syscall-handler.o
+  LD [M]  /home/patharmor/patharmor/lkm/armor-module.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/patharmor/patharmor/lkm/armor-module.mod.o
+  LD [M]  /home/patharmor/patharmor/lkm/armor-module.ko
+make[1]: Leaving directory `/usr/src/linux-headers-3.16.0-49-generic'
+make: Leaving directory `/home/patharmor/patharmor/lkm'
+removing currently loaded armor module if present
+[sudo] password for patharmor: 
+loading armor module
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$ [K]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$ cd nginx-0.8.54/
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$      sh ../run-app.sh ./install-dir/ sbin/nginx
++ pwd
++ pwd
++ pwd
++ pwd
++ sudo LD_BIND_NOW=y LD_PRELOAD=/home/patharmor/patharmor/nginx-0.8.54/../bin/libwrappers.so DYNINSTAPI_RT_LIB=/home/patharmor/patharmor/nginx-0.8.54/../Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.so LD_LIBRARY_PATH=/home/patharmor/patharmor/nginx-0.8.54/../Dyninst-8.2.1/install-dir/lib:/home/patharmor/patharmor/nginx-0.8.54/../dyninst-mainline/install-dir/lib: ../bin/di-opt -load=/home/patharmor/patharmor/nginx-0.8.54/../bin/padyn.di -padyn -args /home/patharmor/patharmor/nginx-0.8.54/./install-dir/sbin/nginx
+[wrapper]: this is ../bin/di-opt
+[wrapper]: this is /home/patharmor/patharmor/nginx-0.8.54/./install-dir/sbin/nginx
+main() - LBR.src: 0x7f8f340ff4ef
+main() - LBR.dst: 0x402e93
+armor_lib_enter        : 0x7f8f340ff7bd
+armor_lib_exit.return(): 0x7f8f340ff853
+armor_cbk_enter        : 0x7f8f340ff705
+armor_cbk_return       : 0x7f8f340ff7a1
+armor_cbk_target_call  : 0x7f8f340ff768
+armor_cbk_target_return: 0x7f8f340ff76b
+pthread_create         : 0x7f8f340ff5c0
+pthread_create_return  : 0x7f8f340ff6fe
+[wrapper]: ARMOR_IOC_INIT
+- getImage()...
+- getModules()...
+- wrapping library calls...
+  * Found 130 PLT entries that we have to wrap:
+    o 0x402500->0x6b0018->0x7f8f320f8f90: initgroups           +0x0bdf90: initgroups                
+    o 0x402510->0x6b0020->0x7f8f321264e0: chmod                +0x0eb4e0: __chmod                       >> simple, exit points at: 0x7f8f321264ef 0x7f8f32126500 <<
+    o 0x402520->0x6b0028->0x7f8f3267e0c0: MD5_Init             +0x0650c0: MD5_Init                      >> simple, exit points at: 0x7f8f3267e12f <<
+    o 0x402530->0x6b0030->0x7f8f32127100: chdir                +0x0ec100: chdir                         >> simple, exit points at: 0x7f8f3212710f 0x7f8f32127120 <<
+    o 0x402540->0x6b0038->0x7f8f32126fe0: dup2                 +0x0ebfe0: __GI___dup2                   >> simple, exit points at: 0x7f8f32126fef 0x7f8f32127000 <<
+    o 0x402550->0x6b0040->0x7f8f320ec3a0: mktime               +0x0b13a0: __GI_mktime               
+    o 0x402560->0x6b0048->0x7f8f320c75c0: memset               +0x08c5c0: __GI_memset                   >> simple, exit points at: 0x7f8f320c75fa 0x7f8f320c760d 0x7f8f320c7680 0x7f8f320c76a6 0x7f8f320c76ad 0x7f8f320c76b6 <<
+    o 0x402570->0x6b0050->0x7f8f320f9320: getgrnam             +0x0be320: getgrnam                  
+    o 0x402580->0x6b0058->0x7f8f320fd0f0: setsid               +0x0c20f0: __GI___setsid                 >> simple, exit points at: 0x7f8f320fd0ff 0x7f8f320fd110 <<
+    o 0x402590->0x6b0060->0x7f8f32136680: shutdown             +0x0fb680: shutdown                      >> simple, exit points at: 0x7f8f3213668f 0x7f8f321366a0 <<
+    o 0x4025a0->0x6b0068->0x7f8f3212f9c0: mmap64               +0x0f49c0: __GI___mmap64                 >> simple, exit points at: 0x7f8f3212f9d2 0x7f8f3212f9e3 <<
+    o 0x4025b0->0x6b0070->0x7f8f320bf8a0: posix_memalign       +0x0848a0: posix_memalign            
+    o 0x4025c0->0x6b0078->0x7f8f32126f50: close                +0x0ebf50: close                     
+    o 0x4025d0->0x6b0080->0x7f8f3267dd80: MD5_Update           +0x064d80: MD5_Update                
+    o 0x4025e0->0x6b0088->0x7f8f3212c330: ioctl                +0x0f1330: __ioctl                       >> simple, exit points at: 0x7f8f3212c33f 0x7f8f3212c350 <<
+    o 0x4025f0->0x6b0090->0x7f8f32074f90: abort                +0x039f90: __GI_abort                
+    o 0x402600->0x6b0098->0x7f8f3212e030: utimes               +0x0f3030: __utimes                      >> simple, exit points at: 0x7f8f3212e03f 0x7f8f3212e051 <<
+    o 0x402610->0x6b00a0->0x7f8f32135a50: epoll_create         +0x0faa50: epoll_create                  >> simple, exit points at: 0x7f8f32135a5f 0x7f8f32135a70 <<
+    o 0x402620->0x6b00a8->0x7f8f32147f90: gethostbyname        +0x10cf90: gethostbyname             
+    o 0x402630->0x6b00b0->0x000000000000: __gmon_start__           >> not found <<
+    o 0x402640->0x6b00b8->0x7f8f32136480: recvmsg              +0x0fb480: __GI___libc_recvmsg       
+    o 0x402650->0x6b00c0->0x7f8f320fba00: uname                +0x0c0a00: uname                         >> simple, exit points at: 0x7f8f320fba0f 0x7f8f320fba20 <<
+    o 0x402660->0x6b00c8->0x7f8f32147640: htons                +0x10c640: ntohs                         >> simple, exit points at: 0x7f8f32147646 <<
+    o 0x402670->0x6b00d0->0x7f8f32077290: exit                 +0x03c290: exit                      
+    o 0x402680->0x6b00d8->0x7f8f32135d80: prctl                +0x0fad80: __GI_prctl                    >> simple, exit points at: 0x7f8f32135d92 0x7f8f32135da3 <<
+    o 0x402690->0x6b00e0->0x7ffd6cbf0ef0: gettimeofday             >> simple, exit point at: 0x7ffd6cbf100a <<
+    o 0x4026a0->0x6b00e8->0x7f8f32404640: deflate              +0x004640: deflate                   
+    o 0x4026b0->0x6b00f0->0x7f8f32177fa0: strpbrk              +0x13cfa0: __strpbrk_sse42           
+    o 0x4026c0->0x6b00f8->0x7f8f32126800: read                 +0x0eb800: __GI___read               
+    o 0x4026d0->0x6b0100->0x7f8f3217c460: strncmp              +0x141460: __GI___strncmp_ssse3          >> not instrumentable, whitelisting <<
+    o 0x4026e0->0x6b0108->0x7f8f320bd750: malloc               +0x082750: __libc_malloc             
+    o 0x4026f0->0x6b0110->0x7f8f340ff4fe: __libc_start_main    +0x0014fe: __libc_start_main         
+    o 0x402700->0x6b0118->0x7f8f32136370: recv                 +0x0fb370: recv                      
+    o 0x402710->0x6b0120->0x7f8f320ef3a0: setitimer            +0x0b43a0: __GI___setitimer              >> simple, exit points at: 0x7f8f320ef3af 0x7f8f320ef3c0 <<
+    o 0x402720->0x6b0128->0x7f8f320c3940: strerror_r           +0x088940: __GI___strerror_r         
+    o 0x402730->0x6b0130->0x7f8f32128070: unlink               +0x0ed070: unlink                        >> simple, exit points at: 0x7f8f3212807f 0x7f8f32128090 <<
+    o 0x402740->0x6b0138->0x7f8f321063f0: sched_yield          +0x0cb3f0: __GI___sched_yield            >> simple, exit points at: 0x7f8f321063ff 0x7f8f32106410 <<
+    o 0x402750->0x6b0140->0x7f8f32136650: setsockopt           +0x0fb650: __setsockopt                  >> simple, exit points at: 0x7f8f32136662 0x7f8f32136673 <<
+    o 0x402760->0x6b0148->0x7f8f320779a0: srandom              +0x03c9a0: srand                     
+    o 0x402770->0x6b0150->0x7f8f320fce10: getpid               +0x0c1e10: __GI_getpid                   >> simple, exit points at: 0x7f8f320fce1f 0x7f8f320fce4c <<
+    o 0x402780->0x6b0158->0x7f8f321261e0: __fxstat64           +0x0eb1e0: __GI___fxstat64               >> simple, exit points at: 0x7f8f321261fc 0x7f8f32126213 0x7f8f32126224 <<
+    o 0x402790->0x6b0160->0x7f8f320fce70: geteuid              +0x0c1e70: geteuid                       >> simple, exit points at: 0x7f8f320fce77 <<
+    o 0x4027a0->0x6b0168->0x7f8f320fced0: setuid               +0x0c1ed0: setuid                    
+    o 0x4027b0->0x6b0170->0x7f8f32072010: sigsuspend           +0x037010: __GI___sigsuspend         
+    o 0x4027c0->0x6b0178->0x7f8f32a17690: pcre_exec            +0x023690: pcre_exec                 
+    o 0x4027d0->0x6b0180->0x7f8f320bddf0: free                 +0x082df0: __cfree                       >> not instrumentable, whitelisting <<
+    o 0x4027e0->0x6b0188->0x7f8f320c3ac0: strlen               +0x088ac0: strlen                        >> simple, exit points at: 0x7f8f320c3b00 0x7f8f320c3b4e 0x7f8f320c3baa 0x7f8f320c3c73 <<
+    o 0x4027f0->0x6b0190->0x7f8f32402740: crc32                +0x002740: crc32                         >> simple, exit points at: 0x7f8f32402783 0x7f8f32402a04 <<
+    o 0x402800->0x6b0198->0x7f8f320f7ef0: opendir              +0x0bcef0: __opendir                 
+    o 0x402810->0x6b01a0->0x7f8f32405cc0: deflateEnd           +0x005cc0: deflateEnd                
+    o 0x402820->0x6b01a8->0x7f8f32128230: posix_fadvise64      +0x0ed230: posix_fadvise64               >> simple, exit points at: 0x7f8f3212824d <<
+    o 0x402830->0x6b01b0->0x7f8f3212bd80: setrlimit64          +0x0f0d80: setrlimit                     >> simple, exit points at: 0x7f8f3212bd8f 0x7f8f3212bda0 <<
+    o 0x402840->0x6b01b8->0x7f8f32136340: listen               +0x0fb340: listen                        >> simple, exit points at: 0x7f8f3213634f 0x7f8f32136360 <<
+    o 0x402850->0x6b01c0->0x7f8f32081770: realpath             +0x046770: realpath@@GLIBC_2.3       
+    o 0x402860->0x6b01c8->0x7f8f32147640: ntohs                +0x10c640: ntohs                         >> simple, exit points at: 0x7f8f32147646 <<
+    o 0x402870->0x6b01d0->0x7f8f32147630: ntohl                +0x10c630: ntohl                         >> simple, exit points at: 0x7f8f32147634 <<
+    o 0x402880->0x6b01d8->0x7f8f3212cba0: getpagesize          +0x0f1ba0: __GI___getpagesize        
+    o 0x402890->0x6b01e0->0x7f8f32126390: statfs64             +0x0eb390: __GI_statfs                   >> simple, exit points at: 0x7f8f3212639f 0x7f8f321263b0 <<
+    o 0x4028a0->0x6b01e8->0x7f8f3267df70: MD5_Final            +0x064f70: MD5_Final                 
+    o 0x4028b0->0x6b01f0->0x7f8f32127040: pipe                 +0x0ec040: pipe                          >> simple, exit points at: 0x7f8f3212704f 0x7f8f32127060 <<
+    o 0x4028c0->0x6b01f8->0x7f8f3212c170: setpriority          +0x0f1170: setpriority                   >> simple, exit points at: 0x7f8f3212c17f 0x7f8f3212c190 <<
+    o 0x4028d0->0x6b0200->0x7f8f32136590: sendmsg              +0x0fb590: __GI___libc_sendmsg       
+    o 0x4028e0->0x6b0208->0x7f8f320eb8a0: gmtime_r             +0x0b08a0: __GI___gmtime_r           
+    o 0x4028f0->0x6b0210->0x7f8f32071fb0: kill                 +0x036fb0: __GI___kill                   >> simple, exit points at: 0x7f8f32071fbf 0x7f8f32071fd0 <<
+    o 0x402900->0x6b0218->0x7f8f3212d470: usleep               +0x0f2470: usleep                    
+    o 0x402910->0x6b0220->0x7f8f32126610: open64               +0x0eb610: __libc_open               
+    o 0x402920->0x6b0228->0x7f8f32135ab0: epoll_ctl            +0x0faab0: __GI_epoll_ctl                >> simple, exit points at: 0x7f8f32135ac2 0x7f8f32135ad3 <<
+    o 0x402930->0x6b0230->0x7f8f320dc230: strstr               +0x0a1230: __strstr_sse2_unaligned   
+    o 0x402940->0x6b0238->0x7f8f32071f80: sigprocmask          +0x036f80: __sigprocmask                 >> simple, exit points at: 0x7f8f32071f98 0x7f8f32071faa <<
+    o 0x402950->0x6b0240->0x7f8f32071f60: sigaction            +0x036f60: __sigaction               
+    o 0x402960->0x6b0248->0x7f8f321366e0: socketpair           +0x0fb6e0: __GI_socketpair               >> simple, exit points at: 0x7f8f321366f2 0x7f8f32136703 <<
+    o 0x402970->0x6b0250->0x7f8f32a18ad0: pcre_fullinfo        +0x024ad0: pcre_fullinfo                 >> not instrumentable, whitelisting <<
+    o 0x402980->0x6b0258->0x7f8f32136310: getsockopt           +0x0fb310: __getsockopt                  >> simple, exit points at: 0x7f8f32136322 0x7f8f32136333 <<
+    o 0x402990->0x6b0260->0x7f8f32c32ea0: crypt_r              +0x000ea0: crypt_r                   
+    o 0x4029a0->0x6b0268->0x7f8f3212e210: ftruncate64          +0x0f3210: __GI___ftruncate64            >> simple, exit points at: 0x7f8f3212e21f 0x7f8f3212e230 <<
+    o 0x4029b0->0x6b0270->0x7f8f320fefb0: glob64               +0x0c3fb0: glob                      
+    o 0x4029c0->0x6b0278->0x7f8f321362e0: getsockname          +0x0fb2e0: __getsockname                 >> simple, exit points at: 0x7f8f321362ef 0x7f8f32136300 <<
+    o 0x4029d0->0x6b0280->0x7f8f32136250: connect              +0x0fb250: __GI_connect              
+    o 0x4029e0->0x6b0288->0x7f8f3212cc10: gethostname          +0x0f1c10: gethostname               
+    o 0x4029f0->0x6b0290->0x7f8f320fef50: globfree64           +0x0c3f50: globfree64                
+    o 0x402a00->0x6b0298->0x7f8f320fc330: execve               +0x0c1330: __execve                      >> simple, exit points at: 0x7f8f320fc33f 0x7f8f320fc351 <<
+    o 0x402a10->0x6b02a0->0x7f8f32071c90: raise                +0x036c90: __GI_raise                    >> simple, exit points at: 0x7f8f32071cd1 0x7f8f32071cfa <<
+    o 0x402a20->0x6b02a8->0x7f8f329ffc20: pcre_compile         +0x00bc20: pcre_compile              
+    o 0x402a30->0x6b02b0->0x7f8f320c1e50: strchr               +0x086e50: __strchr_sse2                 >> simple, exit points at: 0x7f8f320c1ea6 0x7f8f320c1fc4 <<
+    o 0x402a40->0x6b02b8->0x7f8f320fbb30: waitpid              +0x0c0b30: __GI___waitpid            
+    o 0x402a50->0x6b02c0->0x7f8f32126230: __lxstat64           +0x0eb230: __GI___lxstat                 >> simple, exit points at: 0x7f8f3212624d 0x7f8f32126263 0x7f8f32126274 <<
+    o 0x402a60->0x6b02c8->0x7f8f321366b0: socket               +0x0fb6b0: __socket                      >> simple, exit points at: 0x7f8f321366bf 0x7f8f321366d0 <<
+    o 0x402a70->0x6b02d0->0x7f8f3212bd50: getrlimit64          +0x0f0d50: __getrlimit                   >> simple, exit points at: 0x7f8f3212bd5f 0x7f8f3212bd70 <<
+    o 0x402a80->0x6b02d8->0x7f8f32076830: getenv               +0x03b830: getenv                    
+    o 0x402a90->0x6b02e0->0x7f8f32106690: pread64              +0x0cb690: __GI___pread64            
+    o 0x402aa0->0x6b02e8->0x7f8f3205d6e0: __errno_location     +0x0226e0: __errno_location              >> simple, exit points at: 0x7f8f3205d6f0 <<
+    o 0x402ab0->0x6b02f0->0x7f8f32076820: qsort                +0x03b820: __GI_qsort                
+    o 0x402ac0->0x6b02f8->0x7f8f32072830: sigaddset            +0x037830: __GI_sigaddset                >> simple, exit points at: 0x7f8f3207284a 0x7f8f32072863 <<
+    o 0x402ad0->0x6b0300->0x7f8f32145c30: __stack_chk_fail     +0x10ac30: __stack_chk_fail          
+    >> no exit point found <<
+    o 0x402ae0->0x6b0308->0x7f8f3217b200: strcmp               +0x140200: __strcmp_ssse3                >> not instrumentable, whitelisting <<
+    o 0x402af0->0x6b0310->0x7f8f321364e0: send                 +0x0fb4e0: send                      
+    o 0x402b00->0x6b0318->0x7f8f32135ae0: epoll_wait           +0x0faae0: __GI_epoll_wait           
+    o 0x402b10->0x6b0320->0x7f8f32127900: chown                +0x0ec900: __GI___libc_chown             >> simple, exit points at: 0x7f8f3212790f 0x7f8f32127920 <<
+    o 0x402b20->0x6b0328->0x7f8f320fce60: getuid               +0x0c1e60: __GI_getuid                   >> simple, exit points at: 0x7f8f320fce67 <<
+    o 0x402b30->0x6b0330->0x7f8f32405db0: deflateInit2_        +0x005db0: deflateInit2_             
+    o 0x402b40->0x6b0338->0x7f8f3219b060: memcmp               +0x160060: __memcmp_sse4_1               >> not instrumentable, whitelisting <<
+    o 0x402b50->0x6b0340->0x7f8f3212f9f0: munmap               +0x0f49f0: __GI_munmap                   >> simple, exit points at: 0x7f8f3212f9ff 0x7f8f3212fa10 <<
+    o 0x402b60->0x6b0348->0x7f8f321066f0: pwrite64             +0x0cb6f0: __pwrite64                
+    o 0x402b70->0x6b0350->0x7f8f3212c400: writev               +0x0f1400: __libc_writev             
+    o 0x402b80->0x6b0358->0x7f8f32077b20: random               +0x03cb20: __random                  
+    o 0x402b90->0x6b0360->0x7f8f32126190: __xstat64            +0x0eb190: __GI___xstat                  >> simple, exit points at: 0x7f8f321261ad 0x7f8f321261c3 0x7f8f321261d4 <<
+    o 0x402ba0->0x6b0368->0x7f8f320eb8c0: localtime_r          +0x0b08c0: __localtime_r             
+    o 0x402bb0->0x6b0370->0x7f8f321354a0: lseek64              +0x0fa4a0: __GI___libc_lseek         
+    o 0x402bc0->0x6b0378->0x7f8f320f7f00: closedir             +0x0bcf00: __closedir                
+    o 0x402bd0->0x6b0380->0x7f8f32128420: sendfile64           +0x0ed420: sendfile64                    >> simple, exit points at: 0x7f8f32128432 0x7f8f32128443 <<
+    o 0x402be0->0x6b0388->0x7f8f320fbf70: fork                 +0x0c0f70: __libc_fork               
+      -> WARNING: 1 snippet(s) installed already!
+    o 0x402bf0->0x6b0390->0x7f8f320726b0: sigemptyset          +0x0376b0: sigemptyset                   >> simple, exit points at: 0x7f8f320726f0 0x7f8f320726fd 0x7f8f3207277b <<
+    o 0x402c00->0x6b0398->0x7f8f320fce50: getppid              +0x0c1e50: getppid                       >> simple, exit points at: 0x7f8f320fce57 <<
+    o 0x402c10->0x6b03a0->0x7f8f32136220: bind                 +0x0fb220: __GI_bind                     >> simple, exit points at: 0x7f8f3213622f 0x7f8f32136240 <<
+    o 0x402c20->0x6b03a8->0x7f8f32147630: htonl                +0x10c630: ntohl                         >> simple, exit points at: 0x7f8f32147634 <<
+    o 0x402c30->0x6b03b0->0x7f8f320eb8d0: localtime            +0x0b08d0: __GI_localtime            
+    o 0x402c40->0x6b03b8->0x7f8f320fcf30: setgid               +0x0c1f30: __setgid                  
+    o 0x402c50->0x6b03c0->0x7f8f32126860: write                +0x0eb860: write                     
+    o 0x402c60->0x6b03c8->0x7f8f320f31f0: strftime             +0x0b81f0: __GI_strftime             
+    o 0x402c70->0x6b03d0->0x7f8f321361c0: accept               +0x0fb1c0: __libc_accept             
+    o 0x402c80->0x6b03d8->0x7f8f3212c360: readv                +0x0f1360: __readv                   
+    o 0x402c90->0x6b03e0->0x7f8f321264d0: umask                +0x0eb4d0: __GI_umask                    >> simple, exit points at: 0x7f8f321264d7 <<
+    o 0x402ca0->0x6b03e8->0x7f8f320d2fd0: memcpy               +0x097fd0: __memcpy_sse2_unaligned       >> simple, exit points at: 0x7f8f320d3011 <<
+    o 0x402cb0->0x6b03f0->0x7f8f32126ca0: fcntl                +0x0ebca0: __GI___fcntl              
+    o 0x402cc0->0x6b03f8->0x7f8f320fa980: getpwnam             +0x0bf980: getpwnam                  
+    o 0x402cd0->0x6b0400->0x7f8f32098c50: rename               +0x05dc50: rename                        >> simple, exit points at: 0x7f8f32098c5f 0x7f8f32098c70 <<
+    o 0x402ce0->0x6b0408->0x7f8f32106520: sched_setaffinity    +0x0cb520: __sched_setaffinity_new   
+    o 0x402cf0->0x6b0410->0x7f8f320f7f30: readdir64            +0x0bcf30: readdir64                 
+    o 0x402d00->0x6b0418->0x7f8f321265b0: mkdir                +0x0eb5b0: __GI___mkdir                  >> simple, exit points at: 0x7f8f321265bf 0x7f8f321265d0 <<
+    o 0x402d10->0x6b0420->0x7ffd6cbf11c0: time                     >> simple, exit point at: 0x7ffd6cbf11d5 <<
+  * Modifications succesful
+  * WARNING. This GOT entry was not wrapped: 0
+  * WARNING. This GOT entry was not wrapped: 7f8f3205d6e0
+  * WARNING. This GOT entry was not wrapped: 7f8f32071c90
+  * WARNING. This GOT entry was not wrapped: 7f8f32071f80
+  * WARNING. This GOT entry was not wrapped: 7f8f32071fb0
+  * WARNING. This GOT entry was not wrapped: 7f8f320726b0
+  * WARNING. This GOT entry was not wrapped: 7f8f32072830
+  * WARNING. This GOT entry was not wrapped: 7f8f32098c50
+  * WARNING. This GOT entry was not wrapped: 7f8f320bddf0
+  * WARNING. This GOT entry was not wrapped: 7f8f320c1e50
+  * WARNING. This GOT entry was not wrapped: 7f8f320c3ac0
+  * WARNING. This GOT entry was not wrapped: 7f8f320c75c0
+  * WARNING. This GOT entry was not wrapped: 7f8f320d2fd0
+  * WARNING. This GOT entry was not wrapped: 7f8f320ef3a0
+  * WARNING. This GOT entry was not wrapped: 7f8f320fba00
+  * WARNING. This GOT entry was not wrapped: 7f8f320fc330
+  * WARNING. This GOT entry was not wrapped: 7f8f320fce10
+  * WARNING. This GOT entry was not wrapped: 7f8f320fce50
+  * WARNING. This GOT entry was not wrapped: 7f8f320fce60
+  * WARNING. This GOT entry was not wrapped: 7f8f320fce70
+  * WARNING. This GOT entry was not wrapped: 7f8f320fd0f0
+  * WARNING. This GOT entry was not wrapped: 7f8f321063f0
+  * WARNING. This GOT entry was not wrapped: 7f8f32126190
+  * WARNING. This GOT entry was not wrapped: 7f8f321261e0
+  * WARNING. This GOT entry was not wrapped: 7f8f32126230
+  * WARNING. This GOT entry was not wrapped: 7f8f32126390
+  * WARNING. This GOT entry was not wrapped: 7f8f321264d0
+  * WARNING. This GOT entry was not wrapped: 7f8f321264e0
+  * WARNING. This GOT entry was not wrapped: 7f8f321265b0
+  * WARNING. This GOT entry was not wrapped: 7f8f32126fe0
+  * WARNING. This GOT entry was not wrapped: 7f8f32127040
+  * WARNING. This GOT entry was not wrapped: 7f8f32127100
+  * WARNING. This GOT entry was not wrapped: 7f8f32127900
+  * WARNING. This GOT entry was not wrapped: 7f8f32128070
+  * WARNING. This GOT entry was not wrapped: 7f8f32128230
+  * WARNING. This GOT entry was not wrapped: 7f8f32128420
+  * WARNING. This GOT entry was not wrapped: 7f8f3212bd50
+  * WARNING. This GOT entry was not wrapped: 7f8f3212bd80
+  * WARNING. This GOT entry was not wrapped: 7f8f3212c170
+  * WARNING. This GOT entry was not wrapped: 7f8f3212c330
+  * WARNING. This GOT entry was not wrapped: 7f8f3212e030
+  * WARNING. This GOT entry was not wrapped: 7f8f3212e210
+  * WARNING. This GOT entry was not wrapped: 7f8f3212f9c0
+  * WARNING. This GOT entry was not wrapped: 7f8f3212f9f0
+  * WARNING. This GOT entry was not wrapped: 7f8f32135a50
+  * WARNING. This GOT entry was not wrapped: 7f8f32135ab0
+  * WARNING. This GOT entry was not wrapped: 7f8f32135d80
+  * WARNING. This GOT entry was not wrapped: 7f8f32136220
+  * WARNING. This GOT entry was not wrapped: 7f8f321362e0
+  * WARNING. This GOT entry was not wrapped: 7f8f32136310
+  * WARNING. This GOT entry was not wrapped: 7f8f32136340
+  * WARNING. This GOT entry was not wrapped: 7f8f32136650
+  * WARNING. This GOT entry was not wrapped: 7f8f32136680
+  * WARNING. This GOT entry was not wrapped: 7f8f321366b0
+  * WARNING. This GOT entry was not wrapped: 7f8f321366e0
+  * WARNING. This GOT entry was not wrapped: 7f8f32145c30
+  * WARNING. This GOT entry was not wrapped: 7f8f32147630
+  * WARNING. This GOT entry was not wrapped: 7f8f32147640
+  * WARNING. This GOT entry was not wrapped: 7f8f3217b200
+  * WARNING. This GOT entry was not wrapped: 7f8f3217c460
+  * WARNING. This GOT entry was not wrapped: 7f8f3219b060
+  * WARNING. This GOT entry was not wrapped: 7f8f32402740
+  * WARNING. This GOT entry was not wrapped: 7f8f3267e0c0
+  * WARNING. This GOT entry was not wrapped: 7f8f32a18ad0
+  * WARNING. This GOT entry was not wrapped: 7ffd6cbf0ef0
+  * WARNING. This GOT entry was not wrapped: 7ffd6cbf11c0
+  * Pushing plt data to kernel module
+  * Pushing exit points to kernel module
+  * Done
+- wrapping indirect calls...
+  * Skipping libwrappers.so
+  * Skipping libdyninstAPI_RT.so.8.2
+  * Searching for indirect calls in libcrypt.so.1
+  * Committing patches for libcrypt.so.1...
+  * Searching for indirect calls in libpcre.so.3
+  * Committing patches for libpcre.so.3...
+  * Searching for indirect calls in libcrypto.so.1.0.0
+    o Skipping CRYPTO_malloc
+    o Skipping CRYPTO_realloc
+    o Skipping DSO_METHOD_dl
+    o Skipping DSO_METHOD_dlfcn
+    o Skipping CRYPTO_malloc_locked
+  * Committing patches for libcrypto.so.1.0.0...
+  * Searching for indirect calls in libz.so.1
+  * Committing patches for libz.so.1...
+  * Searching for indirect calls in libc.so.6
+    o Skipping _dl_start
+    o Skipping __GI___dl_iterate_phdr
+    o Skipping _dl_addr
+    o Skipping _dl_addr_inside_object
+    o Skipping do_dlopen
+    o Skipping do_dlsym
+    o Skipping __GI___libc_dlopen_mode
+    o Skipping __GI___libc_dlsym
+    o Skipping __libc_dlclose
+    o Skipping call_dl_lookup
+    o Skipping _dl_vsym
+    o Skipping _dl_sym
+    o Skipping __libc_dl_error_tsd
+    o Skipping _dl_vdso_vsym
+  * Committing patches for libc.so.6...
+  * Searching for indirect calls in libpthread.so.0
+    o Skipping start_thread
+  * Committing patches for libpthread.so.0...
+  * Skipping libdl.so.2 << NOT SUPPORTED!
+  * All indirect calls have been wrapped
+- Finished Dyninst setup, returning to target
+
+--detaching--
+--detached--
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$ ú[Kø[K     sudo apt-get install apache2-ut ils
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following NEW packages will be installed:
+  apache2-utils
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0 B/83,5 kB of archives.
+After this operation, 346 kB of additional disk space will be used.
+Selecting previously unselected package apache2-utils.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 239622 files and directories currently installed.)
+Preparing to unpack .../apache2-utils_2.4.7-1ubuntu4.6_amd64.deb ...
+Unpacking apache2-utils (2.4.7-1ubuntu4.6) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up apache2-utils (2.4.7-1ubuntu4.6) ...
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$      ab -n 1000 http://127.0.0.1/
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        nginx/0.8.54
+Server Hostname:        127.0.0.1
+Server Port:            80
+
+Document Path:          /
+Document Length:        151 bytes
+
+Concurrency Level:      1
+Time taken for tests:   0.291 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      362000 bytes
+HTML transferred:       151000 bytes
+Requests per second:    3432.53 [#/sec] (mean)
+Time per request:       0.291 [ms] (mean)
+Time per request:       0.291 [ms] (mean, across all concurrent requests)
+Transfer rate:          1213.45 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:     0    0   0.3      0       4
+Waiting:        0    0   0.3      0       4
+Total:          0    0   0.3      0       4
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      0
+  80%      0
+  90%      0
+  95%      0
+  98%      1
+  99%      2
+ 100%      4 (longest request)
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$      sudo killall nginx
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$ ls -al ty[K^C
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$ exit
+
+Script done on ma 12 okt 2015 17:30:43 CEST

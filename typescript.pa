@@ -1,0 +1,127 @@
+Script started on ma 12 okt 2015 17:16:23 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ cd patharmor/
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$ make && make install
+for d in lkm dyninst-pass dyninst-static shared bin di-opt toy-bug at; do make -C $d || exit 1; done
+make[1]: Entering directory `/home/patharmor/patharmor/lkm'
+make -C /lib/modules/3.16.0-49-generic/build M=/home/patharmor/patharmor/lkm modules EXTRA_CFLAGS="-DARMOR_DEBUG -DARMOR_DEBUG_JIT -DARMOR_STATS -DARMOR_VALIDATE -DARMOR_JIT -I/home/patharmor/patharmor/lkm/../include -I/home/patharmor/patharmor/lkm/../include/patharmor"
+make[2]: Entering directory `/usr/src/linux-headers-3.16.0-49-generic'
+  CC [M]  /home/patharmor/patharmor/lkm/armor.o
+  CC [M]  /home/patharmor/patharmor/lkm/lbr.o
+  CC [M]  /home/patharmor/patharmor/lkm/intercept.o
+  AS [M]  /home/patharmor/patharmor/lkm/pre.o
+  AS [M]  /home/patharmor/patharmor/lkm/syscall-handler.o
+  LD [M]  /home/patharmor/patharmor/lkm/armor-module.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/patharmor/patharmor/lkm/armor-module.mod.o
+  LD [M]  /home/patharmor/patharmor/lkm/armor-module.ko
+make[2]: Leaving directory `/usr/src/linux-headers-3.16.0-49-generic'
+make[1]: Leaving directory `/home/patharmor/patharmor/lkm'
+make[1]: Entering directory `/home/patharmor/patharmor/dyninst-pass'
+echo  "  [C++] padyn.cpp"
+  [C++] padyn.cpp
+g++ -fasynchronous-unwind-tables -fPIC -g -I../include -D__STDC_LIMIT_MACROS -Wno-deprecated -Dos_linux -I../Dyninst-8.2.1 -Darch_x86_64 -Dx86_64_unknown_linux2_4 -DARCH=x64 --std=c++11  -DARMOR_WRAP_LIBRARIES -DARMOR_WRAP_INDIRECTS -I ../include/patharmor --std=c++11  -DARMOR_WRAP_LIBRARIES -DARMOR_WRAP_INDIRECTS -I../Dyninst-8.2.1/symlite/h -I../Dyninst-8.2.1/common/h -I../Dyninst-8.2.1/dyninstAPI/h -I../Dyninst-8.2.1/instructionAPI/h -I../Dyninst-8.2.1/dataflowAPI/h -I../Dyninst-8.2.1/symtabAPI/h -I../Dyninst-8.2.1/stackwalk/h -I../Dyninst-8.2.1/dynC_API/h -I../Dyninst-8.2.1/dwarf/h -I../Dyninst-8.2.1/proccontrol/h -I../Dyninst-8.2.1/elf/h -I../Dyninst-8.2.1/parseAPI/h -I../Dyninst-8.2.1/patchAPI/h -I../Dyninst-8.2.1/dyninstAPI_RT/h  -I../Dyninst-8.2.1/symlite/src -I../Dyninst-8.2.1/common/src -I../Dyninst-8.2.1/dyninstAPI/src -I../Dyninst-8.2.1/instructionAPI/src -I../Dyninst-8.2.1/dataflowAPI/src -I../Dyninst-8.2.1/symtabAPI/src -I../Dyninst-8.2.1/stackwalk/src -I../Dyninst-8.2.1/dynC_API/src -I../Dyninst-8.2.1/dwarf/src -I../Dyninst-8.2.1/proccontrol/src -I../Dyninst-8.2.1/elf/src -I../Dyninst-8.2.1/parseThat/src -I../Dyninst-8.2.1/parseAPI/src -I../Dyninst-8.2.1/patchAPI/src -I../Dyninst-8.2.1/dyninstAPI_RT/src -I../Dyninst-8.2.1/install-dir/common/h -c -o padyn.o padyn.cpp
+echo "  [LINK] padyn.di"
+  [LINK] padyn.di
+g++ -fasynchronous-unwind-tables -fPIC -g -I../include -D__STDC_LIMIT_MACROS -Wno-deprecated -Dos_linux -I../Dyninst-8.2.1 -Darch_x86_64 -Dx86_64_unknown_linux2_4 -DARCH=x64 --std=c++11  -DARMOR_WRAP_LIBRARIES -DARMOR_WRAP_INDIRECTS -I ../include/patharmor --std=c++11  -DARMOR_WRAP_LIBRARIES -DARMOR_WRAP_INDIRECTS -shared -o padyn.di  padyn.o  
+make[1]: Leaving directory `/home/patharmor/patharmor/dyninst-pass'
+make[1]: Entering directory `/home/patharmor/patharmor/dyninst-static'
+  [C++] lbr_analysis_pass.C
+  [C] arms_bb.c
+  [C] arms_edge.c
+  [C] arms_cfg.c
+  [C] arms_function.c
+  [C] arms_dyninst_cfg.c
+  [C] arms_utils.c
+  [C++] lbr_analysis.C
+  [C++] address_taken_parser.C
+  [LINK] lbr_analysis_pass.di
+make[1]: Leaving directory `/home/patharmor/patharmor/dyninst-static'
+make[1]: Entering directory `/home/patharmor/patharmor/shared'
+echo "  [CC] wrappers.c"
+  [CC] wrappers.c
+gcc  -std=gnu99  -fPIC -Wall -Wno-long-long -D_GNU_SOURCE -I../include/patharmor -I../include -I -Iinclude -I../common/libtaskctl/include -c -o wrappers.o wrappers.c
+echo "  [AS] callback.S"
+  [AS] callback.S
+gcc  -std=gnu99  -fPIC -Wall -Wno-long-long -D_GNU_SOURCE -I../include/patharmor -I../include -I -Iinclude -I../common/libtaskctl/include -c -o callback.o callback.S
+echo "  [AS] libenter.S"
+  [AS] libenter.S
+gcc  -std=gnu99  -fPIC -Wall -Wno-long-long -D_GNU_SOURCE -I../include/patharmor -I../include -I -Iinclude -I../common/libtaskctl/include -c -o libenter.o libenter.S
+echo "  [LINK] libwrappers.so"
+  [LINK] libwrappers.so
+gcc  -std=gnu99  -fPIC -Wall -Wno-long-long -D_GNU_SOURCE  -shared -o libwrappers.so wrappers.o callback.o libenter.o   -Wl,--whole-archive -lcrypto -Wl,--no-whole-archive -Wl,-soname -Wl,"libwrappers.so" -pthread -lrt 
+make[1]: Leaving directory `/home/patharmor/patharmor/shared'
+make[1]: Entering directory `/home/patharmor/patharmor/bin'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/patharmor/patharmor/bin'
+make[1]: Entering directory `/home/patharmor/patharmor/di-opt'
+echo  "  [C++] di-opt.cpp"
+  [C++] di-opt.cpp
+g++ -I../include -fasynchronous-unwind-tables -fPIC -g -D__STDC_LIMIT_MACROS -Wno-deprecated -Dos_linux  -Darch_x86_64  -Dx86_64_unknown_linux2_4  -DARCH=x64 -I../Dyninst-8.2.1/symlite/h -I../Dyninst-8.2.1/common/h -I../Dyninst-8.2.1/dyninstAPI/h -I../Dyninst-8.2.1/instructionAPI/h -I../Dyninst-8.2.1/dataflowAPI/h -I../Dyninst-8.2.1/symtabAPI/h -I../Dyninst-8.2.1/stackwalk/h -I../Dyninst-8.2.1/dynC_API/h -I../Dyninst-8.2.1/dwarf/h -I../Dyninst-8.2.1/proccontrol/h -I../Dyninst-8.2.1/elf/h -I../Dyninst-8.2.1/parseAPI/h -I../Dyninst-8.2.1/patchAPI/h -I../Dyninst-8.2.1/dyninstAPI_RT/h  -I../Dyninst-8.2.1/symlite/src -I../Dyninst-8.2.1/common/src -I../Dyninst-8.2.1/dyninstAPI/src -I../Dyninst-8.2.1/instructionAPI/src -I../Dyninst-8.2.1/dataflowAPI/src -I../Dyninst-8.2.1/symtabAPI/src -I../Dyninst-8.2.1/stackwalk/src -I../Dyninst-8.2.1/dynC_API/src -I../Dyninst-8.2.1/dwarf/src -I../Dyninst-8.2.1/proccontrol/src -I../Dyninst-8.2.1/elf/src -I../Dyninst-8.2.1/parseThat/src -I../Dyninst-8.2.1/parseAPI/src -I../Dyninst-8.2.1/patchAPI/src -I../Dyninst-8.2.1/dyninstAPI_RT/src -I../Dyninst-8.2.1/install-dir/common/h -c -o di-opt.o di-opt.cpp
+echo "  [LINK] di-opt"
+  [LINK] di-opt
+g++ -I../include -fasynchronous-unwind-tables -fPIC -g -D__STDC_LIMIT_MACROS -Wno-deprecated -Dos_linux  -Darch_x86_64  -Dx86_64_unknown_linux2_4  -DARCH=x64 -o di-opt di-opt.o -L../Dyninst-8.2.1/install-dir/lib -ldyninstAPI -linstructionAPI -lparseAPI -lpatchAPI -lsymtabAPI -ldl -lrt -rdynamic   
+make[1]: Leaving directory `/home/patharmor/patharmor/di-opt'
+make[1]: Entering directory `/home/patharmor/patharmor/toy-bug'
+cc     toy.c   -o toy
+make[1]: Leaving directory `/home/patharmor/patharmor/toy-bug'
+make[1]: Entering directory `/home/patharmor/patharmor/at'
+/usr/bin/g++ -g -O0 -Wall -Dos_linux -I../Dyninst-8.2.1/proccontrol/h -I../Dyninst-8.2.1/dataflowAPI/h -I../Dyninst-8.2.1/dyninstAPI/h -I../Dyninst-8.2.1/instructionAPI/h -I../Dyninst-8.2.1/symtabAPI/h -I../Dyninst-8.2.1/dynutil/h -I../Dyninst-8.2.1/parseAPI/h -I../Dyninst-8.2.1/patchAPI/h -I../Dyninst-8.2.1/common/h -I../Dyninst-8.2.1/dyninst -I../Dyninst-8.2.1/dyninstAPI/src -I../Dyninst-8.2.1/patchAPI/src -I../Dyninst-8.2.1/patchAPI/src/dyninst -I../Dyninst-8.2.1/dyninstAPI/src/Relocation -I../Dyninst-8.2.1 -I../DynamoRIO-Linux-5.0.0-9/include -I../headers -I./h -c -o obj/CADecoderDynamoRIO.o src/CADecoderDynamoRIO.cpp -DLINUX -DX86_64 -Darch_x86_64 -Dx86_64_unknown_linux2_4 -Dos_linux 
+/usr/bin/g++ -g -O0 -Wall -Dos_linux -I../Dyninst-8.2.1/proccontrol/h -I../Dyninst-8.2.1/dataflowAPI/h -I../Dyninst-8.2.1/dyninstAPI/h -I../Dyninst-8.2.1/instructionAPI/h -I../Dyninst-8.2.1/symtabAPI/h -I../Dyninst-8.2.1/dynutil/h -I../Dyninst-8.2.1/parseAPI/h -I../Dyninst-8.2.1/patchAPI/h -I../Dyninst-8.2.1/common/h -I../Dyninst-8.2.1/dyninst -I../Dyninst-8.2.1/dyninstAPI/src -I../Dyninst-8.2.1/patchAPI/src -I../Dyninst-8.2.1/patchAPI/src/dyninst -I../Dyninst-8.2.1/dyninstAPI/src/Relocation -I../Dyninst-8.2.1 -I../DynamoRIO-Linux-5.0.0-9/include -I../headers -I./h -c -o obj/CAinst.o src/CAinst.cpp -DLINUX -DX86_64 -Darch_x86_64 -Dx86_64_unknown_linux2_4 -Dos_linux 
+/usr/bin/g++ -g -O0 -Wall -Dos_linux obj/CADecoderDynamoRIO.o obj/CAinst.o -o obj/ATAnalysis -L../Dyninst-8.2.1/install-dir/lib -L../DynamoRIO-Linux-5.0.0-9/lib64/release -ldyninstAPI -lsymtabAPI -lpatchAPI -linstructionAPI -lparseAPI -lcommon -ldynamorio -L./obj
+make[1]: Leaving directory `/home/patharmor/patharmor/at'
+for d in lkm dyninst-pass dyninst-static shared bin di-opt toy-bug at; do make -C $d || exit 1; done
+make[1]: Entering directory `/home/patharmor/patharmor/lkm'
+make[1]: `armor-module.ko' is up to date.
+make[1]: Leaving directory `/home/patharmor/patharmor/lkm'
+make[1]: Entering directory `/home/patharmor/patharmor/dyninst-pass'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/patharmor/patharmor/dyninst-pass'
+make[1]: Entering directory `/home/patharmor/patharmor/dyninst-static'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/patharmor/patharmor/dyninst-static'
+make[1]: Entering directory `/home/patharmor/patharmor/shared'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/patharmor/patharmor/shared'
+make[1]: Entering directory `/home/patharmor/patharmor/bin'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/patharmor/patharmor/bin'
+make[1]: Entering directory `/home/patharmor/patharmor/di-opt'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/patharmor/patharmor/di-opt'
+make[1]: Entering directory `/home/patharmor/patharmor/toy-bug'
+make[1]: `toy' is up to date.
+make[1]: Leaving directory `/home/patharmor/patharmor/toy-bug'
+make[1]: Entering directory `/home/patharmor/patharmor/at'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/patharmor/patharmor/at'
+for d in lkm dyninst-pass dyninst-static shared bin di-opt toy-bug at; do make -C $d install || exit 1; done
+make[1]: Entering directory `/home/patharmor/patharmor/lkm'
+true
+make[1]: Leaving directory `/home/patharmor/patharmor/lkm'
+make[1]: Entering directory `/home/patharmor/patharmor/dyninst-pass'
+install -c -D -m 744 padyn.di ../bin
+make[1]: Leaving directory `/home/patharmor/patharmor/dyninst-pass'
+make[1]: Entering directory `/home/patharmor/patharmor/dyninst-static'
+  [INSTALL] lbr_analysis_pass.di -> ../bin/lbr_analysis_pass.di
+make[1]: Leaving directory `/home/patharmor/patharmor/dyninst-static'
+make[1]: Entering directory `/home/patharmor/patharmor/shared'
+echo "  [INSTALL] libwrappers.so -> ../bin/libwrappers.so"
+  [INSTALL] libwrappers.so -> ../bin/libwrappers.so
+install -c -D -m 744 libwrappers.so ../bin/libwrappers.so
+make[1]: Leaving directory `/home/patharmor/patharmor/shared'
+make[1]: Entering directory `/home/patharmor/patharmor/bin'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/patharmor/patharmor/bin'
+make[1]: Entering directory `/home/patharmor/patharmor/di-opt'
+install -c -D -m 744 di-opt ../bin/di-opt
+make[1]: Leaving directory `/home/patharmor/patharmor/di-opt'
+make[1]: Entering directory `/home/patharmor/patharmor/toy-bug'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/patharmor/patharmor/toy-bug'
+make[1]: Entering directory `/home/patharmor/patharmor/at'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/patharmor/patharmor/at'
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$ exit
+
+Script done on ma 12 okt 2015 17:17:11 CEST

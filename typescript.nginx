@@ -1,0 +1,591 @@
+Script started on ma 12 okt 2015 17:19:10 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ cd patharmor/nginx-0.8.54/
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$      sudo apt-get install libpcre3-d ev
+[sudo] password for patharmor: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 1%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following extra packages will be installed:
+  libpcrecpp0
+The following NEW packages will be installed:
+  libpcre3-dev libpcrecpp0
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 252 kB of archives.
+After this operation, 952 kB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+0% [Working]            Get:1 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libpcrecpp0 amd64 1:8.31-2ubuntu2.1 [14,5 kB]
+            6% [1 libpcrecpp0 14,5 kB/14,5 kB 100%]                                       6% [Working]            Get:2 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libpcre3-dev amd64 1:8.31-2ubuntu2.1 [237 kB]
+            6% [2 libpcre3-dev 0 B/237 kB 0%]                                 100% [Working]              Fetched 252 kB in 0s (1407 kB/s)
+Selecting previously unselected package libpcrecpp0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 239507 files and directories currently installed.)
+Preparing to unpack .../libpcrecpp0_1%3a8.31-2ubuntu2.1_amd64.deb ...
+Unpacking libpcrecpp0:amd64 (1:8.31-2ubuntu2.1) ...
+Selecting previously unselected package libpcre3-dev:amd64.
+Preparing to unpack .../libpcre3-dev_1%3a8.31-2ubuntu2.1_amd64.deb ...
+Unpacking libpcre3-dev:amd64 (1:8.31-2ubuntu2.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up libpcrecpp0:amd64 (1:8.31-2ubuntu2.1) ...
+Setting up libpcre3-dev:amd64 (1:8.31-2ubuntu2.1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$      ./configure --prefix=`pwd`/inst all-dir --with-cc-opt="-Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread"
+checking for OS
+ + Linux 3.16.0-49-generic x86_64
+checking for C compiler ... found
+ + using GNU C compiler
+ + gcc version: 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04) 
+checking for gcc -pipe switch ... found
+checking for gcc builtin atomic operations ... found
+checking for C99 variadic macros ... found
+checking for gcc variadic macros ... found
+checking for unistd.h ... found
+checking for inttypes.h ... found
+checking for limits.h ... found
+checking for sys/filio.h ... not found
+checking for sys/param.h ... found
+checking for sys/mount.h ... found
+checking for sys/statvfs.h ... found
+checking for crypt.h ... found
+checking for Linux specific features
+checking for epoll ... found
+checking for sendfile() ... found
+checking for sendfile64() ... found
+checking for sys/prctl.h ... found
+checking for prctl(PR_SET_DUMPABLE) ... found
+checking for sched_setaffinity() ... found
+checking for crypt_r() ... found
+checking for sys/vfs.h ... found
+checking for nobody group ... not found
+checking for nogroup group ... found
+checking for poll() ... found
+checking for /dev/poll ... not found
+checking for kqueue ... not found
+checking for crypt() ... not found
+checking for crypt() in libcrypt ... found
+checking for F_READAHEAD ... not found
+checking for posix_fadvise() ... found
+checking for O_DIRECT ... found
+checking for F_NOCACHE ... not found
+checking for directio() ... not found
+checking for statfs() ... found
+checking for statvfs() ... found
+checking for dlopen() ... not found
+checking for dlopen() in libdl ... found
+checking for sched_yield() ... found
+checking for SO_SETFIB ... not found
+checking for PCRE library ... found
+checking for system md library ... not found
+checking for system md5 library ... not found
+checking for OpenSSL md5 crypto library ... found
+checking for zlib library ... found
+creating objs/Makefile
+checking for int size ... 4 bytes
+checking for long size ... 8 bytes
+checking for long long size ... 8 bytes
+checking for void * size ... 8 bytes
+checking for uint64_t ... found
+checking for sig_atomic_t ... found
+checking for sig_atomic_t size ... 4 bytes
+checking for socklen_t ... found
+checking for in_addr_t ... found
+checking for in_port_t ... found
+checking for rlim_t ... found
+checking for uintptr_t ... uintptr_t found
+checking for system endianess ... little endianess
+checking for size_t size ... 8 bytes
+checking for off_t size ... 8 bytes
+checking for time_t size ... 8 bytes
+checking for setproctitle() ... not found
+checking for pread() ... found
+checking for pwrite() ... found
+checking for strerror_r() ... found but is not working
+checking for gnu style strerror_r() ... found
+checking for sys_errlist[] ... found
+checking for localtime_r() ... found
+checking for posix_memalign() ... found
+checking for memalign() ... found
+checking for mmap(MAP_ANON|MAP_SHARED) ... found
+checking for mmap("/dev/zero", MAP_SHARED) ... found
+checking for System V shared memory ... found
+checking for struct msghdr.msg_control ... found
+checking for ioctl(FIONBIO) ... found
+checking for struct tm.tm_gmtoff ... found
+checking for struct dirent.d_namlen ... not found
+checking for struct dirent.d_type ... found
+
+Configuration summary
+  + using system PCRE library
+  + OpenSSL library is not used
+  + md5: using system crypto library
+  + sha1 library is not used
+  + using system zlib library
+
+  nginx path prefix: "/home/patharmor/patharmor/nginx-0.8.54/install-dir"
+  nginx binary file: "/home/patharmor/patharmor/nginx-0.8.54/install-dir/sbin/nginx"
+  nginx configuration prefix: "/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf"
+  nginx configuration file: "/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/nginx.conf"
+  nginx pid file: "/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs/nginx.pid"
+  nginx error log file: "/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs/error.log"
+  nginx http access log file: "/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs/access.log"
+  nginx http client request body temporary files: "client_body_temp"
+  nginx http proxy temporary files: "proxy_temp"
+  nginx http fastcgi temporary files: "fastcgi_temp"
+  nginx http uwsgi temporary files: "uwsgi_temp"
+  nginx http scgi temporary files: "scgi_temp"
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$      make && make install
+make -f objs/Makefile
+make[1]: Entering directory `/home/patharmor/patharmor/nginx-0.8.54'
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/nginx.o \
+		src/core/nginx.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_log.o \
+		src/core/ngx_log.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_palloc.o \
+		src/core/ngx_palloc.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_array.o \
+		src/core/ngx_array.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_list.o \
+		src/core/ngx_list.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_hash.o \
+		src/core/ngx_hash.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_buf.o \
+		src/core/ngx_buf.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_queue.o \
+		src/core/ngx_queue.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_output_chain.o \
+		src/core/ngx_output_chain.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_string.o \
+		src/core/ngx_string.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_parse.o \
+		src/core/ngx_parse.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_inet.o \
+		src/core/ngx_inet.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_file.o \
+		src/core/ngx_file.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_crc32.o \
+		src/core/ngx_crc32.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_rbtree.o \
+		src/core/ngx_rbtree.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_radix_tree.o \
+		src/core/ngx_radix_tree.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_slab.o \
+		src/core/ngx_slab.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_times.o \
+		src/core/ngx_times.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_shmtx.o \
+		src/core/ngx_shmtx.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_connection.o \
+		src/core/ngx_connection.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_cycle.o \
+		src/core/ngx_cycle.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_spinlock.o \
+		src/core/ngx_spinlock.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_cpuinfo.o \
+		src/core/ngx_cpuinfo.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_conf_file.o \
+		src/core/ngx_conf_file.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_resolver.o \
+		src/core/ngx_resolver.c
+src/core/ngx_resolver.c: In function ‘ngx_resolver_process_ptr’:
+src/core/ngx_resolver.c:1425:43: warning: variable ‘qclass’ set but not used [-Wunused-but-set-variable]
+     ngx_uint_t            i, mask, qtype, qclass, qident;
+                                           ^
+src/core/ngx_resolver.c:1425:36: warning: variable ‘qtype’ set but not used [-Wunused-but-set-variable]
+     ngx_uint_t            i, mask, qtype, qclass, qident;
+                                    ^
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_open_file_cache.o \
+		src/core/ngx_open_file_cache.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event.o \
+		src/event/ngx_event.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_timer.o \
+		src/event/ngx_event_timer.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_posted.o \
+		src/event/ngx_event_posted.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_busy_lock.o \
+		src/event/ngx_event_busy_lock.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_accept.o \
+		src/event/ngx_event_accept.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_connect.o \
+		src/event/ngx_event_connect.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_pipe.o \
+		src/event/ngx_event_pipe.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_time.o \
+		src/os/unix/ngx_time.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_errno.o \
+		src/os/unix/ngx_errno.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_alloc.o \
+		src/os/unix/ngx_alloc.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_files.o \
+		src/os/unix/ngx_files.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_socket.o \
+		src/os/unix/ngx_socket.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_recv.o \
+		src/os/unix/ngx_recv.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_readv_chain.o \
+		src/os/unix/ngx_readv_chain.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_udp_recv.o \
+		src/os/unix/ngx_udp_recv.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_send.o \
+		src/os/unix/ngx_send.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_writev_chain.o \
+		src/os/unix/ngx_writev_chain.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_channel.o \
+		src/os/unix/ngx_channel.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_shmem.o \
+		src/os/unix/ngx_shmem.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_process.o \
+		src/os/unix/ngx_process.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_daemon.o \
+		src/os/unix/ngx_daemon.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_setproctitle.o \
+		src/os/unix/ngx_setproctitle.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_posix_init.o \
+		src/os/unix/ngx_posix_init.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_user.o \
+		src/os/unix/ngx_user.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_process_cycle.o \
+		src/os/unix/ngx_process_cycle.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_linux_init.o \
+		src/os/unix/ngx_linux_init.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/modules/ngx_epoll_module.o \
+		src/event/modules/ngx_epoll_module.c
+src/event/modules/ngx_epoll_module.c: In function ‘ngx_epoll_process_events’:
+src/event/modules/ngx_epoll_module.c:521:24: warning: variable ‘log’ set but not used [-Wunused-but-set-variable]
+     ngx_log_t         *log;
+                        ^
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_linux_sendfile_chain.o \
+		src/os/unix/ngx_linux_sendfile_chain.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_regex.o \
+		src/core/ngx_regex.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http.o \
+		src/http/ngx_http.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_core_module.o \
+		src/http/ngx_http_core_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_special_response.o \
+		src/http/ngx_http_special_response.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_request.o \
+		src/http/ngx_http_request.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_parse.o \
+		src/http/ngx_http_parse.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_header_filter_module.o \
+		src/http/ngx_http_header_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_write_filter_module.o \
+		src/http/ngx_http_write_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_copy_filter_module.o \
+		src/http/ngx_http_copy_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_log_module.o \
+		src/http/modules/ngx_http_log_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_request_body.o \
+		src/http/ngx_http_request_body.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_variables.o \
+		src/http/ngx_http_variables.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_script.o \
+		src/http/ngx_http_script.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_upstream.o \
+		src/http/ngx_http_upstream.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_upstream_round_robin.o \
+		src/http/ngx_http_upstream_round_robin.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_parse_time.o \
+		src/http/ngx_http_parse_time.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_static_module.o \
+		src/http/modules/ngx_http_static_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_index_module.o \
+		src/http/modules/ngx_http_index_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_chunked_filter_module.o \
+		src/http/modules/ngx_http_chunked_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_range_filter_module.o \
+		src/http/modules/ngx_http_range_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_headers_filter_module.o \
+		src/http/modules/ngx_http_headers_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_not_modified_filter_module.o \
+		src/http/modules/ngx_http_not_modified_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_busy_lock.o \
+		src/http/ngx_http_busy_lock.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_file_cache.o \
+		src/http/ngx_http_file_cache.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_gzip_filter_module.o \
+		src/http/modules/ngx_http_gzip_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_postpone_filter_module.o \
+		src/http/ngx_http_postpone_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_ssi_filter_module.o \
+		src/http/modules/ngx_http_ssi_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_charset_filter_module.o \
+		src/http/modules/ngx_http_charset_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_userid_filter_module.o \
+		src/http/modules/ngx_http_userid_filter_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_autoindex_module.o \
+		src/http/modules/ngx_http_autoindex_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_auth_basic_module.o \
+		src/http/modules/ngx_http_auth_basic_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_access_module.o \
+		src/http/modules/ngx_http_access_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_limit_zone_module.o \
+		src/http/modules/ngx_http_limit_zone_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_limit_req_module.o \
+		src/http/modules/ngx_http_limit_req_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_geo_module.o \
+		src/http/modules/ngx_http_geo_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_map_module.o \
+		src/http/modules/ngx_http_map_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_split_clients_module.o \
+		src/http/modules/ngx_http_split_clients_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_referer_module.o \
+		src/http/modules/ngx_http_referer_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_rewrite_module.o \
+		src/http/modules/ngx_http_rewrite_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_proxy_module.o \
+		src/http/modules/ngx_http_proxy_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_fastcgi_module.o \
+		src/http/modules/ngx_http_fastcgi_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_uwsgi_module.o \
+		src/http/modules/ngx_http_uwsgi_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_scgi_module.o \
+		src/http/modules/ngx_http_scgi_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_memcached_module.o \
+		src/http/modules/ngx_http_memcached_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_empty_gif_module.o \
+		src/http/modules/ngx_http_empty_gif_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_browser_module.o \
+		src/http/modules/ngx_http_browser_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_upstream_ip_hash_module.o \
+		src/http/modules/ngx_http_upstream_ip_hash_module.c
+gcc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value -Werror -g -Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/ngx_modules.o \
+		objs/ngx_modules.c
+gcc -o objs/nginx \
+	objs/src/core/nginx.o \
+	objs/src/core/ngx_log.o \
+	objs/src/core/ngx_palloc.o \
+	objs/src/core/ngx_array.o \
+	objs/src/core/ngx_list.o \
+	objs/src/core/ngx_hash.o \
+	objs/src/core/ngx_buf.o \
+	objs/src/core/ngx_queue.o \
+	objs/src/core/ngx_output_chain.o \
+	objs/src/core/ngx_string.o \
+	objs/src/core/ngx_parse.o \
+	objs/src/core/ngx_inet.o \
+	objs/src/core/ngx_file.o \
+	objs/src/core/ngx_crc32.o \
+	objs/src/core/ngx_rbtree.o \
+	objs/src/core/ngx_radix_tree.o \
+	objs/src/core/ngx_slab.o \
+	objs/src/core/ngx_times.o \
+	objs/src/core/ngx_shmtx.o \
+	objs/src/core/ngx_connection.o \
+	objs/src/core/ngx_cycle.o \
+	objs/src/core/ngx_spinlock.o \
+	objs/src/core/ngx_cpuinfo.o \
+	objs/src/core/ngx_conf_file.o \
+	objs/src/core/ngx_resolver.o \
+	objs/src/core/ngx_open_file_cache.o \
+	objs/src/event/ngx_event.o \
+	objs/src/event/ngx_event_timer.o \
+	objs/src/event/ngx_event_posted.o \
+	objs/src/event/ngx_event_busy_lock.o \
+	objs/src/event/ngx_event_accept.o \
+	objs/src/event/ngx_event_connect.o \
+	objs/src/event/ngx_event_pipe.o \
+	objs/src/os/unix/ngx_time.o \
+	objs/src/os/unix/ngx_errno.o \
+	objs/src/os/unix/ngx_alloc.o \
+	objs/src/os/unix/ngx_files.o \
+	objs/src/os/unix/ngx_socket.o \
+	objs/src/os/unix/ngx_recv.o \
+	objs/src/os/unix/ngx_readv_chain.o \
+	objs/src/os/unix/ngx_udp_recv.o \
+	objs/src/os/unix/ngx_send.o \
+	objs/src/os/unix/ngx_writev_chain.o \
+	objs/src/os/unix/ngx_channel.o \
+	objs/src/os/unix/ngx_shmem.o \
+	objs/src/os/unix/ngx_process.o \
+	objs/src/os/unix/ngx_daemon.o \
+	objs/src/os/unix/ngx_setproctitle.o \
+	objs/src/os/unix/ngx_posix_init.o \
+	objs/src/os/unix/ngx_user.o \
+	objs/src/os/unix/ngx_process_cycle.o \
+	objs/src/os/unix/ngx_linux_init.o \
+	objs/src/event/modules/ngx_epoll_module.o \
+	objs/src/os/unix/ngx_linux_sendfile_chain.o \
+	objs/src/core/ngx_regex.o \
+	objs/src/http/ngx_http.o \
+	objs/src/http/ngx_http_core_module.o \
+	objs/src/http/ngx_http_special_response.o \
+	objs/src/http/ngx_http_request.o \
+	objs/src/http/ngx_http_parse.o \
+	objs/src/http/ngx_http_header_filter_module.o \
+	objs/src/http/ngx_http_write_filter_module.o \
+	objs/src/http/ngx_http_copy_filter_module.o \
+	objs/src/http/modules/ngx_http_log_module.o \
+	objs/src/http/ngx_http_request_body.o \
+	objs/src/http/ngx_http_variables.o \
+	objs/src/http/ngx_http_script.o \
+	objs/src/http/ngx_http_upstream.o \
+	objs/src/http/ngx_http_upstream_round_robin.o \
+	objs/src/http/ngx_http_parse_time.o \
+	objs/src/http/modules/ngx_http_static_module.o \
+	objs/src/http/modules/ngx_http_index_module.o \
+	objs/src/http/modules/ngx_http_chunked_filter_module.o \
+	objs/src/http/modules/ngx_http_range_filter_module.o \
+	objs/src/http/modules/ngx_http_headers_filter_module.o \
+	objs/src/http/modules/ngx_http_not_modified_filter_module.o \
+	objs/src/http/ngx_http_busy_lock.o \
+	objs/src/http/ngx_http_file_cache.o \
+	objs/src/http/modules/ngx_http_gzip_filter_module.o \
+	objs/src/http/ngx_http_postpone_filter_module.o \
+	objs/src/http/modules/ngx_http_ssi_filter_module.o \
+	objs/src/http/modules/ngx_http_charset_filter_module.o \
+	objs/src/http/modules/ngx_http_userid_filter_module.o \
+	objs/src/http/modules/ngx_http_autoindex_module.o \
+	objs/src/http/modules/ngx_http_auth_basic_module.o \
+	objs/src/http/modules/ngx_http_access_module.o \
+	objs/src/http/modules/ngx_http_limit_zone_module.o \
+	objs/src/http/modules/ngx_http_limit_req_module.o \
+	objs/src/http/modules/ngx_http_geo_module.o \
+	objs/src/http/modules/ngx_http_map_module.o \
+	objs/src/http/modules/ngx_http_split_clients_module.o \
+	objs/src/http/modules/ngx_http_referer_module.o \
+	objs/src/http/modules/ngx_http_rewrite_module.o \
+	objs/src/http/modules/ngx_http_proxy_module.o \
+	objs/src/http/modules/ngx_http_fastcgi_module.o \
+	objs/src/http/modules/ngx_http_uwsgi_module.o \
+	objs/src/http/modules/ngx_http_scgi_module.o \
+	objs/src/http/modules/ngx_http_memcached_module.o \
+	objs/src/http/modules/ngx_http_empty_gif_module.o \
+	objs/src/http/modules/ngx_http_browser_module.o \
+	objs/src/http/modules/ngx_http_upstream_ip_hash_module.o \
+	objs/ngx_modules.o \
+	-lcrypt -lpcre -lcrypto -lz
+objs/src/os/unix/ngx_process.o: In function `ngx_process_get_status':
+/home/patharmor/patharmor/nginx-0.8.54/src/os/unix/ngx_process.c:490: warning: `sys_errlist' is deprecated; use `strerror' or `strerror_r' instead
+/home/patharmor/patharmor/nginx-0.8.54/src/os/unix/ngx_process.c:490: warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
+make[1]: Leaving directory `/home/patharmor/patharmor/nginx-0.8.54'
+make -f objs/Makefile install
+make[1]: Entering directory `/home/patharmor/patharmor/nginx-0.8.54'
+test -d '/home/patharmor/patharmor/nginx-0.8.54/install-dir' || mkdir -p '/home/patharmor/patharmor/nginx-0.8.54/install-dir'
+test -d '/home/patharmor/patharmor/nginx-0.8.54/install-dir/sbin' 		|| mkdir -p '/home/patharmor/patharmor/nginx-0.8.54/install-dir/sbin'
+test ! -f '/home/patharmor/patharmor/nginx-0.8.54/install-dir/sbin/nginx' 		|| mv '/home/patharmor/patharmor/nginx-0.8.54/install-dir/sbin/nginx' 			'/home/patharmor/patharmor/nginx-0.8.54/install-dir/sbin/nginx.old'
+cp objs/nginx '/home/patharmor/patharmor/nginx-0.8.54/install-dir/sbin/nginx'
+test -d '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf' 		|| mkdir -p '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/koi-win '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/koi-utf '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/win-utf '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+test -f '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/mime.types' 		|| cp conf/mime.types '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/mime.types '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/mime.types.default'
+test -f '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/fastcgi_params' 		|| cp conf/fastcgi_params '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/fastcgi_params 		'/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/fastcgi_params.default'
+test -f '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/fastcgi.conf' 		|| cp conf/fastcgi.conf '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/fastcgi.conf '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/fastcgi.conf.default'
+test -f '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/uwsgi_params' 		|| cp conf/uwsgi_params '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/uwsgi_params 		'/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/uwsgi_params.default'
+test -f '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/scgi_params' 		|| cp conf/scgi_params '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf'
+cp conf/scgi_params 		'/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/scgi_params.default'
+test -f '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/nginx.conf' 		|| cp conf/nginx.conf '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/nginx.conf'
+cp conf/nginx.conf '/home/patharmor/patharmor/nginx-0.8.54/install-dir/conf/nginx.conf.default'
+test -d '/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs' 		|| mkdir -p '/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs'
+test -d '/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs' || 		mkdir -p '/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs'
+test -d '/home/patharmor/patharmor/nginx-0.8.54/install-dir/html' 		|| cp -r html '/home/patharmor/patharmor/nginx-0.8.54/install-dir'
+test -d '/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs' || 		mkdir -p '/home/patharmor/patharmor/nginx-0.8.54/install-dir/logs'
+make[1]: Leaving directory `/home/patharmor/patharmor/nginx-0.8.54'
+]0;patharmor@patharmor-test: ~/patharmor/nginx-0.8.54patharmor@patharmor-test:~/patharmor/nginx-0.8.54$ exit
+
+Script done on ma 12 okt 2015 17:20:01 CEST

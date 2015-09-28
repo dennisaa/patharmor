@@ -1,0 +1,598 @@
+Script started on ma 12 okt 2015 16:51:17 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ git[K     git clone https://github.com/dennisaa/patharmor .git
+Cloning into 'patharmor'...
+remote: Counting objects: 6, done.[K
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 6[K
+Unpacking objects:  16% (1/6)   Unpacking objects:  33% (2/6)   Unpacking objects:  50% (3/6)   Unpacking objects:  66% (4/6)   Unpacking objects:  83% (5/6)   Unpacking objects: 100% (6/6)   Unpacking objects: 100% (6/6), done.
+Checking connectivity... done.
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$      cd patharmor
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$      sudo apt-get install g++ clang libssl -dev cmake libboost1.55-all-dev libelf-dev libiberty-dev 
+[sudo] password for patharmor: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following extra packages will be installed:
+  binfmt-support clang-3.4 cmake-data g++-4.8 gccxml icu-devtools
+  libboost-atomic1.55-dev libboost-atomic1.55.0 libboost-chrono1.55-dev
+  libboost-chrono1.55.0 libboost-context1.55-dev libboost-context1.55.0
+  libboost-coroutine1.55-dev libboost-date-time1.55-dev
+  libboost-date-time1.55.0 libboost-exception1.55-dev
+  libboost-filesystem1.55-dev libboost-filesystem1.55.0
+  libboost-graph-parallel1.55-dev libboost-graph-parallel1.55.0
+  libboost-graph1.55-dev libboost-graph1.55.0 libboost-iostreams1.55-dev
+  libboost-iostreams1.55.0 libboost-locale1.55-dev libboost-locale1.55.0
+  libboost-log1.55-dev libboost-log1.55.0 libboost-math1.55-dev
+  libboost-math1.55.0 libboost-mpi-python1.55-dev libboost-mpi-python1.55.0
+  libboost-mpi1.55-dev libboost-mpi1.55.0 libboost-program-options1.55-dev
+  libboost-program-options1.55.0 libboost-python1.55-dev libboost-python1.55.0
+  libboost-random1.55-dev libboost-random1.55.0 libboost-regex1.55-dev
+  libboost-regex1.55.0 libboost-serialization1.55-dev
+  libboost-serialization1.55.0 libboost-signals1.55-dev libboost-signals1.55.0
+  libboost-system1.55-dev libboost-system1.55.0 libboost-test1.55-dev
+  libboost-test1.55.0 libboost-thread1.55-dev libboost-thread1.55.0
+  libboost-timer1.55-dev libboost-timer1.55.0 libboost-wave1.55-dev
+  libboost-wave1.55.0 libboost1.55-dev libboost1.55-tools-dev
+  libclang-common-3.4-dev libclang1-3.4 libcr0 libexpat1-dev libffi-dev
+  libhwloc-dev libhwloc-plugins libhwloc5 libibverbs-dev libibverbs1
+  libicu-dev libllvm3.4 libobjc-4.8-dev libobjc4 libopenmpi-dev libopenmpi1.6
+  libpci-dev libpython-dev libpython2.7-dev libssl-doc libstdc++-4.8-dev
+  libtinfo-dev libtorque2 libxml2-dev llvm-3.4 llvm-3.4-dev llvm-3.4-runtime
+  mpi-default-bin mpi-default-dev ocl-icd-libopencl1 openmpi-bin
+  openmpi-common python-dev python2.7-dev zlib1g-dev
+Suggested packages:
+  codeblocks eclipse g++-multilib g++-4.8-multilib gcc-4.8-doc
+  libstdc++6-4.8-dbg graphviz libboost1.55-doc libmpfrc++-dev libntl-dev
+  xsltproc doxygen docbook-xml docbook-xsl default-jdk fop blcr-dkms
+  libhwloc-contrib-plugins icu-doc libstdc++-4.8-doc llvm-3.4-doc opencl-icd
+  gfortran openmpi-checkpoint
+The following NEW packages will be installed:
+  binfmt-support clang clang-3.4 cmake cmake-data g++ g++-4.8 gccxml
+  icu-devtools libboost-atomic1.55-dev libboost-atomic1.55.0
+  libboost-chrono1.55-dev libboost-chrono1.55.0 libboost-context1.55-dev
+  libboost-context1.55.0 libboost-coroutine1.55-dev libboost-date-time1.55-dev
+  libboost-date-time1.55.0 libboost-exception1.55-dev
+  libboost-filesystem1.55-dev libboost-filesystem1.55.0
+  libboost-graph-parallel1.55-dev libboost-graph-parallel1.55.0
+  libboost-graph1.55-dev libboost-graph1.55.0 libboost-iostreams1.55-dev
+  libboost-iostreams1.55.0 libboost-locale1.55-dev libboost-locale1.55.0
+  libboost-log1.55-dev libboost-log1.55.0 libboost-math1.55-dev
+  libboost-math1.55.0 libboost-mpi-python1.55-dev libboost-mpi-python1.55.0
+  libboost-mpi1.55-dev libboost-mpi1.55.0 libboost-program-options1.55-dev
+  libboost-program-options1.55.0 libboost-python1.55-dev libboost-python1.55.0
+  libboost-random1.55-dev libboost-random1.55.0 libboost-regex1.55-dev
+  libboost-regex1.55.0 libboost-serialization1.55-dev
+  libboost-serialization1.55.0 libboost-signals1.55-dev libboost-signals1.55.0
+  libboost-system1.55-dev libboost-system1.55.0 libboost-test1.55-dev
+  libboost-test1.55.0 libboost-thread1.55-dev libboost-thread1.55.0
+  libboost-timer1.55-dev libboost-timer1.55.0 libboost-wave1.55-dev
+  libboost-wave1.55.0 libboost1.55-all-dev libboost1.55-dev
+  libboost1.55-tools-dev libclang-common-3.4-dev libclang1-3.4 libcr0
+  libelf-dev libexpat1-dev libffi-dev libhwloc-dev libhwloc-plugins libhwloc5
+  libiberty-dev libibverbs-dev libibverbs1 libicu-dev libllvm3.4
+  libobjc-4.8-dev libobjc4 libopenmpi-dev libopenmpi1.6 libpci-dev
+  libpython-dev libpython2.7-dev libssl-dev libssl-doc libstdc++-4.8-dev
+  libtinfo-dev libtorque2 libxml2-dev llvm-3.4 llvm-3.4-dev llvm-3.4-runtime
+  mpi-default-bin mpi-default-dev ocl-icd-libopencl1 openmpi-bin
+  openmpi-common python-dev python2.7-dev zlib1g-dev
+0 upgraded, 100 newly installed, 0 to remove and 0 not upgraded.
+Need to get 103 MB of archives.
+After this operation, 485 MB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+0% [Working]            Get:1 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-atomic1.55.0 amd64 1.55.0-1 [8546 B]
+            0% [1 libboost-atomic1.55.0 8546 B/8546 B 100%]                                               0% [Working]            Get:2 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-system1.55.0 amd64 1.55.0-1 [10,6 kB]
+            0% [2 libboost-system1.55.0 10,6 kB/10,6 kB 100%]                                                 0% [Working]            Get:3 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-chrono1.55.0 amd64 1.55.0-1 [12,5 kB]
+            0% [3 libboost-chrono1.55.0 6589 B/12,5 kB 53%]                                               0% [Working]            Get:4 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-context1.55.0 amd64 1.55.0-1 [8494 B]
+            0% [4 libboost-context1.55.0 8494 B/8494 B 100%]                                                0% [Waiting for headers]                        Get:5 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-date-time1.55.0 amd64 1.55.0-1 [21,2 kB]
+                        0% [5 libboost-date-time1.55.0 21,2 kB/21,2 kB 100%]                                                    0% [Working]            Get:6 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-filesystem1.55.0 amd64 1.55.0-1 [34,2 kB]
+            0% [Waiting for headers]                        Get:7 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-serialization1.55.0 amd64 1.55.0-1 [126 kB]
+                        0% [7 libboost-serialization1.55.0 0 B/126 kB 0%]                                                 0% [Working]            Get:8 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libcr0 amd64 0.8.5-2.1 [18,6 kB]
+            0% [8 libcr0 18,6 kB/18,6 kB 100%]                                  0% [Working]            Get:9 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/universe libhwloc5 amd64 1.8-1ubuntu1.14.04.1 [78,0 kB]
+            0% [9 libhwloc5 0 B/78,0 kB 0%]                               0% [Working]            Get:10 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libibverbs1 amd64 1.1.7-1ubuntu1.1 [23,6 kB]
+            0% [10 libibverbs1 6829 B/23,6 kB 29%]                                      0% [Working]            Get:11 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libtorque2 amd64 2.4.16+dfsg-1.3ubuntu1 [76,3 kB]
+            0% [11 libtorque2 16,2 kB/76,3 kB 21%]                                      0% [Working]            Get:12 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libopenmpi1.6 amd64 1.6.5-8 [1396 kB]
+            0% [12 libopenmpi1.6 0 B/1396 kB 0%]                                    2% [Working]            Get:13 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-mpi1.55.0 amd64 1.55.0-1 [44,7 kB]
+            2% [13 libboost-mpi1.55.0 17,7 kB/44,7 kB 40%]                                              2% [Working]            Get:14 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-graph-parallel1.55.0 amd64 1.55.0-1 [71,1 kB]
+            2% [14 libboost-graph-parallel1.55.0 16,2 kB/71,1 kB 23%]                                                         2% [Working]            Get:15 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-regex1.55.0 amd64 1.55.0-1 [262 kB]
+            2% [15 libboost-regex1.55.0 16,4 kB/262 kB 6%]                                              2% [Working]            Get:16 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-graph1.55.0 amd64 1.55.0-1 [94,7 kB]
+            2% [16 libboost-graph1.55.0 12,1 kB/94,7 kB 13%]                                                2% [Working]            Get:17 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-iostreams1.55.0 amd64 1.55.0-1 [28,4 kB]
+            2% [17 libboost-iostreams1.55.0 0 B/28,4 kB 0%]                                               2% [Working]            Get:18 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-thread1.55.0 amd64 1.55.0-1 [27,3 kB]
+            2% [18 libboost-thread1.55.0 12,1 kB/27,3 kB 44%]                                                 2% [Working]            Get:19 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-locale1.55.0 amd64 1.55.0-1 [211 kB]
+            2% [19 libboost-locale1.55.0 12,1 kB/211 kB 6%]                                               2% [Working]            Get:20 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-math1.55.0 amd64 1.55.0-1 [254 kB]
+            2% [20 libboost-math1.55.0 12,1 kB/254 kB 5%]                                             3% [Working]            Get:21 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-python1.55.0 amd64 1.55.0-1 [129 kB]
+            3% [21 libboost-python1.55.0 5251 B/129 kB 4%]                                              3% [Working]            Get:22 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe openmpi-common all 1.6.5-8 [101 kB]
+            3% [22 openmpi-common 0 B/101 kB 0%]                                    3% [Working]            Get:23 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe openmpi-bin amd64 1.6.5-8 [84,5 kB]
+            3% [23 openmpi-bin 4096 B/84,5 kB 5%]                                     3% [Working]            Get:24 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe mpi-default-bin amd64 1.0.2ubuntu1 [3252 B]
+            3% [24 mpi-default-bin 3252 B/3252 B 100%]                                          3% [Working]            Get:25 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-mpi-python1.55.0 amd64 1.55.0-1 [228 kB]
+            3% [25 libboost-mpi-python1.55.0 0 B/228 kB 0%]                                               3% [Working]            Get:26 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-program-options1.55.0 amd64 1.55.0-1 [116 kB]
+            3% [26 libboost-program-options1.55.0 0 B/116 kB 0%]                                                    3% [Working]            Get:27 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-random1.55.0 amd64 1.55.0-1 [10,3 kB]
+            3% [27 libboost-random1.55.0 10,3 kB/10,3 kB 100%]                                                  3% [Working]            Get:28 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-signals1.55.0 amd64 1.55.0-1 [29,8 kB]
+            3% [28 libboost-signals1.55.0 28,5 kB/29,8 kB 96%]                                                  3% [Working]            Get:29 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-test1.55.0 amd64 1.55.0-1 [179 kB]
+            3% [29 libboost-test1.55.0 22,5 kB/179 kB 13%]                                              4% [Working]            Get:30 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-timer1.55.0 amd64 1.55.0-1 [9934 B]
+            4% [30 libboost-timer1.55.0 9934 B/9934 B 100%]                                               4% [Working]            Get:31 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-wave1.55.0 amd64 1.55.0-1 [161 kB]
+            4% [31 libboost-wave1.55.0 0 B/161 kB 0%]                                         4% [Working]            Get:32 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libllvm3.4 amd64 1:3.4-1ubuntu3 [6540 kB]
+            4% [32 libllvm3.4 0 B/6540 kB 0%]                                 10% [Working]             Get:33 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libstdc++-4.8-dev amd64 4.8.4-2ubuntu1~14.04 [1052 kB]
+             10% [33 libstdc++-4.8-dev 8192 B/1052 kB 1%]                                            11% [Working]             Get:34 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libobjc4 amd64 4.8.4-2ubuntu1~14.04 [111 kB]
+             11% [34 libobjc4 9364 B/111 kB 8%]                                  11% [Working]             Get:35 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libobjc-4.8-dev amd64 4.8.4-2ubuntu1~14.04 [378 kB]
+             11% [35 libobjc-4.8-dev 17,5 kB/378 kB 5%]                                          12% [Working]             Get:36 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libclang1-3.4 amd64 1:3.4-1ubuntu3 [3534 kB]
+             12% [36 libclang1-3.4 4096 B/3534 kB 0%]                                        15% [Working]             Get:37 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libexpat1-dev amd64 2.1.0-4ubuntu1.1 [115 kB]
+             15% [37 libexpat1-dev 14,8 kB/115 kB 13%]                                         15% [Working]             Get:38 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libpython2.7-dev amd64 2.7.6-8ubuntu0.2 [22,0 MB]
+             15% [38 libpython2.7-dev 28,7 kB/22,0 MB 0%]                                            35% [38 libpython2.7-dev 20,1 MB/22,0 MB 91%]                                             36% [Working]             Get:39 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe ocl-icd-libopencl1 amd64 2.1.3-4 [28,1 kB]
+             36% [39 ocl-icd-libopencl1 2485 B/28,1 kB 9%]                                             36% [Working]             Get:40 http://nl.archive.ubuntu.com/ubuntu/ trusty/main binfmt-support amd64 2.1.4-1 [49,0 kB]
+             36% [40 binfmt-support 18,9 kB/49,0 kB 39%]                                           36% [Working]             Get:41 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libclang-common-3.4-dev amd64 1:3.4-1ubuntu3 [667 kB]
+             37% [41 libclang-common-3.4-dev 17,5 kB/667 kB 3%]                                                  37% [Working]             Get:42 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe clang-3.4 amd64 1:3.4-1ubuntu3 [8922 kB]
+             37% [42 clang-3.4 17,5 kB/8922 kB 0%]                                     46% [Working]             Get:43 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe clang amd64 1:3.4-0ubuntu1 [2476 B]
+             46% [43 clang 0 B/2476 B 0%]                            46% [Working]             Get:44 http://nl.archive.ubuntu.com/ubuntu/ trusty/main cmake-data all 2.8.12.2-0ubuntu3 [676 kB]
+             46% [44 cmake-data 4096 B/676 kB 1%]                                    46% [Working]             Get:45 http://nl.archive.ubuntu.com/ubuntu/ trusty/main cmake amd64 2.8.12.2-0ubuntu3 [2618 kB]
+             46% [45 cmake 12,1 kB/2618 kB 0%]                                 49% [Working]             Get:46 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main g++-4.8 amd64 4.8.4-2ubuntu1~14.04 [15,0 MB]
+             49% [46 g++-4.8 0 B/15,0 MB 0%]                               63% [Working]             Get:47 http://nl.archive.ubuntu.com/ubuntu/ trusty/main g++ amd64 4:4.8.2-1ubuntu6 [1490 B]
+             63% [47 g++ 1490 B/1490 B 100%]                               63% [Working]             Get:48 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe gccxml amd64 0.9.0+git20130511-1ubuntu2 [4358 kB]
+             63% [48 gccxml 12,1 kB/4358 kB 0%]                                  68% [Working]             Get:49 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main icu-devtools amd64 52.1-3ubuntu0.4 [163 kB]
+             68% [49 icu-devtools 18,9 kB/163 kB 12%]                                        68% [Working]             Get:50 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost1.55-dev amd64 1.55.0-1 [5762 kB]
+             68% [50 libboost1.55-dev 0 B/5762 kB 0%]                                        73% [Working]             Get:51 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-atomic1.55-dev amd64 1.55.0-1 [4936 B]
+             73% [51 libboost-atomic1.55-dev 4936 B/4936 B 100%]                                                   73% [Working]             Get:52 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-chrono1.55-dev amd64 1.55.0-1 [14,2 kB]
+             73% [52 libboost-chrono1.55-dev 10,7 kB/14,2 kB 75%]                                                    73% [Working]             Get:53 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-context1.55-dev amd64 1.55.0-1 [4780 B]
+             73% [53 libboost-context1.55-dev 0 B/4780 B 0%]                                               73% [Working]             Get:54 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-coroutine1.55-dev amd64 1.55.0-1 [9290 B]
+             73% [54 libboost-coroutine1.55-dev 9290 B/9290 B 100%]                                                      73% [Working]             Get:55 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-serialization1.55-dev amd64 1.55.0-1 [151 kB]
+             73% [55 libboost-serialization1.55-dev 8192 B/151 kB 5%]                                                        74% [Working]             Get:56 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-date-time1.55-dev amd64 1.55.0-1 [25,3 kB]
+             74% [56 libboost-date-time1.55-dev 14,8 kB/25,3 kB 58%]                                                       74% [Working]             Get:57 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-exception1.55-dev amd64 1.55.0-1 [4402 B]
+             74% [57 libboost-exception1.55-dev 4402 B/4402 B 100%]                                                      74% [Working]             Get:58 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-system1.55-dev amd64 1.55.0-1 [8456 B]
+             74% [58 libboost-system1.55-dev 0 B/8456 B 0%]                                              74% [Working]             Get:59 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-filesystem1.55-dev amd64 1.55.0-1 [41,6 kB]
+             74% [59 libboost-filesystem1.55-dev 0 B/41,6 kB 0%]                                                   74% [Working]             Get:60 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-test1.55-dev amd64 1.55.0-1 [213 kB]
+             74% [60 libboost-test1.55-dev 9323 B/213 kB 4%]                                               74% [Working]             Get:61 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-graph-parallel1.55-dev amd64 1.55.0-1 [72,7 kB]
+             74% [61 libboost-graph-parallel1.55-dev 5220 B/72,7 kB 7%]                                                          74% [Working]             Get:62 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-graph1.55-dev amd64 1.55.0-1 [98,3 kB]
+             74% [62 libboost-graph1.55-dev 4096 B/98,3 kB 4%]                                                 74% [Working]             Get:63 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libicu-dev amd64 52.1-3ubuntu0.4 [7588 kB]
+             74% [63 libicu-dev 0 B/7588 kB 0%]                                  79% [63 libicu-dev 5232 kB/7588 kB 69%]                                       81% [Working]             Get:64 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-regex1.55-dev amd64 1.55.0-1 [302 kB]
+             81% [64 libboost-regex1.55-dev 16,4 kB/302 kB 5%]                                                 82% [Working]             Get:65 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-iostreams1.55-dev amd64 1.55.0-1 [30,8 kB]
+             82% [65 libboost-iostreams1.55-dev 21,6 kB/30,8 kB 70%]                                                       82% [Working]             Get:66 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-locale1.55-dev amd64 1.55.0-1 [277 kB]
+             82% [66 libboost-locale1.55-dev 6587 B/277 kB 2%]                                                 82% [Working]             Get:67 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-log1.55.0 amd64 1.55.0-1 [499 kB]
+             82% [67 libboost-log1.55.0 2857 B/499 kB 1%]                                            82% [Working]             Get:68 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-thread1.55-dev amd64 1.55.0-1 [26,4 kB]
+             83% [68 libboost-thread1.55-dev 20,3 kB/26,4 kB 77%]                                                    83% [Working]             Get:69 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-log1.55-dev amd64 1.55.0-1 [589 kB]
+             83% [69 libboost-log1.55-dev 1471 B/589 kB 0%]                                              83% [Working]             Get:70 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-math1.55-dev amd64 1.55.0-1 [663 kB]
+             83% [70 libboost-math1.55-dev 2034 B/663 kB 0%]                                               84% [Working]             Get:71 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libibverbs-dev amd64 1.1.7-1ubuntu1.1 [70,0 kB]
+             84% [71 libibverbs-dev 0 B/70,0 kB 0%]                                      84% [Working]             Get:72 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libxml2-dev amd64 2.9.1+dfsg1-3ubuntu4.4 [630 kB]
+             84% [72 libxml2-dev 33,9 kB/630 kB 5%]                                      84% [Working]             Get:73 http://nl.archive.ubuntu.com/ubuntu/ trusty/main zlib1g-dev amd64 1:1.2.8.dfsg-1ubuntu1 [183 kB]
+             84% [73 zlib1g-dev 12,3 kB/183 kB 7%]                                     85% [Working]             Get:74 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libpci-dev amd64 1:3.2.1-1ubuntu5 [43,9 kB]
+             85% [74 libpci-dev 10,7 kB/43,9 kB 24%]                                       85% [Working]             Get:75 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/universe libhwloc-dev amd64 1.8-1ubuntu1.14.04.1 [129 kB]
+             85% [75 libhwloc-dev 0 B/129 kB 0%]                                   85% [Working]             Get:76 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libopenmpi-dev amd64 1.6.5-8 [379 kB]
+             85% [76 libopenmpi-dev 0 B/379 kB 0%]                                     85% [Working]             Get:77 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe mpi-default-dev amd64 1.0.2ubuntu1 [3822 B]
+             85% [77 mpi-default-dev 3822 B/3822 B 100%]                                           85% [Working]             Get:78 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-mpi1.55-dev amd64 1.55.0-1 [121 kB]
+             85% [78 libboost-mpi1.55-dev 5219 B/121 kB 4%]                                              85% [Working]             Get:79 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-mpi-python1.55-dev amd64 1.55.0-1 [23,6 kB]
+             85% [79 libboost-mpi-python1.55-dev 4628 B/23,6 kB 20%]                                                       85% [Working]             Get:80 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-program-options1.55-dev amd64 1.55.0-1 [133 kB]
+             85% [80 libboost-program-options1.55-dev 14,8 kB/133 kB 11%]                                                            85% [Working]             Get:81 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libpython-dev amd64 2.7.5-5ubuntu3 [7078 B]
+             85% [81 libpython-dev 2486 B/7078 B 35%]                                        85% [Working]             Get:82 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main python2.7-dev amd64 2.7.6-8ubuntu0.2 [269 kB]
+             85% [82 python2.7-dev 0 B/269 kB 0%]                                    86% [Working]             Get:83 http://nl.archive.ubuntu.com/ubuntu/ trusty/main python-dev amd64 2.7.5-5ubuntu3 [1166 B]
+             86% [83 python-dev 1166 B/1166 B 100%]                                      86% [Working]             Get:84 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-python1.55-dev amd64 1.55.0-1 [148 kB]
+             86% [84 libboost-python1.55-dev 0 B/148 kB 0%]                                              86% [Working]             Get:85 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-random1.55-dev amd64 1.55.0-1 [6370 B]
+             86% [85 libboost-random1.55-dev 0 B/6370 B 0%]                                              86% [Working]             Get:86 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-signals1.55-dev amd64 1.55.0-1 [30,4 kB]
+             86% [86 libboost-signals1.55-dev 5195 B/30,4 kB 17%]                                                    86% [Working]             Get:87 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-timer1.55-dev amd64 1.55.0-1 [9542 B]
+             86% [87 libboost-timer1.55-dev 5222 B/9542 B 55%]                                                 86% [Working]             Get:88 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost-wave1.55-dev amd64 1.55.0-1 [210 kB]
+             86% [88 libboost-wave1.55-dev 18,9 kB/210 kB 9%]                                                86% [Working]             Get:89 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost1.55-tools-dev amd64 1.55.0-1 [1061 kB]
+             86% [89 libboost1.55-tools-dev 16,1 kB/1061 kB 2%]                                                  87% [Working]                                                      14,8 MB/s 0s                                                                               Get:90 http://nl.archive.ubuntu.com/ubuntu/ trusty/universe libboost1.55-all-dev amd64 1.55.0-1 [4206 B]
+87% [90 libboost1.55-all-dev 3469 B/4206 B 82%]                    14,8 MB/s 0s87% [Working]                                                      14,8 MB/s 0s                                                                               Get:91 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libelf-dev amd64 0.158-0ubuntu5.2 [47,3 kB]
+87% [91 libelf-dev 12,1 kB/47,3 kB 25%]                            14,8 MB/s 0s87% [Working]                                                      14,8 MB/s 0s                                                                               Get:92 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libiberty-dev amd64 20131116-1 [135 kB]
+87% [92 libiberty-dev 12,1 kB/135 kB 9%]                           14,8 MB/s 0s87% [Working]                                                      14,8 MB/s 0s                                                                               Get:93 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libssl-dev amd64 1.0.1f-1ubuntu2.15 [1073 kB]
+87% [93 libssl-dev 12,8 kB/1073 kB 1%]                             14,8 MB/s 0s88% [Working]                                                      14,8 MB/s 0s                                                                               Get:94 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/main libssl-doc all 1.0.1f-1ubuntu2.15 [966 kB]
+88% [94 libssl-doc 20,5 kB/966 kB 2%]                              14,8 MB/s 0s89% [Working]                                                      14,8 MB/s 0s                                                                               Get:95 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libtinfo-dev amd64 5.9+20140118-1ubuntu1 [76,3 kB]
+89% [95 libtinfo-dev 5091 B/76,3 kB 7%]                            14,8 MB/s 0s89% [Working]                                                      14,8 MB/s 0s                                                                               Get:96 http://nl.archive.ubuntu.com/ubuntu/ trusty/main llvm-3.4-runtime amd64 1:3.4-1ubuntu3 [36,2 kB]
+89% [96 llvm-3.4-runtime 20,3 kB/36,2 kB 56%]                      14,8 MB/s 0s89% [Working]                                                      14,8 MB/s 0s                                                                               Get:97 http://nl.archive.ubuntu.com/ubuntu/ trusty/main llvm-3.4 amd64 1:3.4-1ubuntu3 [1078 kB]
+89% [97 llvm-3.4 23,2 kB/1078 kB 2%]                               14,8 MB/s 0s90% [Working]                                                      14,8 MB/s 0s                                                                               Get:98 http://nl.archive.ubuntu.com/ubuntu/ trusty/main libffi-dev amd64 3.1~rc1+r3.0.13-12 [99,8 kB]
+90% [98 libffi-dev 12,3 kB/99,8 kB 12%]                            14,8 MB/s 0s90% [Working]                                                      14,8 MB/s 0s                                                                               Get:99 http://nl.archive.ubuntu.com/ubuntu/ trusty/main llvm-3.4-dev amd64 1:3.4-1ubuntu3 [9801 kB]
+91% [99 llvm-3.4-dev 12,1 kB/9801 kB 0%]                           14,8 MB/s 0s100% [99 llvm-3.4-dev 9801 kB/9801 kB 100%]                        14,8 MB/s 0s100% [Working]                                                     14,8 MB/s 0s                                                                               Get:100 http://nl.archive.ubuntu.com/ubuntu/ trusty-updates/universe libhwloc-plugins amd64 1.8-1ubuntu1.14.04.1 [12,0 kB]
+100% [100 libhwloc-plugins 12,0 kB/12,0 kB 100%]                   14,8 MB/s 0s100% [Working]                                                     14,8 MB/s 0s                                                                               Fetched 103 MB in 7s (14,7 MB/s)
+Extracting templates from packages: 30%Extracting templates from packages: 60%Extracting templates from packages: 90%Extracting templates from packages: 100%
+Selecting previously unselected package libboost-atomic1.55.0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 222054 files and directories currently installed.)
+Preparing to unpack .../libboost-atomic1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-atomic1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-system1.55.0:amd64.
+Preparing to unpack .../libboost-system1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-system1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-chrono1.55.0:amd64.
+Preparing to unpack .../libboost-chrono1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-chrono1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-context1.55.0:amd64.
+Preparing to unpack .../libboost-context1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-context1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-date-time1.55.0:amd64.
+Preparing to unpack .../libboost-date-time1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-date-time1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-filesystem1.55.0:amd64.
+Preparing to unpack .../libboost-filesystem1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-filesystem1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-serialization1.55.0:amd64.
+Preparing to unpack .../libboost-serialization1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-serialization1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libcr0.
+Preparing to unpack .../libcr0_0.8.5-2.1_amd64.deb ...
+Unpacking libcr0 (0.8.5-2.1) ...
+Selecting previously unselected package libhwloc5:amd64.
+Preparing to unpack .../libhwloc5_1.8-1ubuntu1.14.04.1_amd64.deb ...
+Unpacking libhwloc5:amd64 (1.8-1ubuntu1.14.04.1) ...
+Selecting previously unselected package libibverbs1.
+Preparing to unpack .../libibverbs1_1.1.7-1ubuntu1.1_amd64.deb ...
+Unpacking libibverbs1 (1.1.7-1ubuntu1.1) ...
+Selecting previously unselected package libtorque2.
+Preparing to unpack .../libtorque2_2.4.16+dfsg-1.3ubuntu1_amd64.deb ...
+Unpacking libtorque2 (2.4.16+dfsg-1.3ubuntu1) ...
+Selecting previously unselected package libopenmpi1.6.
+Preparing to unpack .../libopenmpi1.6_1.6.5-8_amd64.deb ...
+Unpacking libopenmpi1.6 (1.6.5-8) ...
+Selecting previously unselected package libboost-mpi1.55.0.
+Preparing to unpack .../libboost-mpi1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-mpi1.55.0 (1.55.0-1) ...
+Selecting previously unselected package libboost-graph-parallel1.55.0.
+Preparing to unpack .../libboost-graph-parallel1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-graph-parallel1.55.0 (1.55.0-1) ...
+Selecting previously unselected package libboost-regex1.55.0:amd64.
+Preparing to unpack .../libboost-regex1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-regex1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-graph1.55.0:amd64.
+Preparing to unpack .../libboost-graph1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-graph1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-iostreams1.55.0:amd64.
+Preparing to unpack .../libboost-iostreams1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-iostreams1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-thread1.55.0:amd64.
+Preparing to unpack .../libboost-thread1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-thread1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-locale1.55.0:amd64.
+Preparing to unpack .../libboost-locale1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-locale1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-math1.55.0:amd64.
+Preparing to unpack .../libboost-math1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-math1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-python1.55.0.
+Preparing to unpack .../libboost-python1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-python1.55.0 (1.55.0-1) ...
+Selecting previously unselected package openmpi-common.
+Preparing to unpack .../openmpi-common_1.6.5-8_all.deb ...
+Unpacking openmpi-common (1.6.5-8) ...
+Selecting previously unselected package openmpi-bin.
+Preparing to unpack .../openmpi-bin_1.6.5-8_amd64.deb ...
+Unpacking openmpi-bin (1.6.5-8) ...
+Selecting previously unselected package mpi-default-bin.
+Preparing to unpack .../mpi-default-bin_1.0.2ubuntu1_amd64.deb ...
+Unpacking mpi-default-bin (1.0.2ubuntu1) ...
+Selecting previously unselected package libboost-mpi-python1.55.0.
+Preparing to unpack .../libboost-mpi-python1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-mpi-python1.55.0 (1.55.0-1) ...
+Selecting previously unselected package libboost-program-options1.55.0:amd64.
+Preparing to unpack .../libboost-program-options1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-program-options1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-random1.55.0:amd64.
+Preparing to unpack .../libboost-random1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-random1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-signals1.55.0:amd64.
+Preparing to unpack .../libboost-signals1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-signals1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-test1.55.0:amd64.
+Preparing to unpack .../libboost-test1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-test1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-timer1.55.0:amd64.
+Preparing to unpack .../libboost-timer1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-timer1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-wave1.55.0:amd64.
+Preparing to unpack .../libboost-wave1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-wave1.55.0:amd64 (1.55.0-1) ...
+Selecting previously unselected package libllvm3.4:amd64.
+Preparing to unpack .../libllvm3.4_1%3a3.4-1ubuntu3_amd64.deb ...
+Unpacking libllvm3.4:amd64 (1:3.4-1ubuntu3) ...
+Selecting previously unselected package libstdc++-4.8-dev:amd64.
+Preparing to unpack .../libstdc++-4.8-dev_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libobjc4:amd64.
+Preparing to unpack .../libobjc4_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libobjc4:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libobjc-4.8-dev:amd64.
+Preparing to unpack .../libobjc-4.8-dev_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libobjc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libclang1-3.4:amd64.
+Preparing to unpack .../libclang1-3.4_1%3a3.4-1ubuntu3_amd64.deb ...
+Unpacking libclang1-3.4:amd64 (1:3.4-1ubuntu3) ...
+Selecting previously unselected package libexpat1-dev:amd64.
+Preparing to unpack .../libexpat1-dev_2.1.0-4ubuntu1.1_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.1.0-4ubuntu1.1) ...
+Selecting previously unselected package libpython2.7-dev:amd64.
+Preparing to unpack .../libpython2.7-dev_2.7.6-8ubuntu0.2_amd64.deb ...
+Unpacking libpython2.7-dev:amd64 (2.7.6-8ubuntu0.2) ...
+Selecting previously unselected package ocl-icd-libopencl1:amd64.
+Preparing to unpack .../ocl-icd-libopencl1_2.1.3-4_amd64.deb ...
+Unpacking ocl-icd-libopencl1:amd64 (2.1.3-4) ...
+Selecting previously unselected package binfmt-support.
+Preparing to unpack .../binfmt-support_2.1.4-1_amd64.deb ...
+Unpacking binfmt-support (2.1.4-1) ...
+Selecting previously unselected package libclang-common-3.4-dev.
+Preparing to unpack .../libclang-common-3.4-dev_1%3a3.4-1ubuntu3_amd64.deb ...
+Unpacking libclang-common-3.4-dev (1:3.4-1ubuntu3) ...
+Selecting previously unselected package clang-3.4.
+Preparing to unpack .../clang-3.4_1%3a3.4-1ubuntu3_amd64.deb ...
+Unpacking clang-3.4 (1:3.4-1ubuntu3) ...
+Selecting previously unselected package clang.
+Preparing to unpack .../clang_1%3a3.4-0ubuntu1_amd64.deb ...
+Unpacking clang (1:3.4-0ubuntu1) ...
+Selecting previously unselected package cmake-data.
+Preparing to unpack .../cmake-data_2.8.12.2-0ubuntu3_all.deb ...
+Unpacking cmake-data (2.8.12.2-0ubuntu3) ...
+Selecting previously unselected package cmake.
+Preparing to unpack .../cmake_2.8.12.2-0ubuntu3_amd64.deb ...
+Unpacking cmake (2.8.12.2-0ubuntu3) ...
+Selecting previously unselected package g++-4.8.
+Preparing to unpack .../g++-4.8_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking g++-4.8 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking g++ (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package gccxml.
+Preparing to unpack .../gccxml_0.9.0+git20130511-1ubuntu2_amd64.deb ...
+Unpacking gccxml (0.9.0+git20130511-1ubuntu2) ...
+Selecting previously unselected package icu-devtools.
+Preparing to unpack .../icu-devtools_52.1-3ubuntu0.4_amd64.deb ...
+Unpacking icu-devtools (52.1-3ubuntu0.4) ...
+Selecting previously unselected package libboost1.55-dev.
+Preparing to unpack .../libboost1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost1.55-dev (1.55.0-1) ...
+Selecting previously unselected package libboost-atomic1.55-dev:amd64.
+Preparing to unpack .../libboost-atomic1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-atomic1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-chrono1.55-dev:amd64.
+Preparing to unpack .../libboost-chrono1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-chrono1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-context1.55-dev:amd64.
+Preparing to unpack .../libboost-context1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-context1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-coroutine1.55-dev.
+Preparing to unpack .../libboost-coroutine1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-coroutine1.55-dev (1.55.0-1) ...
+Selecting previously unselected package libboost-serialization1.55-dev:amd64.
+Preparing to unpack .../libboost-serialization1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-serialization1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-date-time1.55-dev:amd64.
+Preparing to unpack .../libboost-date-time1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-date-time1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-exception1.55-dev:amd64.
+Preparing to unpack .../libboost-exception1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-exception1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-system1.55-dev:amd64.
+Preparing to unpack .../libboost-system1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-system1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-filesystem1.55-dev:amd64.
+Preparing to unpack .../libboost-filesystem1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-filesystem1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-test1.55-dev:amd64.
+Preparing to unpack .../libboost-test1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-test1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-graph-parallel1.55-dev.
+Preparing to unpack .../libboost-graph-parallel1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-graph-parallel1.55-dev (1.55.0-1) ...
+Selecting previously unselected package libboost-graph1.55-dev:amd64.
+Preparing to unpack .../libboost-graph1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-graph1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libicu-dev:amd64.
+Preparing to unpack .../libicu-dev_52.1-3ubuntu0.4_amd64.deb ...
+Unpacking libicu-dev:amd64 (52.1-3ubuntu0.4) ...
+Selecting previously unselected package libboost-regex1.55-dev:amd64.
+Preparing to unpack .../libboost-regex1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-regex1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-iostreams1.55-dev:amd64.
+Preparing to unpack .../libboost-iostreams1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-iostreams1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-locale1.55-dev:amd64.
+Preparing to unpack .../libboost-locale1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-locale1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-log1.55.0.
+Preparing to unpack .../libboost-log1.55.0_1.55.0-1_amd64.deb ...
+Unpacking libboost-log1.55.0 (1.55.0-1) ...
+Selecting previously unselected package libboost-thread1.55-dev:amd64.
+Preparing to unpack .../libboost-thread1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-thread1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-log1.55-dev.
+Preparing to unpack .../libboost-log1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-log1.55-dev (1.55.0-1) ...
+Selecting previously unselected package libboost-math1.55-dev:amd64.
+Preparing to unpack .../libboost-math1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-math1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libibverbs-dev.
+Preparing to unpack .../libibverbs-dev_1.1.7-1ubuntu1.1_amd64.deb ...
+Unpacking libibverbs-dev (1.1.7-1ubuntu1.1) ...
+Selecting previously unselected package libxml2-dev:amd64.
+Preparing to unpack .../libxml2-dev_2.9.1+dfsg1-3ubuntu4.4_amd64.deb ...
+Unpacking libxml2-dev:amd64 (2.9.1+dfsg1-3ubuntu4.4) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-1ubuntu1_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-1ubuntu1) ...
+Selecting previously unselected package libpci-dev.
+Preparing to unpack .../libpci-dev_1%3a3.2.1-1ubuntu5_amd64.deb ...
+Unpacking libpci-dev (1:3.2.1-1ubuntu5) ...
+Selecting previously unselected package libhwloc-dev:amd64.
+Preparing to unpack .../libhwloc-dev_1.8-1ubuntu1.14.04.1_amd64.deb ...
+Unpacking libhwloc-dev:amd64 (1.8-1ubuntu1.14.04.1) ...
+Selecting previously unselected package libopenmpi-dev.
+Preparing to unpack .../libopenmpi-dev_1.6.5-8_amd64.deb ...
+Unpacking libopenmpi-dev (1.6.5-8) ...
+Selecting previously unselected package mpi-default-dev.
+Preparing to unpack .../mpi-default-dev_1.0.2ubuntu1_amd64.deb ...
+Unpacking mpi-default-dev (1.0.2ubuntu1) ...
+Selecting previously unselected package libboost-mpi1.55-dev.
+Preparing to unpack .../libboost-mpi1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-mpi1.55-dev (1.55.0-1) ...
+Selecting previously unselected package libboost-mpi-python1.55-dev.
+Preparing to unpack .../libboost-mpi-python1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-mpi-python1.55-dev (1.55.0-1) ...
+Selecting previously unselected package libboost-program-options1.55-dev:amd64.
+Preparing to unpack .../libboost-program-options1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-program-options1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libpython-dev:amd64.
+Preparing to unpack .../libpython-dev_2.7.5-5ubuntu3_amd64.deb ...
+Unpacking libpython-dev:amd64 (2.7.5-5ubuntu3) ...
+Selecting previously unselected package python2.7-dev.
+Preparing to unpack .../python2.7-dev_2.7.6-8ubuntu0.2_amd64.deb ...
+Unpacking python2.7-dev (2.7.6-8ubuntu0.2) ...
+Selecting previously unselected package python-dev.
+Preparing to unpack .../python-dev_2.7.5-5ubuntu3_amd64.deb ...
+Unpacking python-dev (2.7.5-5ubuntu3) ...
+Selecting previously unselected package libboost-python1.55-dev.
+Preparing to unpack .../libboost-python1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-python1.55-dev (1.55.0-1) ...
+Selecting previously unselected package libboost-random1.55-dev:amd64.
+Preparing to unpack .../libboost-random1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-random1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-signals1.55-dev:amd64.
+Preparing to unpack .../libboost-signals1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-signals1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-timer1.55-dev:amd64.
+Preparing to unpack .../libboost-timer1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-timer1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost-wave1.55-dev:amd64.
+Preparing to unpack .../libboost-wave1.55-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost-wave1.55-dev:amd64 (1.55.0-1) ...
+Selecting previously unselected package libboost1.55-tools-dev.
+Preparing to unpack .../libboost1.55-tools-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost1.55-tools-dev (1.55.0-1) ...
+Selecting previously unselected package libboost1.55-all-dev.
+Preparing to unpack .../libboost1.55-all-dev_1.55.0-1_amd64.deb ...
+Unpacking libboost1.55-all-dev (1.55.0-1) ...
+Selecting previously unselected package libelf-dev:amd64.
+Preparing to unpack .../libelf-dev_0.158-0ubuntu5.2_amd64.deb ...
+Unpacking libelf-dev:amd64 (0.158-0ubuntu5.2) ...
+Selecting previously unselected package libiberty-dev:amd64.
+Preparing to unpack .../libiberty-dev_20131116-1_amd64.deb ...
+Unpacking libiberty-dev:amd64 (20131116-1) ...
+Selecting previously unselected package libssl-dev:amd64.
+Preparing to unpack .../libssl-dev_1.0.1f-1ubuntu2.15_amd64.deb ...
+Unpacking libssl-dev:amd64 (1.0.1f-1ubuntu2.15) ...
+Selecting previously unselected package libssl-doc.
+Preparing to unpack .../libssl-doc_1.0.1f-1ubuntu2.15_all.deb ...
+Unpacking libssl-doc (1.0.1f-1ubuntu2.15) ...
+Selecting previously unselected package libtinfo-dev:amd64.
+Preparing to unpack .../libtinfo-dev_5.9+20140118-1ubuntu1_amd64.deb ...
+Unpacking libtinfo-dev:amd64 (5.9+20140118-1ubuntu1) ...
+Selecting previously unselected package llvm-3.4-runtime.
+Preparing to unpack .../llvm-3.4-runtime_1%3a3.4-1ubuntu3_amd64.deb ...
+Unpacking llvm-3.4-runtime (1:3.4-1ubuntu3) ...
+Selecting previously unselected package llvm-3.4.
+Preparing to unpack .../llvm-3.4_1%3a3.4-1ubuntu3_amd64.deb ...
+Unpacking llvm-3.4 (1:3.4-1ubuntu3) ...
+Selecting previously unselected package libffi-dev:amd64.
+Preparing to unpack .../libffi-dev_3.1~rc1+r3.0.13-12_amd64.deb ...
+Unpacking libffi-dev:amd64 (3.1~rc1+r3.0.13-12) ...
+Selecting previously unselected package llvm-3.4-dev.
+Preparing to unpack .../llvm-3.4-dev_1%3a3.4-1ubuntu3_amd64.deb ...
+Unpacking llvm-3.4-dev (1:3.4-1ubuntu3) ...
+Selecting previously unselected package libhwloc-plugins.
+Preparing to unpack .../libhwloc-plugins_1.8-1ubuntu1.14.04.1_amd64.deb ...
+Unpacking libhwloc-plugins (1.8-1ubuntu1.14.04.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for doc-base (0.10.5) ...
+Processing 3 added doc-base files...
+Processing triggers for ureadahead (0.100.0-16) ...
+ureadahead will be reprofiled on next reboot
+Processing triggers for install-info (5.2.0.dfsg.1-2) ...
+Setting up libboost-atomic1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-system1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-chrono1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-context1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-date-time1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-filesystem1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-serialization1.55.0:amd64 (1.55.0-1) ...
+Setting up libcr0 (0.8.5-2.1) ...
+Setting up libhwloc5:amd64 (1.8-1ubuntu1.14.04.1) ...
+Setting up libibverbs1 (1.1.7-1ubuntu1.1) ...
+Setting up libtorque2 (2.4.16+dfsg-1.3ubuntu1) ...
+Setting up libopenmpi1.6 (1.6.5-8) ...
+Setting up libboost-mpi1.55.0 (1.55.0-1) ...
+Setting up libboost-graph-parallel1.55.0 (1.55.0-1) ...
+Setting up libboost-regex1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-graph1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-iostreams1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-thread1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-locale1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-math1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-python1.55.0 (1.55.0-1) ...
+Setting up openmpi-common (1.6.5-8) ...
+Setting up openmpi-bin (1.6.5-8) ...
+update-alternatives: using /usr/bin/mpirun.openmpi to provide /usr/bin/mpirun (mpirun) in auto mode
+Setting up mpi-default-bin (1.0.2ubuntu1) ...
+Setting up libboost-mpi-python1.55.0 (1.55.0-1) ...
+Setting up libboost-program-options1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-random1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-signals1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-test1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-timer1.55.0:amd64 (1.55.0-1) ...
+Setting up libboost-wave1.55.0:amd64 (1.55.0-1) ...
+Setting up libllvm3.4:amd64 (1:3.4-1ubuntu3) ...
+Setting up libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libobjc4:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libobjc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libclang1-3.4:amd64 (1:3.4-1ubuntu3) ...
+Setting up libexpat1-dev:amd64 (2.1.0-4ubuntu1.1) ...
+Setting up libpython2.7-dev:amd64 (2.7.6-8ubuntu0.2) ...
+Setting up ocl-icd-libopencl1:amd64 (2.1.3-4) ...
+Setting up binfmt-support (2.1.4-1) ...
+binfmt-support start/running
+Setting up libclang-common-3.4-dev (1:3.4-1ubuntu3) ...
+Setting up clang-3.4 (1:3.4-1ubuntu3) ...
+Setting up clang (1:3.4-0ubuntu1) ...
+Setting up cmake-data (2.8.12.2-0ubuntu3) ...
+Setting up cmake (2.8.12.2-0ubuntu3) ...
+Setting up g++-4.8 (4.8.4-2ubuntu1~14.04) ...
+Setting up g++ (4:4.8.2-1ubuntu6) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up gccxml (0.9.0+git20130511-1ubuntu2) ...
+Setting up icu-devtools (52.1-3ubuntu0.4) ...
+Setting up libboost1.55-dev (1.55.0-1) ...
+Setting up libboost-atomic1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-chrono1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-context1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-coroutine1.55-dev (1.55.0-1) ...
+Setting up libboost-serialization1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-date-time1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-exception1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-system1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-filesystem1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-test1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-graph-parallel1.55-dev (1.55.0-1) ...
+Setting up libboost-graph1.55-dev:amd64 (1.55.0-1) ...
+Setting up libicu-dev:amd64 (52.1-3ubuntu0.4) ...
+Setting up libboost-regex1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-iostreams1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-locale1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-log1.55.0 (1.55.0-1) ...
+Setting up libboost-thread1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-log1.55-dev (1.55.0-1) ...
+Setting up libboost-math1.55-dev:amd64 (1.55.0-1) ...
+Setting up libibverbs-dev (1.1.7-1ubuntu1.1) ...
+Setting up libxml2-dev:amd64 (2.9.1+dfsg1-3ubuntu4.4) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-1ubuntu1) ...
+Setting up libpci-dev (1:3.2.1-1ubuntu5) ...
+Setting up libhwloc-dev:amd64 (1.8-1ubuntu1.14.04.1) ...
+Setting up libopenmpi-dev (1.6.5-8) ...
+update-alternatives: using /usr/lib/openmpi/include to provide /usr/include/mpi (mpi) in auto mode
+Setting up mpi-default-dev (1.0.2ubuntu1) ...
+Setting up libboost-mpi1.55-dev (1.55.0-1) ...
+Setting up libboost-mpi-python1.55-dev (1.55.0-1) ...
+Setting up libboost-program-options1.55-dev:amd64 (1.55.0-1) ...
+Setting up libpython-dev:amd64 (2.7.5-5ubuntu3) ...
+Setting up python2.7-dev (2.7.6-8ubuntu0.2) ...
+Setting up python-dev (2.7.5-5ubuntu3) ...
+Setting up libboost-python1.55-dev (1.55.0-1) ...
+Setting up libboost-random1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-signals1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-timer1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost-wave1.55-dev:amd64 (1.55.0-1) ...
+Setting up libboost1.55-tools-dev (1.55.0-1) ...
+Setting up libboost1.55-all-dev (1.55.0-1) ...
+Setting up libelf-dev:amd64 (0.158-0ubuntu5.2) ...
+Setting up libiberty-dev:amd64 (20131116-1) ...
+Setting up libssl-dev:amd64 (1.0.1f-1ubuntu2.15) ...
+Setting up libssl-doc (1.0.1f-1ubuntu2.15) ...
+Setting up libtinfo-dev:amd64 (5.9+20140118-1ubuntu1) ...
+Setting up libffi-dev:amd64 (3.1~rc1+r3.0.13-12) ...
+Setting up libhwloc-plugins (1.8-1ubuntu1.14.04.1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up llvm-3.4-runtime (1:3.4-1ubuntu3) ...
+Setting up llvm-3.4 (1:3.4-1ubuntu3) ...
+Setting up llvm-3.4-dev (1:3.4-1ubuntu3) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$ exit
+
+Script done on ma 12 okt 2015 16:54:43 CEST

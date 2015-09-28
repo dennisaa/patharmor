@@ -1,0 +1,6 @@
+.*.cmd
+Module.symvers
+modules.order
+armor-module.ko
+armor-module.mod.c
+.tmp_versions

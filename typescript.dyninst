@@ -1,0 +1,1391 @@
+Script started on ma 12 okt 2015 16:59:01 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ cd patharmor/
+]0;patharmor@patharmor-test: ~/patharmorpatharmor@patharmor-test:~/patharmor$      cd Dyninst-8.2.1/install-dir
+]0;patharmor@patharmor-test: ~/patharmor/Dyninst-8.2.1/install-dirpatharmor@patharmor-test:~/patharmor/Dyninst-8.2.1/install-dir$      cmake .. -D CMAKE_INSTALL_PREFIX=`pwd`
+-- Attempting to automatically identify platform: x86_64-unknown-linux2.4
+-- Could NOT find LibDwarf (missing:  LIBDWARF_LIBRARIES LIBDWARF_INCLUDE_DIR) 
+-- No libdwarf found, attempting to build as external project
+-- Found libiberty: /usr/lib/x86_64-linux-gnu/libiberty.a
+-- Using libiberty /usr/lib/x86_64-linux-gnu/libiberty.a
+-- Disabling Boost's own CMake--known buggy in many cases
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:492 ] _boost_TEST_VERSIONS = 1.47;1.47.0;1.48;1.48.0;1.49;1.49.0;1.50;1.50.0;1.51;1.51.0;1.52;1.52.0;1.53;1.53.0;1.54;1.54.0;1.55;1.55.0;1.56;1.56.0;1.56.0;1.56;1.55.0;1.55;1.54.0;1.54;1.53.0;1.53;1.52.0;1.52;1.51.0;1.51;1.50.0;1.50;1.49.0;1.49;1.48.0;1.48;1.47.0;1.47;1.46.1;1.46.0;1.46;1.45.0;1.45;1.44.0;1.44;1.43.0;1.43;1.42.0;1.42;1.41.0;1.41;1.40.0;1.40;1.39.0;1.39;1.38.0;1.38;1.37.0;1.37;1.36.1;1.36.0;1.36;1.35.1;1.35.0;1.35;1.34.1;1.34.0;1.34;1.33.1;1.33.0;1.33
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:494 ] Boost_USE_MULTITHREADED = ON
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:496 ] Boost_USE_STATIC_LIBS = 
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:498 ] Boost_USE_STATIC_RUNTIME = OFF
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:500 ] Boost_ADDITIONAL_VERSIONS = 1.47;1.47.0;1.48;1.48.0;1.49;1.49.0;1.50;1.50.0;1.51;1.51.0;1.52;1.52.0;1.53;1.53.0;1.54;1.54.0;1.55;1.55.0;1.56;1.56.0
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:502 ] Boost_NO_SYSTEM_PATHS = ON
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:554 ] Declared as CMake or Environmental Variables:
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:556 ]   BOOST_ROOT = 
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:558 ]   BOOST_INCLUDEDIR = 
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:560 ]   BOOST_LIBRARYDIR = 
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:562 ] _boost_TEST_VERSIONS = 1.47;1.47.0;1.48;1.48.0;1.49;1.49.0;1.50;1.50.0;1.51;1.51.0;1.52;1.52.0;1.53;1.53.0;1.54;1.54.0;1.55;1.55.0;1.56;1.56.0;1.56.0;1.56;1.55.0;1.55;1.54.0;1.54;1.53.0;1.53;1.52.0;1.52;1.51.0;1.51;1.50.0;1.50;1.49.0;1.49;1.48.0;1.48;1.47.0;1.47;1.46.1;1.46.0;1.46;1.45.0;1.45;1.44.0;1.44;1.43.0;1.43;1.42.0;1.42;1.41.0;1.41;1.40.0;1.40;1.39.0;1.39;1.38.0;1.38;1.37.0;1.37;1.36.1;1.36.0;1.36;1.35.1;1.35.0;1.35;1.34.1;1.34.0;1.34;1.33.1;1.33.0;1.33
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:655 ] location of version.hpp: /usr/include/boost/version.hpp
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:679 ] version.hpp reveals boost 1.55.0
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:755 ] guessed _boost_COMPILER = -gcc48
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:765 ] _boost_MULTITHREADED = -mt
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:808 ] _boost_RELEASE_ABI_TAG = -
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:810 ] _boost_DEBUG_ABI_TAG = -d
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:859 ] _boost_LIBRARY_SEARCH_DIRS = /usr/lib/x86_64-linux-gnu;NO_DEFAULT_PATH
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:947 ] Searching for THREAD_LIBRARY_RELEASE: boost_thread-gcc48-mt-1_55;boost_thread-gcc48-mt;boost_thread-mt-1_55;boost_thread-mt;boost_thread
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:983 ] Searching for THREAD_LIBRARY_DEBUG: boost_thread-gcc48-mt-d-1_55;boost_thread-gcc48-mt-d;boost_thread-mt-d-1_55;boost_thread-mt-d;boost_thread-mt;boost_thread
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:947 ] Searching for SYSTEM_LIBRARY_RELEASE: boost_system-gcc48-mt-1_55;boost_system-gcc48-mt;boost_system-mt-1_55;boost_system-mt;boost_system
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:983 ] Searching for SYSTEM_LIBRARY_DEBUG: boost_system-gcc48-mt-d-1_55;boost_system-gcc48-mt-d;boost_system-mt-d-1_55;boost_system-mt-d;boost_system-mt;boost_system
+-- [ /usr/share/cmake-2.8/Modules/FindBoost.cmake:1034 ] Boost_FOUND = 1
+-- Boost version: 1.55.0
+-- Found the following Boost libraries:
+--   thread
+--   system
+-- Boost includes: /usr/include
+-- Boost library dirs: /usr/lib/x86_64-linux-gnu
+-- Boost thread library: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+-- Boost libraries: /usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libpthread.so
+-- C++11 support found, required flags are: -std=c++11
+-- Enabling ThreadDB support
+-- Set arch and platform based definitions
+-- Found g++, enabling -fvisibility=hidden
+statusOptions set
+statusSet optimization flags
+-- Configuring DyninstAPI_RT
+-- Configuring RT library
+-- The C compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Set arch and platform based definitions
+statusOptions set
+statusSet optimization flags
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- dyninstAPI RT library SOVERSION: 8.2
+-- dyninstAPI RT library LIBVERSION: 8.2.1
+-- dyninstAPI output location: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/dyninstAPI_RT/libdyninstAPI_RT.so
+-- Checking for 32-bit runtime library...
+-- Performing Test CHECK_RT_LIB_32
+-- Performing Test CHECK_RT_LIB_32 - Failed
+-- Disabling 32-bit runtime library; change BUILD_RTLIB_32 to ON and install 32-bit build environment to enable
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    NEED_NATIVE_ASSEMBLER
+
+
+-- Build files have been written to: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/dyninstAPI_RT
+-- Adding Unix-specific dependencies
+-- Added libdwarf_imp and libelf_imp dependencies
+-- Building libdwarf, creating libdwarf dependency on libelf
+-- Installing /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/libdwarf/lib/libdwarf.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir
+]0;patharmor@patharmor-test: ~/patharmor/Dyninst-8.2.1/install-dirpatharmor@patharmor-test:~/patharmor/Dyninst-8.2.1/install-dir$      make -j2 &&  make install
+[  0%] [  0%] [34m[1mCreating directories for 'LibDwarf'
+[0m[34m[1mBuilding DyninstRT
+[0mmake[3]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
+[35m[1mScanning dependencies of target dyninstAPI_RT
+[0m[  0%] [34m[1mPerforming download step (download, verify and extract) for 'LibDwarf'
+[0m[  3%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTcommon.c.o
+[0m-- downloading...
+     src='http://www.paradyn.org/libdwarf/libdwarf-20130126.tar.gz'
+     dst='/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/libdwarf/src/libdwarf-20130126.tar.gz'
+     timeout='none'
+[  7%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTmemEmulator.c.o
+[0m[ 10%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTposix.c.o
+[0m-- [download 0% complete]
+-- [download 1% complete]
+[ 14%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTlinux.c.o
+[0m-- [download 2% complete]
+[ 17%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTheap.c.o
+[0m[ 21%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTheap-linux.c.o
+[0m-- [download 3% complete]
+-- [download 4% complete]
+[ 25%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTthread.c.o
+[0m[ 28%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTspace.S.o
+[0m-- [download 5% complete]
+[ 32%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTsignal.c.o
+[0m[ 35%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTstatic_ctors_dtors_begin.c.o
+[0m[ 39%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTstatic_ctors_dtors_end.c.o
+[0m[ 42%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTthread-x86-64.c.o
+[0m-- [download 6% complete]
+-- [download 7% complete]
+[ 46%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTtlsgetaddr-x86.S.o
+[0m[ 50%] [32mBuilding C object CMakeFiles/dyninstAPI_RT.dir/src/RTstatic_ctors_dtors-x86.c.o
+[0m[31m[1mLinking C shared library libdyninstAPI_RT.so
+[0m[ 50%] Built target dyninstAPI_RT
+[35m[1mScanning dependencies of target dyninstAPI_RT_static
+[0m[ 53%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTcommon.c.o
+[0m-- [download 8% complete]
+-- [download 9% complete]
+[ 57%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTmemEmulator.c.o
+[0m-- [download 10% complete]
+-- [download 11% complete]
+[ 60%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTposix.c.o
+[0m[ 64%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTlinux.c.o
+[0m-- [download 12% complete]
+-- [download 13% complete]
+[ 67%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTheap.c.o
+[0m-- [download 14% complete]
+-- [download 15% complete]
+-- [download 16% complete]
+[ 71%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTheap-linux.c.o
+[0m-- [download 17% complete]
+-- [download 18% complete]
+-- [download 19% complete]
+[ 75%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTthread.c.o
+[0m[ 78%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTspace.S.o
+[0m[ 82%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTsignal.c.o
+[0m-- [download 20% complete]
+-- [download 21% complete]
+[ 85%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTstatic_ctors_dtors_begin.c.o
+[0m[ 89%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTstatic_ctors_dtors_end.c.o
+[0m[ 92%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTthread-x86-64.c.o
+[0m[ 96%] [32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTtlsgetaddr-x86.S.o
+[0m[100%] -- [download 22% complete]
+[32mBuilding C object CMakeFiles/dyninstAPI_RT_static.dir/src/RTstatic_ctors_dtors-x86.c.o
+[0m[31m[1mLinking C static library libdyninstAPI_RT.a
+[0m[100%] Built target dyninstAPI_RT_static
+[  0%] Built target DyninstRT
+[  0%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Ident.C.o
+[0m-- [download 23% complete]
+-- [download 24% complete]
+-- [download 25% complete]
+-- [download 26% complete]
+-- [download 27% complete]
+-- [download 28% complete]
+-- [download 29% complete]
+-- [download 30% complete]
+-- [download 31% complete]
+-- [download 32% complete]
+-- [download 33% complete]
+-- [download 34% complete]
+-- [download 35% complete]
+-- [download 36% complete]
+-- [download 37% complete]
+[  0%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/string-regex.C.o
+[0m-- [download 38% complete]
+-- [download 39% complete]
+-- [download 40% complete]
+-- [download 41% complete]
+-- [download 42% complete]
+-- [download 43% complete]
+-- [download 44% complete]
+-- [download 45% complete]
+-- [download 46% complete]
+-- [download 47% complete]
+-- [download 48% complete]
+-- [download 49% complete]
+-- [download 50% complete]
+-- [download 51% complete]
+-- [download 52% complete]
+-- [download 53% complete]
+-- [download 54% complete]
+-- [download 55% complete]
+-- [download 56% complete]
+[  1%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Timer.C.o
+[0m-- [download 57% complete]
+-- [download 58% complete]
+-- [download 59% complete]
+-- [download 60% complete]
+-- [download 61% complete]
+-- [download 62% complete]
+-- [download 63% complete]
+-- [download 64% complete]
+-- [download 65% complete]
+-- [download 66% complete]
+-- [download 67% complete]
+-- [download 68% complete]
+[  1%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Types.C.o
+[0m-- [download 69% complete]
+-- [download 70% complete]
+-- [download 71% complete]
+-- [download 72% complete]
+-- [download 73% complete]
+-- [download 74% complete]
+-- [download 75% complete]
+-- [download 76% complete]
+-- [download 77% complete]
+-- [download 78% complete]
+-- [download 79% complete]
+-- [download 80% complete]
+-- [download 81% complete]
+-- [download 82% complete]
+[  1%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/debugOstream.C.o
+[0m-- [download 83% complete]
+-- [download 84% complete]
+[  1%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/lprintf.C.o
+[0m-- [download 85% complete]
+-- [download 86% complete]
+-- [download 87% complete]
+-- [download 88% complete]
+-- [download 89% complete]
+-- [download 90% complete]
+-- [download 91% complete]
+-- [download 92% complete]
+-- [download 93% complete]
+-- [download 94% complete]
+-- [download 95% complete]
+-- [download 96% complete]
+-- [download 97% complete]
+-- [download 98% complete]
+-- [download 99% complete]
+-- [download 100% complete]
+-- downloading... done
+-- verifying file...
+     file='/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/libdwarf/src/libdwarf-20130126.tar.gz'
+-- verifying file... warning: did not verify file - no URL_HASH specified?
+-- extracting...
+     src='/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/libdwarf/src/libdwarf-20130126.tar.gz'
+     dst='/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/libdwarf/src/LibDwarf'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[  1%] [34m[1mNo patch step for 'LibDwarf'
+[0m[  2%] [34m[1mNo update step for 'LibDwarf'
+[0m[  2%] [34m[1mPerforming configure step for 'LibDwarf'
+[0mchecking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... [  2%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/pathName.C.o
+[0myes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking whether gcc needs -traditional... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ranlib... ranlib
+checking for ar... ar
+checking alloca.h usability... yes
+checking alloca.h presence... yes
+checking for alloca.h... yes
+checking elf.h usability... yes
+checking elf.h presence... yes
+checking for elf.h... yes
+checking elfaccess.h usability... no
+checking elfaccess.h presence... no
+checking for elfaccess.h... no
+checking libelf.h usability... yes
+checking libelf.h presence... yes
+checking for libelf.h... yes
+checking libelf/libelf.h usability... no
+checking libelf/libelf.h presence... no
+checking for libelf/libelf.h... no
+checking for sys/types.h... (cached) yes
+checking sys/ia64/elf.h usability... no
+checking sys/ia64/elf.h presence... no
+checking for sys/ia64/elf.h... no
+checking for elf64_getehdr in -lelf... yes
+checking for elf64_getshdr in -lelf... yes
+[  2%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Time.C.o
+[0mconfigure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+[  2%] [34m[1mPerforming build step for 'LibDwarf'
+[0mmake[3]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
+[  2%] [34m[1mPerforming install step for 'LibDwarf'
+[0m[  2%] [34m[1mCompleted 'LibDwarf'
+[0m[  2%] Built target LibDwarf
+[  3%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/fraction.C.o
+[0m[  3%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Ident.C.o
+[0m[  3%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/timing.C.o
+[0m[  3%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/string-regex.C.o
+[0m[  3%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/stats.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Timer.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Annotatable.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Types.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/MappedFile.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/debugOstream.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/lprintf.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/pathName.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/sha1.C.o
+[0m[  4%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Time.C.o
+[0m[  5%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/serialize-bin.C.o
+[0m[  5%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/serialize-xml.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/fraction.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/util.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/timing.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Node.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/stats.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Annotatable.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/MappedFile.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Graph.C.o
+[0m[  6%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/sha1.C.o
+[0m[  7%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/serialize-bin.C.o
+[0m[  7%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Edge.C.o
+[0m[  7%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/serialize-xml.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/DOT.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/util.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Node.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/dyn_regs.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/AST.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/addrtranslate.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Graph.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/arch-x86.C.o
+[0m[  8%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Edge.C.o
+[0m[  9%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/DOT.C.o
+[0m[  9%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/dyn_regs.C.o
+[0m[  9%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/AST.C.o
+[0m[  9%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/addrtranslate.C.o
+[0m[  9%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/arch-x86.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/common/src/arch-x86.C: In static member function ‘static void NS_x86::ia32_instruction::initFlagTable(std::tr1::unordered_map<entryID, NS_x86::flagInfo>&)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/common/src/arch-x86.C:832:6: note: variable tracking size limit exceeded with -fvar-tracking-assignments, retrying without
+ void ia32_instruction::initFlagTable(dyn_hash_map<entryID, flagInfo>& flagTable)
+      ^
+[  9%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/arch-power.C.o
+[0m[ 10%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/debug_common.C.o
+[0m[ 10%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/VariableLocation.C.o
+[0m[ 10%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/Buffer.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/common/src/arch-x86.C: In static member function ‘static void NS_x86::ia32_instruction::initFlagTable(std::tr1::unordered_map<entryID, NS_x86::flagInfo>&)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/common/src/arch-x86.C:832:6: note: variable tracking size limit exceeded with -fvar-tracking-assignments, retrying without
+ void ia32_instruction::initFlagTable(dyn_hash_map<entryID, flagInfo>& flagTable)
+      ^
+[ 10%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/MachSyscall.C.o
+[0m[ 10%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/arch-power.C.o
+[0m[ 11%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/debug_common.C.o
+[0m[ 11%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/VariableLocation.C.o
+[0m[ 11%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/Buffer.C.o
+[0m[ 11%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/MachSyscall.C.o
+[0mIn file included from /home/patharmor/patharmor/Dyninst-8.2.1/common/src/MachSyscall.C:100:0:
+/home/patharmor/patharmor/Dyninst-8.2.1/common/src/SyscallInformation.C: In constructor ‘SyscallInformation::SyscallInformation()’:
+/home/patharmor/patharmor/Dyninst-8.2.1/common/src/SyscallInformation.C:4:1: note: variable tracking size limit exceeded with -fvar-tracking-assignments, retrying without
+ SyscallInformation::SyscallInformation() {
+ ^
+[ 11%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/linuxKludges.C.o
+[0m[ 11%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/timing-linux.C.o
+[0m[ 12%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/parseauxv.C.o
+[0m[ 12%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/addrtranslate-sysv.C.o
+[0m[ 12%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/addrtranslate-auxv.C.o
+[0m[ 12%] [32mBuilding CXX object common/CMakeFiles/common.dir/src/addrtranslate-linux.C.o
+[0m[31m[1mLinking CXX shared library libcommon.so
+[0m[ 12%] Built target common
+[ 12%] [32mBuilding CXX object elf/CMakeFiles/dynElf.dir/src/Elf_X.C.o
+[0mIn file included from /home/patharmor/patharmor/Dyninst-8.2.1/common/src/MachSyscall.C:100:0:
+/home/patharmor/patharmor/Dyninst-8.2.1/common/src/SyscallInformation.C: In constructor ‘SyscallInformation::SyscallInformation()’:
+/home/patharmor/patharmor/Dyninst-8.2.1/common/src/SyscallInformation.C:4:1: note: variable tracking size limit exceeded with -fvar-tracking-assignments, retrying without
+ SyscallInformation::SyscallInformation() {
+ ^
+[ 12%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/linuxKludges.C.o
+[0m[ 12%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/timing-linux.C.o
+[0m[ 13%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/parseauxv.C.o
+[0m[31m[1mLinking CXX shared library libdynElf.so
+[0m[ 13%] Built target dynElf
+[ 13%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/addrtranslate-sysv.C.o
+[0m[ 13%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/addrtranslate-auxv.C.o
+[0m[ 13%] [32mBuilding CXX object elf/CMakeFiles/dynElf_static.dir/src/Elf_X.C.o
+[0m[ 13%] [32mBuilding CXX object common/CMakeFiles/common_static.dir/src/addrtranslate-linux.C.o
+[0m[31m[1mLinking CXX static library libcommon_static.a
+[0m[ 13%] Built target common_static
+[35m[1mScanning dependencies of target dynDwarf
+[0m[ 13%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf.dir/src/dwarfResult.C.o
+[0m[ 13%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf.dir/src/dwarfExprParser.C.o
+[0m[31m[1mLinking CXX static library libdynElf_static.a
+[0m[ 13%] Built target dynElf_static
+[ 13%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf_static.dir/src/dwarfResult.C.o
+[0m[ 13%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf.dir/src/dwarfFrameParser.C.o
+[0m[ 14%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf_static.dir/src/dwarfExprParser.C.o
+[0m[ 14%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf_static.dir/src/dwarfFrameParser.C.o
+[0m[ 14%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf.dir/src/dwarfHandle.C.o
+[0m[31m[1mLinking CXX shared library libdynDwarf.so
+[0m[ 14%] Built target dynDwarf
+[ 14%] [32mBuilding CXX object symlite/CMakeFiles/symLite.dir/src/SymLite-elf.C.o
+[0m[ 14%] [32mBuilding CXX object dwarf/CMakeFiles/dynDwarf_static.dir/src/dwarfHandle.C.o
+[0m[31m[1mLinking CXX static library libdynDwarf_static.a
+[0m[ 14%] Built target dynDwarf_static
+[ 14%] [32mBuilding CXX object symlite/CMakeFiles/symLite_static.dir/src/SymLite-elf.C.o
+[0m[31m[1mLinking CXX shared library libsymLite.so
+[0m[ 14%] Built target symLite
+[35m[1mScanning dependencies of target symtabAPI
+[0m[ 15%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Object.C.o
+[0m[31m[1mLinking CXX static library libsymLite_static.a
+[0m[ 15%] Built target symLite_static
+[ 15%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Aggregate.C.o
+[0m[35m[1mScanning dependencies of target instructionAPI
+[0m[ 15%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/Instruction.C.o
+[0m[ 15%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Function.C.o
+[0m[ 16%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/InstructionAST.C.o
+[0m[ 16%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Variable.C.o
+[0m[ 16%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/Operation.C.o
+[0m[ 16%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Symbol.C.o
+[0m[ 16%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/LineInformation.C.o
+[0m[ 16%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/Operand.C.o
+[0m[ 16%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/Register.C.o
+[0m[ 17%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Symtab.C.o
+[0m[ 17%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/Expression.C.o
+[0m[ 17%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/BinaryFunction.C.o
+[0m[ 18%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/InstructionCategories.C.o
+[0m[ 18%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/Immediate.C.o
+[0m[ 18%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/InstructionDecoder.C.o
+[0m[ 18%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/InstructionDecoder-x86.C.o
+[0m[ 18%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Symtab-edit.C.o
+[0m[ 18%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/InstructionDecoder-power.C.o
+[0m[ 18%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Symtab-lookup.C.o
+[0m[ 18%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Symtab-deprecated.C.o
+[0m[ 18%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Module.C.o
+[0m[ 18%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Region.C.o
+[0m[ 19%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Collections.C.o
+[0m[ 19%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Type.C.o
+[0m[ 19%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/AddrLookup.C.o
+[0m[ 19%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/annotations.C.o
+[0m[ 19%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI.dir/src/InstructionDecoderImpl.C.o
+[0m[ 19%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/debug.C.o
+[0m[ 19%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/SymtabReader.C.o
+[0m[31m[1mLinking CXX shared library libinstructionAPI.so
+[0m[ 19%] Built target instructionAPI
+[35m[1mScanning dependencies of target dynC_API_static
+[0m[ 19%] [32mBuilding CXX object dynC_API/CMakeFiles/dynC_API_static.dir/src/snippetGen.C.o
+[0m[ 20%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Object-elf.C.o
+[0m[ 20%] [32mBuilding CXX object dynC_API/CMakeFiles/dynC_API_static.dir/src/lex.dynC.C.o
+[0m[ 20%] [32mBuilding CXX object dynC_API/CMakeFiles/dynC_API_static.dir/src/dynC.tab.C.o
+[0m[ 21%] [32mBuilding CXX object dynC_API/CMakeFiles/dynC_API_static.dir/src/dynC.C.o
+[0m[ 21%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Archive.C.o
+[0m[31m[1mLinking CXX static library libdynC_API_static.a
+[0m[ 21%] Built target dynC_API_static
+[35m[1mScanning dependencies of target instructionAPI_static
+[0m[ 22%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/Instruction.C.o
+[0m[ 22%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/Archive-elf.C.o
+[0m[ 22%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/InstructionAST.C.o
+[0m[ 22%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/parseDwarf.C.o
+[0m[ 22%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/Operation.C.o
+[0m[ 22%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/parseStab.C.o
+[0m[ 22%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/Operand.C.o
+[0m[ 22%] [ 22%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/emitElf.C.o
+[0m[32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/Register.C.o
+[0m[ 22%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/Expression.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf.C: In member function ‘bool Dyninst::SymtabAPI::emitElf::driver(Dyninst::SymtabAPI::Symtab*, std::string)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf.C:917:46: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’, declared with attribute warn_unused_result [-Wunused-result]
+      write(newfd, &offset, sizeof(Elf32_Off));
+                                              ^
+[ 23%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/BinaryFunction.C.o
+[0m[ 23%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/InstructionCategories.C.o
+[0m[ 23%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/Immediate.C.o
+[0m[ 23%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/InstructionDecoder.C.o
+[0m[ 24%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/LinkMap.C.o
+[0m[ 24%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/InstructionDecoder-x86.C.o
+[0m[ 24%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/emitElfStatic.C.o
+[0m[ 24%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/InstructionDecoder-power.C.o
+[0m[ 24%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/dwarfWalker.C.o
+[0m[ 24%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/emitElf-64.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf-64.C: In member function ‘bool Dyninst::SymtabAPI::emitElf64::driver(Dyninst::SymtabAPI::Symtab*, std::string)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf-64.C:877:46: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’, declared with attribute warn_unused_result [-Wunused-result]
+      write(newfd, &offset, sizeof(Elf64_Off));
+                                              ^
+[ 24%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/emitElfStatic-x86.C.o
+[0m[ 24%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI.dir/src/relocationEntry-elf-x86.C.o
+[0m[31m[1mLinking CXX shared library libsymtabAPI.so
+[0m[ 25%] [32mBuilding CXX object instructionAPI/CMakeFiles/instructionAPI_static.dir/src/InstructionDecoderImpl.C.o
+[0m[ 25%] Built target symtabAPI
+[35m[1mScanning dependencies of target symtabAPI_static
+[0m[ 26%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Object.C.o
+[0m[31m[1mLinking CXX static library libinstructionAPI_static.a
+[0m[ 26%] Built target instructionAPI_static
+[35m[1mScanning dependencies of target parseAPI_static
+[ 26%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Aggregate.C.o
+[0m[0m[ 26%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/ParserDetails.C.o
+[0m[ 26%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Function.C.o
+[0m[ 26%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Variable.C.o
+[0m[ 27%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/Parser.C.o
+[0m[ 27%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Symbol.C.o
+[0m[ 27%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/LineInformation.C.o
+[0m[ 28%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Symtab.C.o
+[0m[ 28%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/CFGFactory.C.o
+[0m[ 28%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/Function.C.o
+[0m[ 28%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Symtab-edit.C.o
+[0m[ 28%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/Block.C.o
+[0m[ 28%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Symtab-lookup.C.o
+[0m[ 28%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/CodeObject.C.o
+[0m[ 28%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Symtab-deprecated.C.o
+[0m[ 28%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/debug_parse.C.o
+[0m[ 28%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Module.C.o
+[0m[ 29%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/CodeSource.C.o
+[0m[ 29%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Region.C.o
+[0m[ 29%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/ParseData.C.o
+[0m[ 30%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Collections.C.o
+[0m[ 30%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Type.C.o
+[0m[ 30%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/InstructionAdapter.C.o
+[0m[ 30%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/AddrLookup.C.o
+[0m[ 30%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/Parser-speculative.C.o
+[0m[ 30%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/annotations.C.o
+[0m[ 30%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/debug.C.o
+[0m[ 30%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/ParseCallback.C.o
+[0m[ 30%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/SymtabReader.C.o
+[0m[ 31%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Object-elf.C.o
+[0m[ 31%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/IA_IAPI.C.o
+[0m[ 32%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/IA_x86Details.C.o
+[0m[ 32%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Archive.C.o
+[0m[ 32%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/IA_powerDetails.C.o
+[0m[ 32%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/Archive-elf.C.o
+[0m[ 32%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/parseDwarf.C.o
+[0m[ 32%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/parseStab.C.o
+[0m[ 32%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/IA_platformDetailsFactory.C.o
+[0m[ 32%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/emitElf.C.o
+[0m[ 32%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/CFGModifier.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf.C: In member function ‘bool Dyninst::SymtabAPI::emitElf::driver(Dyninst::SymtabAPI::Symtab*, std::string)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf.C:917:46: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’, declared with attribute warn_unused_result [-Wunused-result]
+      write(newfd, &offset, sizeof(Elf32_Off));
+                                              ^
+[ 32%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/StackTamperVisitor.C.o
+[0m[ 33%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/LinkMap.C.o
+[0m[ 33%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/emitElfStatic.C.o
+[0m[ 33%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/ABI.C.o
+[0m[ 34%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/Absloc.C.o
+[0m[ 34%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/dwarfWalker.C.o
+[0m[ 34%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/AbslocInterface.C.o
+[0m[ 34%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/emitElf-64.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf-64.C: In member function ‘bool Dyninst::SymtabAPI::emitElf64::driver(Dyninst::SymtabAPI::Symtab*, std::string)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/symtabAPI/src/emitElf-64.C:877:46: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’, declared with attribute warn_unused_result [-Wunused-result]
+      write(newfd, &offset, sizeof(Elf64_Off));
+                                              ^
+[ 34%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/convertOpcodes.C.o
+[0m[ 34%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/debug_dataflow.C.o
+[0m[ 34%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/ExpressionConversionVisitor.C.o
+[0m[ 34%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/InstructionCache.C.o
+[0m[ 34%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/emitElfStatic-x86.C.o
+[0m[ 35%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/liveness.C.o
+[0m[ 36%] [32mBuilding CXX object symtabAPI/CMakeFiles/symtabAPI_static.dir/src/relocationEntry-elf-x86.C.o
+[0m[31m[1mLinking CXX static library libsymtabAPI_static.a
+[0m[ 36%] Built target symtabAPI_static
+[ 36%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/RegisterMap.C.o
+[0m[35m[1mScanning dependencies of target patchAPI_static
+[ 36%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/RoseImpl.C.o
+[0m[0m[ 36%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/AddrSpace.C.o
+[0m[ 36%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/RoseInsnFactory.C.o
+[0m[ 36%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/slicing.C.o
+[0m[ 36%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/Instrumenter.C.o
+[0m[ 37%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PatchObject.C.o
+[0m[ 37%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PatchBlock.C.o
+[0m[ 37%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/stackanalysis.C.o
+[0m[ 37%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PatchEdge.C.o
+[0m[ 38%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/SymbolicExpansion.C.o
+[0m[ 38%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PatchFunction.C.o
+[0m[ 38%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PatchMgr.C.o
+[0m[ 39%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/Point.C.o
+[0m[ 39%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/CFGMaker.C.o
+[0m[ 39%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PointMaker.C.o
+[0m[ 39%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/SymEval.C.o
+[0m[ 39%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/Command.C.o
+[0m[ 39%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PatchCallback.C.o
+[0m[ 39%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/SymEvalPolicy.C.o
+[0m[ 39%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/ParseCallback.C.o
+[0m[ 39%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/templates.C.o
+[0m[ 39%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/__/dataflowAPI/src/Visitors.C.o
+[0m[ 40%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI_static.dir/src/PatchModifier.C.o
+[0m[ 40%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/SymtabCodeSource.C.o
+[0m[31m[1mLinking CXX static library libpatchAPI_static.a
+[0m[ 40%] Built target patchAPI_static
+[ 41%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/InstructionSource-x86.C.o
+[0m[35m[1mScanning dependencies of target pcontrol_static
+[0m[ 42%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/event.C.o
+[0m[ 42%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI_static.dir/src/IA_x86.C.o
+[0m[31m[1mLinking CXX static library libparseAPI_static.a
+[0m[ 42%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/generator.C.o
+[0m[ 42%] Built target parseAPI_static
+[35m[1mScanning dependencies of target stackwalk_static
+[0m[ 42%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/frame.C.o
+[0m[ 42%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/framestepper.C.o
+[0m[ 42%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/handler.C.o
+[0m[ 42%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/swk_errors.C.o
+[0m[ 42%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/symlookup.C.o
+[0m[ 43%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/walker.C.o
+[0m[ 43%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/procstate.C.o
+[0m[ 43%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/steppergroup.C.o
+[0m[ 43%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/mailbox.C.o
+[0m[ 43%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/libstate.C.o
+[0m[ 43%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/sw_c.C.o
+[0m[ 43%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/process.C.o
+[0m[ 43%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/sw_pcontrol.C.o
+[0m[ 44%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/symtab-swk.C.o
+[0m[ 44%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/linuxbsd-swk.C.o
+[0m[ 44%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/linux-swk.C.o
+[0m[ 44%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/dbginfo-stepper.C.o
+[0m[ 44%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/linux-x86-swk.C.o
+[0m[ 44%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/x86-wanderer.C.o
+[0m[ 45%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/linuxbsd-x86-swk.C.o
+[0m[ 45%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/pcerrors.C.o
+[0m[ 45%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/x86-swk.C.o
+[0m[ 46%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/procpool.C.o
+[0m[ 46%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/analysis_stepper.C.o
+[0m[ 46%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/irpc.C.o
+[0m[ 46%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk_static.dir/src/callchecker-IAPI.C.o
+[0m[31m[1mLinking CXX static library libstackwalk_static.a
+[0m[ 46%] Built target stackwalk_static
+[35m[1mScanning dependencies of target dyninstAPI_static
+[ 46%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/response.C.o
+[0m[0m[ 46%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch.C.o
+[0m[ 46%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/resp.C.o
+[0m[ 46%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/memcache.C.o
+[0m[ 47%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_image.C.o
+[0m[ 47%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/procset.C.o
+[0m[ 47%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_function.C.o
+[0m[ 48%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/processplat.C.o
+[0m[ 48%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_snippet.C.o
+[0m[ 48%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/loadLibrary/injector.C.o
+[0m[ 48%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/loadLibrary/codegen.C.o
+[0m[ 48%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/x86_process.C.o
+[0m[ 48%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_thread.C.o
+[0m[ 48%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/loadLibrary/codegen-x86.C.o
+[0m[ 48%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/loadLibrary/codegen-ppc.C.o
+[0m[ 49%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/ppc_process.C.o
+[0m[ 49%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_process.C.o
+[0m[ 49%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/pcmachsyscall.C.o
+[0m[ 49%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/sysv.C.o
+[0m[ 49%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/int_thread_db.C.o
+[0m[ 49%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_type.C.o
+[0m[ 49%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/mmapalloc.C.o
+[0m[ 49%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/linux.C.o
+[0m[ 50%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_module.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C: In member function ‘virtual bool linux_process::plat_attachWillTriggerStop()’:
+/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C:991:42: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+             &tmpPid, &tmpPid, &ttyNumber);
+                                          ^
+/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C: In member function ‘bool linux_process::readStatM(long unsigned int&, long unsigned int&, long unsigned int&)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C:1701:35: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+           &text, &lib, &data, &dt);
+                                   ^
+[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/unix.C.o
+[0m[ 51%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_object.C.o
+[0m[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/notify_pipe.C.o
+[0m[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/__/common/src/dthread-unix.C.o
+[0m[ 51%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_point.C.o
+[0m[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/__/common/src/dthread.C.o
+[0m[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol_static.dir/src/loadLibrary/codegen-linux.C.o
+[0m[31m[1mLinking CXX static library libpcontrol_static.a
+[0m[ 51%] Built target pcontrol_static
+[ 51%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_collections.C.o
+[0m[35m[1mScanning dependencies of target pcontrol
+[0m[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/event.C.o
+[0m[ 51%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_sourceBlock.C.o
+[0m[ 51%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_basicBlock.C.o
+[0m[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/generator.C.o
+[0m[ 51%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/handler.C.o
+[0m[ 52%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_basicBlockLoop.C.o
+[0m[ 52%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_edge.C.o
+[0m[ 52%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/mailbox.C.o
+[0m[ 52%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_loopTreeNode.C.o
+[0m[ 52%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/process.C.o
+[0m[ 52%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_flowGraph.C.o
+[0m[ 52%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_frame.C.o
+[0m[ 52%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_parRegion.C.o
+[0m[ 53%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/pcerrors.C.o
+[0m[ 53%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/procpool.C.o
+[0m[ 53%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/irpc.C.o
+[0m[ 54%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_statement.C.o
+[0m[ 54%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/response.C.o
+[0m[ 54%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_addressSpace.C.o
+[0m[ 54%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/resp.C.o
+[0m[ 54%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/memcache.C.o
+[0m[ 54%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_binaryEdit.C.o
+[0m[ 55%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/procset.C.o
+[0m[ 55%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_memoryAccess.C.o
+[0m[ 55%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/dummy.C.o
+[0m[ 55%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/debug.C.o
+[0m[ 56%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/ast.C.o
+[0m[ 56%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/processplat.C.o
+[0m[ 56%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/loadLibrary/injector.C.o
+[0m[ 56%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/registerSpace.C.o
+[0m[ 56%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/loadLibrary/codegen.C.o
+[0m[ 56%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/x86_process.C.o
+[0m[ 56%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/loadLibrary/codegen-x86.C.o
+[0m[ 57%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/loadLibrary/codegen-ppc.C.o
+[0m[ 57%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/codegen.C.o
+[0m[ 57%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/ppc_process.C.o
+[0m[ 57%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/pcmachsyscall.C.o
+[0m[ 57%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/sysv.C.o
+[0m[ 57%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/inst.C.o
+[0m[ 57%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/int_thread_db.C.o
+[0m[ 57%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/instPoint.C.o
+[0m[ 57%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/mmapalloc.C.o
+[0m[ 58%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/linux.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C: In member function ‘virtual bool linux_process::plat_attachWillTriggerStop()’:
+/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C:991:42: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+             &tmpPid, &tmpPid, &ttyNumber);
+                                          ^
+/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C: In member function ‘bool linux_process::readStatM(long unsigned int&, long unsigned int&, long unsigned int&)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/proccontrol/src/linux.C:1701:35: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+           &text, &lib, &data, &dt);
+                                   ^
+[ 58%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/baseTramp.C.o
+[0m[ 58%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/unix.C.o
+[0m[ 59%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/addressSpace.C.o
+[0m[ 59%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/notify_pipe.C.o
+[0m[ 59%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/__/common/src/dthread-unix.C.o
+[0m[ 59%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/__/common/src/dthread.C.o
+[0m[ 59%] [32mBuilding CXX object proccontrol/CMakeFiles/pcontrol.dir/src/loadLibrary/codegen-linux.C.o
+[0m[31m[1mLinking CXX shared library libpcontrol.so
+[0m[ 59%] Built target pcontrol
+[ 59%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/binaryEdit.C.o
+[0m[35m[1mScanning dependencies of target parseAPI
+[0m[ 59%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/ParserDetails.C.o
+[0m[ 59%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/infHeap.C.o
+[0m[ 59%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/Parser.C.o
+[0m[ 59%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/frame.C.o
+[0m[ 59%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/CFGFactory.C.o
+[0m[ 59%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/codeRange.C.o
+[0m[ 59%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/Function.C.o
+[0m[ 59%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/image.C.o
+[0m[ 59%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/Block.C.o
+[0m[ 60%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/CodeObject.C.o
+[0m[ 61%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/dominator.C.o
+[0m[ 61%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/debug_parse.C.o
+[0m[ 61%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/CodeSource.C.o
+[0m[ 61%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/parse-cfg.C.o
+[0m[ 61%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/ParseData.C.o
+[0m[ 61%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/mapped_object.C.o
+[0m[ 61%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/InstructionAdapter.C.o
+[0m[ 61%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/Parser-speculative.C.o
+[0m[ 62%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/ParseCallback.C.o
+[0m[ 62%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/IA_IAPI.C.o
+[0m[ 62%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/mapped_module.C.o
+[0m[ 62%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/IA_x86Details.C.o
+[0m[ 62%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/function.C.o
+[0m[ 62%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/IA_powerDetails.C.o
+[0m[ 62%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/block.C.o
+[0m[ 62%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/IA_platformDetailsFactory.C.o
+[0m[ 63%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/CFGModifier.C.o
+[0m[ 64%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/edge.C.o
+[0m[ 64%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/StackTamperVisitor.C.o
+[0m[ 64%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/variable.C.o
+[0m[ 64%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/ABI.C.o
+[0m[ 64%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/Absloc.C.o
+[0m[ 64%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/util.C.o
+[0m[ 64%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_instruction.C.o
+[0m[ 64%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/AbslocInterface.C.o
+[0m[ 64%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/parRegion.C.o
+[0m[ 64%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/convertOpcodes.C.o
+[0m[ 65%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/debug_dataflow.C.o
+[0m[ 65%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/ExpressionConversionVisitor.C.o
+[0m[ 65%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/InstructionCache.C.o
+[0m[ 65%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Parsing.C.o
+[0m[ 65%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/liveness.C.o
+[0m[ 66%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Parsing-arch.C.o
+[0m[ 66%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/RegisterMap.C.o
+[0m[ 66%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/RoseImpl.C.o
+[0m[ 66%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/hybridInstrumentation.C.o
+[0m[ 67%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/RoseInsnFactory.C.o
+[0m[ 67%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/slicing.C.o
+[0m[ 67%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/hybridOverwrites.C.o
+[0m[ 67%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/stackanalysis.C.o
+[0m[ 67%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/SymbolicExpansion.C.o
+[0m[ 67%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/hybridCallbacks.C.o
+[0m[ 67%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/dynProcess.C.o
+[0m[ 68%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/dynThread.C.o
+[0m[ 68%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/SymEval.C.o
+[0m[ 68%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/pcEventHandler.C.o
+[0m[ 68%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/SymEvalPolicy.C.o
+[0m[ 69%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/templates.C.o
+[0m[ 69%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/__/dataflowAPI/src/Visitors.C.o
+[0m[ 69%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/SymtabCodeSource.C.o
+[0m[ 69%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/pcEventMuxer.C.o
+[0m[ 69%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/InstructionSource-x86.C.o
+[0m[ 69%] [32mBuilding CXX object parseAPI/CMakeFiles/parseAPI.dir/src/IA_x86.C.o
+[0m[ 69%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/CodeMover.C.o
+[0m[31m[1mLinking CXX shared library libparseAPI.so
+[0m[ 69%] Built target parseAPI
+[35m[1mScanning dependencies of target stackwalk
+[0m[ 69%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/frame.C.o
+[0m[ 70%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/framestepper.C.o
+[0m[ 70%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/CFG/RelocGraph.C.o
+[0m[ 70%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/swk_errors.C.o
+[0m[ 70%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/symlookup.C.o
+[0m[ 70%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/walker.C.o
+[0m[ 70%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/procstate.C.o
+[0m[ 70%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/steppergroup.C.o
+[0m[ 70%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/CFG/RelocBlock.C.o
+[0m[ 71%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/libstate.C.o
+[0m[ 71%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/sw_c.C.o
+[0m[ 71%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/sw_pcontrol.C.o
+[0m[ 72%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/CFG/RelocEdge.C.o
+[0m[ 72%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/symtab-swk.C.o
+[0m[ 72%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/linuxbsd-swk.C.o
+[0m[ 72%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/CFG/RelocTarget.C.o
+[0m[ 72%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/linux-swk.C.o
+[0m[ 73%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/dbginfo-stepper.C.o
+[0m[ 73%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/linux-x86-swk.C.o
+[0m[ 73%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Springboard.C.o
+[0m[ 73%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/x86-wanderer.C.o
+[0m[ 73%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/linuxbsd-x86-swk.C.o
+[0m[ 73%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/x86-swk.C.o
+[0m[ 74%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/analysis_stepper.C.o
+[0m[ 74%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/ASTWidget.C.o
+[0m[ 74%] [32mBuilding CXX object stackwalk/CMakeFiles/stackwalk.dir/src/callchecker-IAPI.C.o
+[0m[ 74%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/CFWidget.C.o
+[0m[31m[1mLinking CXX shared library libstackwalk.so
+[0m[ 74%] Built target stackwalk
+[35m[1mScanning dependencies of target patchAPI
+[0m[ 74%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/AddrSpace.C.o
+[0m[ 74%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/Instrumenter.C.o
+[0m[ 74%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/CallbackWidget.C.o
+[0m[ 74%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PatchObject.C.o
+[0m[ 75%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/InsnWidget.C.o
+[0m[ 75%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PatchBlock.C.o
+[0m[ 75%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/InstWidget.C.o
+[0m[ 76%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PatchEdge.C.o
+[0m[ 76%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/PCWidget.C.o
+[0m[ 76%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PatchFunction.C.o
+[0m[ 76%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/RelDataWidget.C.o
+[0m[ 76%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PatchMgr.C.o
+[0m[ 76%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Transformers/Transformer.C.o
+[0m[ 76%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/Point.C.o
+[0m[ 76%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/CFGMaker.C.o
+[0m[ 76%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Transformers/Instrumenter.C.o
+[0m[ 76%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PointMaker.C.o
+[0m[ 77%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/Command.C.o
+[0m[ 78%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Transformers/Modification.C.o
+[0m[ 78%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PatchCallback.C.o
+[0m[ 78%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Transformers/Movement-adhoc.C.o
+[0m[ 78%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/ParseCallback.C.o
+[0m[ 78%] [32mBuilding CXX object patchAPI/CMakeFiles/patchAPI.dir/src/PatchModifier.C.o
+[0m[ 78%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Transformers/Movement-analysis.C.o
+[0m[31m[1mLinking CXX shared library libpatchAPI.so
+[0m[ 78%] Built target patchAPI
+[35m[1mScanning dependencies of target dyninstAPI
+[0m[ 78%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch.C.o
+[0m[ 78%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/CodeTracker.C.o
+[0m[ 79%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_image.C.o
+[0m[ 79%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/CodeBuffer.C.o
+[0m[ 79%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/patchapi_debug.C.o
+[0m[ 79%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_function.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/DynObject.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/DynAddrSpace.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_snippet.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/DynPointMaker.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_thread.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/DynCFGMaker.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/DynInstrumenter.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_process.C.o
+[0m[ 80%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Patching.C.o
+[0m[ 81%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/frameChecker.C.o
+[0m[ 81%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_type.C.o
+[0m[ 81%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/BPatch_memoryAccessAdapter.C.o
+[0m[ 81%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/RegisterConversion-x86.C.o
+[0m[ 82%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_module.C.o
+[0m[ 82%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/Relocation/Widgets/CFWidget-x86.C.o
+[0m[ 82%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/inst-x86.C.o
+[0m[ 82%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_object.C.o
+[0m[ 82%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_point.C.o
+[0m[ 82%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/emit-x86.C.o
+[0m[ 82%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_collections.C.o
+[0m[ 83%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/codegen-x86.C.o
+[0m[ 83%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_sourceBlock.C.o
+[0m[ 83%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_basicBlock.C.o
+[0m[ 83%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/stackwalk-x86.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_basicBlockLoop.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/dynProcess-x86.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_edge.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/parse-x86.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_loopTreeNode.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_flowGraph.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/IAPI_to_AST.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/linux.C.o
+[0m[ 84%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_frame.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/dyninstAPI/src/linux.C: In static member function ‘static bool BinaryEdit::getResolvedLibraryPath(const string&, std::vector<std::basic_string<char> >&)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/dyninstAPI/src/linux.C:223:37: warning: ignoring return value of ‘char* fgets(char*, int, FILE*)’, declared with attribute warn_unused_result [-Wunused-result]
+         fgets(buffer, 512, ldconfig); // ignore first line
+                                     ^
+[ 85%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/inst-linux.C.o
+[0m[ 85%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_parRegion.C.o
+[0m[ 85%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/unix.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_statement.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_addressSpace.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/syscallNotification.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_binaryEdit.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/syscall-linux.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI_static.dir/src/linux-x86.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_memoryAccess.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/dummy.C.o
+[0m[ 86%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/debug.C.o
+[0m[31m[1mLinking CXX static library libdyninstAPI_static.a
+[0m[ 87%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/ast.C.o
+[0m[ 87%] Built target dyninstAPI_static
+[ 87%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/registerSpace.C.o
+[0m[ 87%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/codegen.C.o
+[0m[ 87%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/inst.C.o
+[0m[ 87%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/instPoint.C.o
+[0m[ 87%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/baseTramp.C.o
+[0m[ 88%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/addressSpace.C.o
+[0m[ 88%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/binaryEdit.C.o
+[0m[ 88%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/infHeap.C.o
+[0m[ 88%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/frame.C.o
+[0m[ 88%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/codeRange.C.o
+[0m[ 88%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/image.C.o
+[0m[ 89%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/dominator.C.o
+[0m[ 89%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/parse-cfg.C.o
+[0m[ 89%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/mapped_object.C.o
+[0m[ 89%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/mapped_module.C.o
+[0m[ 89%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/function.C.o
+[0m[ 89%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/block.C.o
+[0m[ 90%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/edge.C.o
+[0m[ 90%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/variable.C.o
+[0m[ 90%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/util.C.o
+[0m[ 90%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_instruction.C.o
+[0m[ 90%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/parRegion.C.o
+[0m[ 90%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Parsing.C.o
+[0m[ 91%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Parsing-arch.C.o
+[0m[ 91%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/hybridInstrumentation.C.o
+[0m[ 91%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/hybridOverwrites.C.o
+[0m[ 91%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/hybridCallbacks.C.o
+[0m[ 91%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/dynProcess.C.o
+[0m[ 91%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/dynThread.C.o
+[0m[ 92%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/pcEventHandler.C.o
+[0m[ 92%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/pcEventMuxer.C.o
+[0m[ 92%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/CodeMover.C.o
+[0m[ 92%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/CFG/RelocGraph.C.o
+[0m[ 92%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/CFG/RelocBlock.C.o
+[0m[ 92%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/CFG/RelocEdge.C.o
+[0m[ 93%] [ 93%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/CFG/RelocTarget.C.o
+[0m[32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Springboard.C.o
+[0m[ 93%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/ASTWidget.C.o
+[0m[ 93%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/CFWidget.C.o
+[0m[ 93%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/CallbackWidget.C.o
+[0m[ 93%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/InsnWidget.C.o
+[0m[ 94%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/InstWidget.C.o
+[0m[ 94%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/PCWidget.C.o
+[0m[ 94%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/RelDataWidget.C.o
+[0m[ 94%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Transformers/Transformer.C.o
+[0m[ 94%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Transformers/Instrumenter.C.o
+[0m[ 95%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Transformers/Modification.C.o
+[0m[ 95%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Transformers/Movement-adhoc.C.o
+[0m[ 95%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Transformers/Movement-analysis.C.o
+[0m[ 95%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/CodeTracker.C.o
+[0m[ 95%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/CodeBuffer.C.o
+[0m[ 95%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/patchapi_debug.C.o
+[0m[ 96%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/DynObject.C.o
+[0m[ 96%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/DynAddrSpace.C.o
+[0m[ 96%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/DynPointMaker.C.o
+[0m[ 96%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/DynCFGMaker.C.o
+[0m[ 96%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/DynInstrumenter.C.o
+[0m[ 96%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Patching.C.o
+[0m[ 97%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/frameChecker.C.o
+[0m[ 97%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/BPatch_memoryAccessAdapter.C.o
+[0m[ 97%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/RegisterConversion-x86.C.o
+[0m[ 97%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/Relocation/Widgets/CFWidget-x86.C.o
+[0m[ 97%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/inst-x86.C.o
+[0m[ 97%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/emit-x86.C.o
+[0m[ 98%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/codegen-x86.C.o
+[0m[ 98%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/stackwalk-x86.C.o
+[0m[ 98%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/dynProcess-x86.C.o
+[0m[ 98%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/parse-x86.C.o
+[0m[ 98%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/IAPI_to_AST.C.o
+[0m[ 98%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/linux.C.o
+[0m[ 99%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/inst-linux.C.o
+[0m/home/patharmor/patharmor/Dyninst-8.2.1/dyninstAPI/src/linux.C: In static member function ‘static bool BinaryEdit::getResolvedLibraryPath(const string&, std::vector<std::basic_string<char> >&)’:
+/home/patharmor/patharmor/Dyninst-8.2.1/dyninstAPI/src/linux.C:223:37: warning: ignoring return value of ‘char* fgets(char*, int, FILE*)’, declared with attribute warn_unused_result [-Wunused-result]
+         fgets(buffer, 512, ldconfig); // ignore first line
+                                     ^
+[ 99%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/unix.C.o
+[0m[ 99%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/syscallNotification.C.o
+[0m[ 99%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/syscall-linux.C.o
+[0m[ 99%] [32mBuilding CXX object dyninstAPI/CMakeFiles/dyninstAPI.dir/src/linux-x86.C.o
+[0m[31m[1mLinking CXX shared library libdyninstAPI.so
+[0m[ 99%] Built target dyninstAPI
+[35m[1mScanning dependencies of target dynC_API
+[0m[ 99%] [ 99%] [32mBuilding CXX object dynC_API/CMakeFiles/dynC_API.dir/src/lex.dynC.C.o
+[32mBuilding CXX object dynC_API/CMakeFiles/dynC_API.dir/src/snippetGen.C.o
+[0m[0m[100%] [32mBuilding CXX object dynC_API/CMakeFiles/dynC_API.dir/src/dynC.tab.C.o
+[0m[100%] [32mBuilding CXX object dynC_API/CMakeFiles/dynC_API.dir/src/dynC.C.o
+[0m[31m[1mLinking CXX shared library libdynC_API.so
+[0m[100%] Built target dynC_API
+[  0%] [34m[1mBuilding DyninstRT
+[0m[ 50%] Built target dyninstAPI_RT
+[100%] Built target dyninstAPI_RT_static
+[  0%] Built target DyninstRT
+[  1%] Built target LibDwarf
+[  7%] Built target common
+[ 13%] Built target common_static
+[ 13%] Built target dynElf
+[ 13%] Built target dynElf_static
+[ 13%] Built target dynDwarf
+[ 14%] Built target dynDwarf_static
+[ 14%] Built target symLite
+[ 14%] Built target symLite_static
+[ 19%] Built target symtabAPI
+[ 23%] Built target pcontrol
+[ 25%] Built target instructionAPI
+[ 31%] Built target parseAPI
+[ 35%] Built target stackwalk
+[ 37%] Built target patchAPI
+[ 54%] Built target dyninstAPI
+[ 55%] Built target dynC_API
+[ 56%] Built target dynC_API_static
+[ 59%] Built target instructionAPI_static
+[ 65%] Built target symtabAPI_static
+[ 72%] Built target parseAPI_static
+[ 75%] Built target patchAPI_static
+[ 80%] Built target pcontrol_static
+[ 83%] Built target stackwalk_static
+[100%] Built target dyninstAPI_static
+[36mInstall the project...
+[0m-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdwarf.so
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/cmake/Dyninst/DyninstConfig.cmake
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/cmake/Dyninst/DyninstConfigVersion.cmake
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/cmake/Dyninst/DyninstTargets.cmake
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/cmake/Dyninst/DyninstTargets-relwithdebinfo.cmake
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.so
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyninstRTExport.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyninstAPI_RT.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyninstRTExport.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyninstAPI_RT.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libcommon.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libcommon.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libcommon.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libcommon.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/entryIDs.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/IBSTree.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Annotatable.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymReader.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/DynAST.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Graph.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyn_syscalls.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyn_regs.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Node.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/util.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ProcReader.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/stl_utils.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyntypes.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Buffer.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Serialization.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/MachSyscall.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Edge.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/VariableLocation.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libcommon_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/entryIDs.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/IBSTree.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Annotatable.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymReader.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/DynAST.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Graph.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyn_syscalls.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyn_regs.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Node.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/util.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ProcReader.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/stl_utils.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dyntypes.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Buffer.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Serialization.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/MachSyscall.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Edge.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/VariableLocation.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynElf.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynElf.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynElf.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynElf.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Elf_X.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynElf_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Elf_X.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynDwarf.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynDwarf.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynDwarf.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynDwarf.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfExprParser.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfResult.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfFrameParser.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfHandle.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynDwarf_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfExprParser.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfResult.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfFrameParser.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dwarfHandle.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymLite.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymLite.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymLite.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymLite.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymLite-elf.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymLite_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymLite-elf.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynC_API.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynC_API.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynC_API.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynC_API.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/snippetGen.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dynC.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdynC_API_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/snippetGen.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/dynC.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libinstructionAPI.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libinstructionAPI.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libinstructionAPI.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libinstructionAPI.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionCategories.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Instruction.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionDecoder.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Visitor.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Expression.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Dereference.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/RegisterIDs.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Register.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Operand.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Immediate.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionAST.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Operation.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Result.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BinaryFunction.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libinstructionAPI_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionCategories.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Instruction.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionDecoder.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Visitor.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Expression.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Dereference.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/RegisterIDs.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Register.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Operand.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Immediate.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionAST.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Operation.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Result.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BinaryFunction.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymtabAPI.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymtabAPI.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymtabAPI.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymtabAPI.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Symbol.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Aggregate.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/symutil.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Region.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/AddrLookup.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Archive.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymtabReader.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/RangeLookup.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Variable.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/LineInformation.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Symtab.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Type.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Collections.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Module.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Function.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libsymtabAPI_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Symbol.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Aggregate.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/symutil.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Region.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/AddrLookup.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Archive.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymtabReader.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/RangeLookup.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Variable.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/LineInformation.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Symtab.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Type.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Collections.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Module.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Function.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libparseAPI.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libparseAPI.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libparseAPI.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libparseAPI.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/GraphAdapter.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ParseCallback.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFGModifier.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionSource.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ParseContainers.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFG.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CodeObject.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFGFactory.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionAdapter.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Location.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymLiteCodeSource.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CodeSource.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/stackanalysis.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/bitArray.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/slicing.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ABI.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/AbslocInterface.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Absloc.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/liveness.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionCache.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymEval.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libparseAPI_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/GraphAdapter.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ParseCallback.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFGModifier.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionSource.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ParseContainers.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFG.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CodeObject.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFGFactory.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionAdapter.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Location.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymLiteCodeSource.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CodeSource.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/stackanalysis.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/bitArray.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/slicing.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ABI.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/AbslocInterface.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Absloc.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/liveness.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/InstructionCache.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/SymEval.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpatchAPI.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpatchAPI.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpatchAPI.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpatchAPI.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/AddrSpace.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchCallback.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFGMaker.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Snippet.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Instrumenter.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchCFG.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchCommon.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Point.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchMgr.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchModifier.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Command.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchObject.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpatchAPI_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/AddrSpace.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchCallback.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/CFGMaker.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Snippet.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Instrumenter.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchCFG.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchCommon.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Point.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchMgr.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchModifier.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Command.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PatchObject.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpcontrol.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpcontrol.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpcontrol.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpcontrol.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ProcessSet.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Handler.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PCErrors.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PCProcess.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PlatFeatures.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/EventType.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Event.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Decoder.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Generator.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Mailbox.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libpcontrol_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/ProcessSet.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Handler.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PCErrors.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PCProcess.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/PlatFeatures.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/EventType.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Event.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Decoder.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Generator.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/Mailbox.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libstackwalk.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libstackwalk.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libstackwalk.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libstackwalk.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/basetypes.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/symlookup.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/swk_errors.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/local_var.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/walker.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/procstate.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/sw_c.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/steppergroup.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/framestepper.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/frame.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libstackwalk_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/basetypes.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/symlookup.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/swk_errors.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/local_var.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/walker.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/procstate.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/sw_c.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/steppergroup.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/framestepper.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/frame.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI.so.8.2.1
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI.so.8.2
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI.so
+-- Set runtime path of "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI.so.8.2.1" to "/home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib"
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_edge.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_flowGraph.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_loopTreeNode.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_statement.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_function.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_dependenceGraphNode.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_sourceBlock.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_thread.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_dll.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_point.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_Set.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_dependenceGraphEdge.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_basicBlock.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_type.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_instruction.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_Vector.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_callbacks.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_image.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_enums.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_snippet.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_parRegion.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_sourceObj.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_object.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_module.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_addressSpace.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_basicBlockLoop.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_binaryEdit.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_frame.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_memoryAccess_NP.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_process.h
+-- Installing: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/lib/libdyninstAPI_static.a
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_edge.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_flowGraph.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_loopTreeNode.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_statement.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_function.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_dependenceGraphNode.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_sourceBlock.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_thread.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_dll.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_point.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_Set.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_dependenceGraphEdge.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_basicBlock.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_type.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_instruction.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_Vector.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_callbacks.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_image.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_enums.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_snippet.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_parRegion.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_sourceObj.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_object.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_module.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_addressSpace.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_basicBlockLoop.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_binaryEdit.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_frame.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_memoryAccess_NP.h
+-- Up-to-date: /home/patharmor/patharmor/Dyninst-8.2.1/install-dir/include/BPatch_process.h
+]0;patharmor@patharmor-test: ~/patharmor/Dyninst-8.2.1/install-dirpatharmor@patharmor-test:~/patharmor/Dyninst-8.2.1/install-dir$ cd patharmor/[Kexit
+
+Script done on ma 12 okt 2015 17:15:59 CEST

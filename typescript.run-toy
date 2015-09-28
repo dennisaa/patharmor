@@ -1,0 +1,82 @@
+Script started on ma 12 okt 2015 17:32:55 CEST
+]0;patharmor@patharmor-test: ~patharmor@patharmor-test:~$ cd patharmor/toy-bug/
+]0;patharmor@patharmor-test: ~/patharmor/toy-bugpatharmor@patharmor-test:~/patharmor/toy-bug$      sh ../run-app.sh ./toy
++ pwd
++ pwd
++ pwd
++ pwd
++ sudo LD_BIND_NOW=y LD_PRELOAD=/home/patharmor/patharmor/toy-bug/../bin/libwrappers.so DYNINSTAPI_RT_LIB=/home/patharmor/patharmor/toy-bug/../Dyninst-8.2.1/install-dir/lib/libdyninstAPI_RT.so LD_LIBRARY_PATH=/home/patharmor/patharmor/toy-bug/../Dyninst-8.2.1/install-dir/lib:/home/patharmor/patharmor/toy-bug/../dyninst-mainline/install-dir/lib: ../bin/di-opt -load=/home/patharmor/patharmor/toy-bug/../bin/padyn.di -padyn -args /home/patharmor/patharmor/toy-bug/./toy
+[sudo] password for patharmor: 
+[wrapper]: this is ../bin/di-opt
+[wrapper]: this is /home/patharmor/patharmor/toy-bug/./toy
+main() - LBR.src: 0x7f8c285de4ef
+main() - LBR.dst: 0x40078d
+armor_lib_enter        : 0x7f8c285de7bd
+armor_lib_exit.return(): 0x7f8c285de853
+armor_cbk_enter        : 0x7f8c285de705
+armor_cbk_return       : 0x7f8c285de7a1
+armor_cbk_target_call  : 0x7f8c285de768
+armor_cbk_target_return: 0x7f8c285de76b
+pthread_create         : 0x7f8c285de5c0
+pthread_create_return  : 0x7f8c285de6fe
+[wrapper]: ARMOR_IOC_INIT
+- getImage()...
+- getModules()...
+- wrapping library calls...
+  * Found 10 PLT entries that we have to wrap:
+    o 0x400600->0x601018->0x7f8c26ff4e30: puts                 +0x06fe30: _IO_puts                  
+    o 0x400610->0x601020->0x7f8c26fbbf60: sigaction            +0x036f60: __sigaction               
+    o 0x400620->0x601028->0x7f8c270799c0: mmap                 +0x0f49c0: __GI___mmap64                 >> simple, exit points at: 0x7f8c270799d2 0x7f8c270799e3 <<
+    o 0x400630->0x601030->0x7f8c26fd9400: printf               +0x054400: printf                    
+    o 0x400640->0x601038->0x7f8c285de4fe: __libc_start_main    +0x0014fe: __libc_start_main         
+    o 0x400650->0x601040->0x7f8c26fd9370: fprintf              +0x054370: fprintf                   
+    o 0x400660->0x601048->0x000000000000: __gmon_start__           >> not found <<
+    o 0x400670->0x601050->0x7f8c26fe3450: __isoc99_sscanf      +0x05e450: __isoc99_sscanf           
+    o 0x400680->0x601058->0x7f8c27079a20: mprotect             +0x0f4a20: __GI_mprotect                 >> simple, exit points at: 0x7f8c27079a2f 0x7f8c27079a40 <<
+    o 0x400690->0x601060->0x7f8c26fc1290: exit                 +0x03c290: exit                      
+  * Modifications succesful
+  * WARNING. This GOT entry was not wrapped: 0
+  * WARNING. This GOT entry was not wrapped: 7f8c270799c0
+  * WARNING. This GOT entry was not wrapped: 7f8c27079a20
+  * Pushing plt data to kernel module
+  * Pushing exit points to kernel module
+  * Done
+- wrapping indirect calls...
+  * Skipping libwrappers.so
+  * Skipping libdyninstAPI_RT.so.8.2
+  * Searching for indirect calls in libc.so.6
+    o Skipping _dl_start
+    o Skipping __GI___dl_iterate_phdr
+    o Skipping _dl_addr
+    o Skipping _dl_addr_inside_object
+    o Skipping do_dlopen
+    o Skipping do_dlsym
+    o Skipping __GI___libc_dlopen_mode
+    o Skipping __GI___libc_dlsym
+    o Skipping __libc_dlclose
+    o Skipping call_dl_lookup
+    o Skipping _dl_vsym
+    o Skipping _dl_sym
+    o Skipping __libc_dl_error_tsd
+    o Skipping _dl_vdso_vsym
+  * Committing patches for libc.so.6...
+  * Searching for indirect calls in libpthread.so.0
+    o Skipping start_thread
+  * Committing patches for libpthread.so.0...
+  * Skipping libdl.so.2 << NOT SUPPORTED!
+  * All indirect calls have been wrapped
+- Finished Dyninst setup, returning to target
+
+--detaching--
+--detached--
+Doing legitimate mmap() now.
+Done
+Doing a legitimate mprotect() now.
+Done
+Doing a legitimate sigaction() now.
+Done
+Usage: /home/patharmor/patharmor/toy-bug/./toy <hex call address>
+]0;patharmor@patharmor-test: ~/patharmor/toy-bugpatharmor@patharmor-test:~/patharmor/toy-bug$ ^C
+]0;patharmor@patharmor-test: ~/patharmor/toy-bugpatharmor@patharmor-test:~/patharmor/toy-bug$ exit
+
+Script done on ma 12 okt 2015 17:33:56 CEST
