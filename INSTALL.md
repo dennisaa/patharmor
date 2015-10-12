@@ -37,7 +37,13 @@ allowing third-party software. Then open a terminal and type:
 
 The expected output is in typescript.kernel.
 
-Now, reboot with this linux-image-3.16.0-49-generic kernel version.
+Now, reboot with this linux-image-3.16.0-49-generic kernel version. Once you are
+rebooted, verify the kernel version:
+
+     patharmor@patharmor-test:~$ uname -a
+     Linux patharmor-test 3.16.0-49-generic #65~14.04.1-Ubuntu SMP Wed Sep 9 10:03:23 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+
+Now get the repo and install some dependencies from packages:
 
      git clone https://github.com/dennisaa/patharmor.git
      cd patharmor
