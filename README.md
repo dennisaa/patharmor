@@ -22,6 +22,11 @@ Other dirs:
 Notes:
   * These Makefiles assume LLVM 3.4
 
+Building / Installing
+=====================
+
+Detailed instructions are in [INSTALL.md](INSTALL.md).
+
 Authors
 =======
 

@@ -35,7 +35,7 @@ allowing third-party software. Then open a terminal and type:
      sudo apt-get update && sudo apt-get install git && sudo apt-get upgrade
      sudo apt-get install linux-image-3.16.0-49-generic linux-headers-3.16.0-49-generic
 
-The expected output is in typescript.kernel.
+The expected output is in [typescript.kernel](typescript.kernel).
 
 Now, reboot with this linux-image-3.16.0-49-generic kernel version. Once you are
 rebooted, verify the kernel version:
@@ -49,7 +49,7 @@ Now get the repo and install some dependencies from packages:
      cd patharmor
      sudo apt-get install g++ clang libssl-dev cmake libboost1.55-all-dev libelf-dev libiberty-dev 
 
-The expected output is in typescript.packages.
+The expected output is in [typescript.packages](typescript.packages).
 
 This installs llvm-3.4, clang-3.4, g++-4.8, libssl-dev, cmake, libelf and
 boost 1.55.
@@ -65,20 +65,20 @@ Build & install the packaged, patched Dyninst (see patches/):
      cmake .. -DCMAKE_INSTALL_PREFIX=`pwd`
      make -j2 && make install
 
-The expected output is in typescript.dyninst.
+The expected output is in [typescript.dyninst](typescript.dyninst).
 
 Build & install patharmor components:
 
      cd ../.. # back to the top level of the Patharmor distribution
      make && make install # installs in bin/
 
-The expected output is in typescript.pa.
+The expected output is in [typescript.pa](typescript.pa).
 
 Build & load the patharmor LKM:
 
      sh lkm-start.sh
 
-The expected output is in typescript.lkm.
+The expected output is in [typescript.lkm](typescript.lkm).
 
 Building the demo app
 =====================
@@ -89,7 +89,7 @@ From the Patharmor distribution root:
      ./configure --prefix=`pwd`/install-dir --with-cc-opt="-Wno-error -O0 -fasynchronous-unwind-tables -fPIC -g -pthread"
      make && make install
 
-The expected output is in typescript.nginx.
+The expected output is in [typescript.nginx](typescript.nginx).
 
 Running
 =======
@@ -221,8 +221,8 @@ similar to:
 This shows 7 unique LBR's that were forwarded to userspace and all validated to be
 correct LBR's.
 
-The expected output for running the application is in typescript.run.
-The expected output for the analyser is in typescript.run-nginx-analyzer.
+The expected output for running the application is in [typescript.run](typescript.run).
+The expected output for the analyser is in [typescript.run-nginx-analyzer](typescript.run-nginx-analyzer).
 
 Notes on usage
 ==============
@@ -282,7 +282,7 @@ NOTE: We use sigaction as it does not require valid args to trigger an LBR valid
 
 This shows you you can use 0x400610 as sigaction offset.
 
-Expected output from running the toy app is in typescript.run-toy, the analyser in typescript.toy-analyser.
+Expected output from running the toy app is in [typescript.run-toy](typescript.run-toy), the analyser in [typescript.toy-analyser](typescript.toy-analyser).
 
 Restart the analysing daemon so it can deal with the new invocation.
 
@@ -386,4 +386,4 @@ But it is not in the source so the LBR fails to validate:
 
 This demonstrates patharmor successfully distinguishes legitimate from nonlegitimate call sequences.
 
-Expected output from running the toy app is in typescript.run-toy-non-legit, the analyser in typescript.toy-analyser-non-legit.
+Expected output from running the toy app is in [typescript.run-toy-non-legit](typescript.run-toy-non-legit), the analyser in [typescript.toy-analyser-non-legit](typescript.toy-analyser-non-legit).
